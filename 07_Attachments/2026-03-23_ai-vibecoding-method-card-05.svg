@@ -1,0 +1,47 @@
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgm5" x1="68" y1="70" x2="1012" y2="1280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F8F3"/>
+      <stop offset="0.48" stop-color="#F6F1E8"/>
+      <stop offset="1" stop-color="#F6E5D6"/>
+    </linearGradient>
+    <filter id="shadowm5" x="38" y="40" width="1004" height="1274" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.16 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 18px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: 0.18em; }
+      .title { font: 800 56px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .body { font: 500 30px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+      .small { font: 700 22px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+  <rect width="1080" height="1350" fill="#ECE7DE"/>
+  <rect x="74" y="62" width="932" height="1226" rx="34" fill="url(#bgm5)" filter="url(#shadowm5)"/>
+  <rect x="122" y="118" width="246" height="34" rx="17" fill="#1F2A24"/>
+  <text x="148" y="140" class="eyebrow" fill="#F8F4EB">VIBE CODING</text>
+
+  <text x="122" y="256" class="title" fill="#1F2A24">第 5 步：</text>
+  <text x="122" y="324" class="title" fill="#1F2A24">最后靠人打磨</text>
+
+  <text x="122" y="452" class="body" fill="#3C4742">很多 Demo 最后不是死在做不出来，</text>
+  <text x="122" y="500" class="body" fill="#3C4742">而是死在“能跑，但不稳”。</text>
+
+  <rect x="122" y="596" width="836" height="300" rx="28" fill="#FFF8F1" stroke="#E7C6A7" stroke-width="2"/>
+  <text x="158" y="668" class="small" fill="#A65419">这时候真正决定成色的，往往是人的判断：</text>
+  <text x="158" y="744" class="body" fill="#245E49">• 哪些地方该删</text>
+  <text x="158" y="800" class="body" fill="#245E49">• 哪些地方该收</text>
+  <text x="158" y="856" class="body" fill="#245E49">• 哪些细节值得补</text>
+  <text x="158" y="912" class="body" fill="#245E49">• 什么叫已经够好，可以交付</text>
+
+  <text x="122" y="1026" class="title" fill="#A65419">AI 能做出来，</text>
+  <text x="122" y="1094" class="title" fill="#245E49">人决定成色。</text>
+
+  <text x="122" y="1208" class="small" fill="#342B21">最终的“高级感”和“可靠感”，仍然要靠人兜底。</text>
+</svg>

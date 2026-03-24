@@ -1,0 +1,47 @@
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgm2" x1="70" y1="70" x2="1010" y2="1280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF7F1"/>
+      <stop offset="0.48" stop-color="#F7F2EA"/>
+      <stop offset="1" stop-color="#F6E4D6"/>
+    </linearGradient>
+    <filter id="shadowm2" x="38" y="40" width="1004" height="1274" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.16 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 18px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: 0.18em; }
+      .title { font: 800 56px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .body { font: 500 30px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+      .small { font: 700 22px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+  <rect width="1080" height="1350" fill="#ECE7DE"/>
+  <rect x="74" y="62" width="932" height="1226" rx="34" fill="url(#bgm2)" filter="url(#shadowm2)"/>
+  <rect x="122" y="118" width="246" height="34" rx="17" fill="#1F2A24"/>
+  <text x="148" y="140" class="eyebrow" fill="#F8F4EB">VIBE CODING</text>
+
+  <text x="122" y="256" class="title" fill="#1F2A24">第 2 步：</text>
+  <text x="122" y="324" class="title" fill="#1F2A24">先做规划</text>
+
+  <text x="122" y="452" class="body" fill="#3C4742">有了 AI，不是更不需要规划，</text>
+  <text x="122" y="500" class="body" fill="#3C4742">而是更需要规划。</text>
+
+  <text x="122" y="616" class="body" fill="#3C4742">因为 AI 会帮你更快生成结果，</text>
+  <text x="122" y="664" class="body" fill="#3C4742">也会帮你更快生成偏题和技术债。</text>
+
+  <rect x="122" y="748" width="836" height="252" rx="28" fill="#FFF8F1" stroke="#E7C6A7" stroke-width="2"/>
+  <text x="158" y="820" class="small" fill="#A65419">更稳的做法是先写一个最小规格：</text>
+  <text x="158" y="896" class="body" fill="#245E49">• 目标是什么</text>
+  <text x="158" y="952" class="body" fill="#245E49">• 模块有哪些</text>
+  <text x="158" y="1008" class="body" fill="#245E49">• 交互流程是什么</text>
+  <text x="158" y="1064" class="body" fill="#245E49">• 当前阶段做到哪里算完成</text>
+
+  <text x="122" y="1166" class="small" fill="#342B21">越能快速生成，越要先把蓝图定住。</text>
+</svg>

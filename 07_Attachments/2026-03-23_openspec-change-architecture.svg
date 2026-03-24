@@ -1,0 +1,98 @@
+<svg width="1600" height="1120" viewBox="0 0 1600 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="60" x2="1520" y2="1060" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2EADF"/>
+      <stop offset="0.45" stop-color="#EEEDE8"/>
+      <stop offset="1" stop-color="#E0ECE7"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#B65F31"/>
+      <stop offset="1" stop-color="#2F7B69"/>
+    </linearGradient>
+    <style>
+      .eyebrow { font: 700 20px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; letter-spacing: 0.16em; }
+      .title { font: 800 60px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .subtitle { font: 500 26px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .zone { font: 700 22px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; letter-spacing: 0.04em; }
+      .cardTitle { font: 700 30px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .cardBody { font: 500 22px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .small { font: 700 18px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#EEE7DD"/>
+  <rect x="60" y="52" width="1480" height="1016" rx="34" fill="url(#bg)"/>
+
+  <rect x="108" y="96" width="220" height="36" rx="18" fill="#1F2A25"/>
+  <text x="132" y="119" class="eyebrow" fill="#F7F4EC">OPENSPEC CHANGE FLOW</text>
+
+  <text x="108" y="220" class="title" fill="#1F2A25">一轮像样的变更，不该只有代码</text>
+  <text x="112" y="278" class="subtitle" fill="#5B665F">Proposal 收边界，Design 定路径，Spec 管行为，Tasks 管执行，</text>
+  <text x="112" y="314" class="subtitle" fill="#5B665F">Validate 负责检查结构，Archive 负责把结论沉淀回系统事实。</text>
+
+  <rect x="108" y="382" width="408" height="94" rx="24" fill="#FFF2E8" stroke="#EABF9C" stroke-width="2"/>
+  <rect x="548" y="382" width="504" height="94" rx="24" fill="#EDF7F2" stroke="#BCD9CC" stroke-width="2"/>
+  <rect x="1084" y="382" width="408" height="94" rx="24" fill="#F7F3EC" stroke="#DDD3C8" stroke-width="2"/>
+  <text x="138" y="420" class="zone" fill="#A75527">对齐层</text>
+  <text x="138" y="452" class="cardBody" fill="#704F35">先定义为什么做，以及这次改动的边界。</text>
+  <text x="578" y="420" class="zone" fill="#255D4D">约束层</text>
+  <text x="578" y="452" class="cardBody" fill="#3B564C">先写行为和步骤，再让实现进入可检查状态。</text>
+  <text x="1114" y="420" class="zone" fill="#353029">交付层</text>
+  <text x="1114" y="452" class="cardBody" fill="#554F46">完成实现、验证和沉淀，让 change 真正闭环。</text>
+
+  <rect x="108" y="552" width="286" height="222" rx="28" fill="#FFF9F3" stroke="#E6D7C4" stroke-width="2"/>
+  <rect x="438" y="552" width="286" height="222" rx="28" fill="#FFF9F3" stroke="#E6D7C4" stroke-width="2"/>
+  <rect x="768" y="552" width="286" height="222" rx="28" fill="#FFF9F3" stroke="#E6D7C4" stroke-width="2"/>
+  <rect x="1098" y="552" width="286" height="222" rx="28" fill="#FFF9F3" stroke="#E6D7C4" stroke-width="2"/>
+
+  <rect x="142" y="584" width="104" height="28" rx="14" fill="#B65F31"/>
+  <text x="167" y="603" class="small" fill="#FFF8F1">WHY / WHAT</text>
+  <text x="142" y="656" class="cardTitle" fill="#1F2A25">Proposal</text>
+  <text x="142" y="700" class="cardBody" fill="#59635D">为什么现在要做，</text>
+  <text x="142" y="732" class="cardBody" fill="#59635D">具体改什么，</text>
+  <text x="142" y="764" class="cardBody" fill="#59635D">这次不改什么。</text>
+
+  <rect x="472" y="584" width="90" height="28" rx="14" fill="#BC7B49"/>
+  <text x="496" y="603" class="small" fill="#FFF8F1">HOW</text>
+  <text x="472" y="656" class="cardTitle" fill="#1F2A25">Design</text>
+  <text x="472" y="700" class="cardBody" fill="#59635D">模块怎么拆，</text>
+  <text x="472" y="732" class="cardBody" fill="#59635D">数据怎么流，</text>
+  <text x="472" y="764" class="cardBody" fill="#59635D">关键取舍是什么。</text>
+
+  <rect x="802" y="584" width="112" height="28" rx="14" fill="#2F7B69"/>
+  <text x="827" y="603" class="small" fill="#F8FFFC">BEHAVIOR</text>
+  <text x="802" y="656" class="cardTitle" fill="#1F2A25">Specs</text>
+  <text x="802" y="700" class="cardBody" fill="#59635D">用 Requirement</text>
+  <text x="802" y="732" class="cardBody" fill="#59635D">和 Scenario 写清楚</text>
+  <text x="802" y="764" class="cardBody" fill="#59635D">系统行为变化。</text>
+
+  <rect x="1132" y="584" width="104" height="28" rx="14" fill="#3A8C77"/>
+  <text x="1157" y="603" class="small" fill="#F8FFFC">EXECUTE</text>
+  <text x="1132" y="656" class="cardTitle" fill="#1F2A25">Tasks</text>
+  <text x="1132" y="700" class="cardBody" fill="#59635D">把变更拆成</text>
+  <text x="1132" y="732" class="cardBody" fill="#59635D">可执行、可回看、</text>
+  <text x="1132" y="764" class="cardBody" fill="#59635D">可验收的步骤。</text>
+
+  <path d="M394 663H438" stroke="url(#line)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M724 663H768" stroke="url(#line)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M1054 663H1098" stroke="url(#line)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M416 650L438 663L416 676" stroke="#8C745B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M746 650L768 663L746 676" stroke="#6F887C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1076 650L1098 663L1076 676" stroke="#6F887C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="178" y="862" width="366" height="176" rx="28" fill="#FFF3E8" stroke="#E7BE9E" stroke-width="2"/>
+  <rect x="618" y="862" width="366" height="176" rx="28" fill="#EDF7F2" stroke="#BCD9CC" stroke-width="2"/>
+  <rect x="1058" y="862" width="366" height="176" rx="28" fill="#F7F4EC" stroke="#DED4C7" stroke-width="2"/>
+
+  <text x="212" y="918" class="cardTitle" fill="#A75527">Validate</text>
+  <text x="212" y="958" class="cardBody" fill="#694A31">检查章节、Delta、Requirement</text>
+  <text x="212" y="990" class="cardBody" fill="#694A31">和 Scenario 是否成形。</text>
+
+  <text x="652" y="918" class="cardTitle" fill="#255D4D">Implement</text>
+  <text x="652" y="958" class="cardBody" fill="#3A564C">实现不再只靠聊天推进，</text>
+  <text x="652" y="990" class="cardBody" fill="#3A564C">而是沿着 change 施工。</text>
+
+  <text x="1092" y="918" class="cardTitle" fill="#353029">Archive</text>
+  <text x="1092" y="958" class="cardBody" fill="#575046">把这轮 change 的结果</text>
+  <text x="1092" y="990" class="cardBody" fill="#575046">沉淀回主规格，形成新事实。</text>
+</svg>

@@ -17,6 +17,7 @@
 - 保持 Obsidian 兼容
 - 区分来源事实、作者观点、我的判断
 - 优先复用已有模板、脚本和工作流，不重复造轮子
+- 发布类内容优先生成可复用的“内容包”，而不是只停留在单篇正文
 
 ## 2. 当前仓库结构
 
@@ -55,6 +56,74 @@
 
 - [自动入库说明](/Users/apple/Desktop/project/document/99_System/自动入库说明.md)
 - [内容处理工作流](/Users/apple/Desktop/project/document/05_Workflows/内容处理工作流.md)
+- [Markdown发布预览说明](/Users/apple/Desktop/project/document/99_System/Markdown发布预览说明.md)
+
+来源处理完成后，默认继续判断下游去向：
+
+1. 是否需要并入主题笔记
+2. 是否需要生成文章草稿
+3. 是否需要进入发布包装
+
+默认链路是：
+
+来源 -> 主题 -> 成稿 -> 发布包装
+
+当用户提出“业务是否能闭环”“现有系统是否能跑通”“是否适合 agent 化”这类问题时，默认按下面顺序处理：
+
+1. 先定义业务目标和边界
+2. 再拆输入、动作、反馈三层
+3. 再判断结果是否可观察、失败是否可回退
+4. 再设计状态机与人工闸门
+5. 最后区分当前已能跑通的部分与仍需补齐的基础设施
+
+相关说明：
+
+- [业务闭环设计流程](/Users/apple/Desktop/project/document/05_Workflows/业务闭环设计流程.md)
+- [T-业务闭环设计](/Users/apple/Desktop/project/document/04_Templates/T-业务闭环设计.md)
+- [内容业务闭环设计示例](/Users/apple/Desktop/project/document/99_System/内容业务闭环设计示例.md)
+
+当用户明确希望把软件类需求做成“PRD -> 搜索上下文 -> 实现计划 -> 写文件 -> 跑测试”的系统时，优先复用仓库内的 Python 闭环引擎，并按下面顺序处理：
+
+1. 先初始化目标仓库，记录仓库用途、允许写入范围、默认测试命令和业务备注
+2. 再确认 PRD 或自然语言需求是否结构足够清晰
+3. 再选择 research provider 和 strategy provider
+4. 再明确允许写入的项目范围和测试命令
+5. 先用 mock 跑通链路
+6. 再接真实模型进入项目执行
+
+相关说明：
+
+- [PRD到测试闭环流程](/Users/apple/Desktop/project/document/05_Workflows/PRD到测试闭环流程.md)
+- [PRD到测试闭环系统说明](/Users/apple/Desktop/project/document/99_System/PRD到测试闭环系统说明.md)
+- [业务闭环面板说明](/Users/apple/Desktop/project/document/99_System/业务闭环面板说明.md)
+- [T-PRD-交付需求](/Users/apple/Desktop/project/document/04_Templates/T-PRD-交付需求.md)
+
+当用户明确要做文章、分享稿、系列内容或对外发布内容时，默认按下面顺序处理：
+
+1. 先形成主题笔记或工作草稿
+2. 再生成发布版正文
+3. 再补发布建议
+4. 再补视觉资产，例如封面图、认知图、SVG 图卡
+5. 最后补社交传播文案
+
+相关说明：
+
+- [文章发布包装流程](/Users/apple/Desktop/project/document/05_Workflows/文章发布包装流程.md)
+- [T-发布建议](/Users/apple/Desktop/project/document/04_Templates/T-发布建议.md)
+- [SVG资产生成与校验说明](/Users/apple/Desktop/project/document/99_System/SVG资产生成与校验说明.md)
+- [文章配图与图卡流程](/Users/apple/Desktop/project/document/05_Workflows/文章配图与图卡流程.md)
+
+其中“发布建议”默认不应只停留在中性说明，而应尽量补齐下面这些要素：
+
+- 推荐主标题
+- 更有点击欲的备选标题
+- 标题选择建议，例如更稳、更强点击、更适合社群、更像分享者口径
+- 推荐导语
+- 推荐分享开场口径
+- 不建议使用的发布方式
+- 推荐结尾金句
+
+默认目标不是写一份冰冷的说明卡，而是产出一份更接近真实分享场景、能提升点击欲和查看欲的发布建议。
 
 ### 本地 skill 使用规则
 
@@ -112,6 +181,7 @@
 - 命名偏好
 - 输出结构偏好
 - 对摘要、分析、分享文档的格式要求
+- 对发布资产的偏好，例如 SVG、图卡、发布建议、社交文案
 
 这些偏好不应该只留在上下文里，而应该沉淀到：
 
@@ -171,6 +241,108 @@ python3 scripts/intake_source.py "<url-or-path>"
 - pdf
 - document
 
+### Markdown 发布预览
+
+能力说明：
+
+- 启动本地 HTML 预览服务
+- 预览 Markdown 正文并内嵌本地图片
+- 支持常见正文语法，包括标题、列表、引用、行内代码、fenced code block、表格、分隔线
+- 适合从浏览器复制富文本内容到飞书、公众号编辑器等场景测试
+- 支持从仓库 `.env` 读取预览端口配置
+
+入口：
+
+```bash
+node scripts/serve_markdown_publish_preview.js "03_Outputs/Drafts/xxx.md" --open
+```
+
+重启入口：
+
+```bash
+bash scripts/restart_markdown_publish_preview.sh
+```
+
+监听入口：
+
+```bash
+npm run preview:md:watch -- "03_Outputs/Drafts/xxx.md" --open
+```
+
+飞书复制模式：
+
+- 预览页应优先提供“飞书复制版正文”按钮或对应预览区
+- 如果已经出现多个平台的稳定差异，预览页应支持平台选择，而不是只保留单一复制结构
+- 当用户在正文区域直接按复制快捷键时，可以拦截复制事件并替换成当前平台对应的输出
+- 当普通网页结构复制到飞书出现代码块、背景色或图片粘贴异常时，优先增加“复制专用 HTML 输出”，而不是只调网页展示样式
+- 飞书复制版可以牺牲部分原生语义，例如把块级代码降级为带行内样式的内容块，以换取更稳定的粘贴结果
+
+端口配置：
+
+```bash
+MARKDOWN_PUBLISH_PREVIEW_PORT=4312
+```
+
+相关说明：
+
+- [Markdown发布预览说明](/Users/apple/Desktop/project/document/99_System/Markdown发布预览说明.md)
+- [markdown-publish-preview](/Users/apple/Desktop/project/document/skills/markdown-publish-preview/SKILL.md)
+
+### PRD 到测试闭环引擎
+
+能力说明：
+
+- 读取 Markdown PRD
+- 本地搜索项目上下文
+- 用 research provider 压缩搜索结果
+- 用 strategy provider 生成实现计划
+- 写入文件并执行测试命令
+- 保存每次运行的日志、阶段产物和备份
+
+入口：
+
+```bash
+python3 -m business_loop.cli run --prd path/to/prd.md --project-root path/to/project
+```
+
+测试入口：
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+相关说明：
+
+- [PRD到测试闭环流程](/Users/apple/Desktop/project/document/05_Workflows/PRD到测试闭环流程.md)
+- [PRD到测试闭环系统说明](/Users/apple/Desktop/project/document/99_System/PRD到测试闭环系统说明.md)
+
+### 业务闭环面板
+
+能力说明：
+
+- 用一个本地 Web 面板管理多个业务项目
+- 初始化项目身份和长期记忆
+- 直接输入自然语言需求或 PRD 路径
+- 启动一次闭环运行并查看状态
+- 当业务规则不清时自动阻断
+
+入口：
+
+```bash
+python3 -m business_loop.cli serve-panel --open
+```
+
+快捷入口：
+
+```bash
+bash scripts/start_business_loop_panel.sh
+npm run loop:panel
+```
+
+相关说明：
+
+- [业务闭环面板说明](/Users/apple/Desktop/project/document/99_System/业务闭环面板说明.md)
+
 ### 后续可继续 skill 化的候选能力
 
 - 来源内容自动摘要
@@ -189,15 +361,79 @@ skill 候选池与流程入口：
 
 - [source-auto-summary](/Users/apple/Desktop/project/document/skills/source-auto-summary/SKILL.md)
 
+当前已可复用的本地 skill：
+
+- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
+- [markdown-publish-preview](/Users/apple/Desktop/project/document/skills/markdown-publish-preview/SKILL.md)
+
+当前已安装并可优先使用的全局外部 skill：
+
+- `web-access`
+  - 安装位置：`~/.codex/skills/web-access`
+  - 用途：处理联网搜索、页面读取、动态站点访问、登录态页面操作、浏览器 CDP 自动化
+  - 使用原则：当任务涉及外部网页、动态渲染页面、需要登录态、需要像人一样操作浏览器时，优先考虑该 skill
+
 ## 8. 协作口径
 
 本仓库默认使用中文协作。
+
+当前已识别到的稳定偏好：
+
+- 优先用中文完成内容生产和协作
+- 内容不仅要有正文，还要尽量补齐发布版、发布建议和传播物料
+- 发布建议不应只停留在冷标题和中性导语，默认应补“更有点击欲的标题备选”“标题选择建议”“推荐分享开场口径”“不建议使用的发布方式”
+- 发布建议的整体风格应更接近真人分享、社群转发和经验复盘口径，而不是百科式、说明书式或过度冰冷的表达
+- 视觉资产优先使用 SVG
+- SVG 资产生成后，应先渲染预览验证，再决定是否导出 PNG
+- 文本型 SVG 默认应再跑一次布局检查，优先识别文字越界和重叠风险
+- 对外发布正文、飞书文档、公众号编辑器等实际分发场景，默认引用 PNG，不直接引用 SVG
+- PNG 导出必须锁定为 SVG 根尺寸，不能让当前机器窗口大小决定最终宽高
+- 横版发布图默认可按统一宽度导出，例如 1440，并保持原始比例
+- 对文本密度高、容易超框的结构图，首次生成就优先使用 `Satori` 的“模板 + 数据”方式生成 SVG
+- 如果希望跨机器尽量保持一致，应优先使用稳定字体方案，不完全依赖系统字体
+- 文章应尽量加入示例，增强可读性和完整性
+- 同一篇内容优先拆成分层产物，便于后续继续编辑和复用
+- 当发布目标是飞书等富文本编辑器时，优先考虑先渲染 HTML 预览再复制，而不是直接复制 Markdown 源码
+- 对可重复使用的方法和流程，优先沉淀为“参考文档 + 模板”的组合，方便他人按自己的业务重新定制
 
 输出原则：
 
 - 先判断内容类型，再处理
 - 先结构化，再表达观点
 - 先沉淀主题，再生成文章
+- 先形成工作稿，再做发布包装
 - 优先可复用、可维护，不追求一次性结果
+
+当内容任务已经进入发布阶段时，优先检查是否适合使用本地 skill：
+
+- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
+
+当任务涉及封面图、认知图、结构图或 SVG 图卡时，默认执行：
+
+1. 先生成 SVG
+2. 文本型资产优先判断是否应改用 `Satori`
+3. 再做 PNG 预览验证
+4. 再做布局检查，确认没有明显越界和重叠
+5. 发现裁切或版式问题后先修 SVG 或模板
+6. 如有平台分发需求，再导出 PNG
+
+当任务从来源整理进入主题或发布阶段时，应优先检查：
+
+- [source-auto-summary](/Users/apple/Desktop/project/document/skills/source-auto-summary/SKILL.md)
+- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
+
+当任务涉及业务闭环设计、流程 agent 化或系统化评估时，应优先复用：
+
+- [业务闭环设计流程](/Users/apple/Desktop/project/document/05_Workflows/业务闭环设计流程.md)
+- [T-业务闭环设计](/Users/apple/Desktop/project/document/04_Templates/T-业务闭环设计.md)
+
+当任务涉及软件类 PRD 落地、实现计划生成、受控写文件和测试闭环时，应优先复用：
+
+- [PRD到测试闭环流程](/Users/apple/Desktop/project/document/05_Workflows/PRD到测试闭环流程.md)
+- [PRD到测试闭环系统说明](/Users/apple/Desktop/project/document/99_System/PRD到测试闭环系统说明.md)
+- [业务闭环面板说明](/Users/apple/Desktop/project/document/99_System/业务闭环面板说明.md)
+- [business_loop](/Users/apple/Desktop/project/document/business_loop)
 
 如果任务完成后能够顺手提高仓库的长期可用性，应主动补齐文档、模板、规则或 skill 候选说明。

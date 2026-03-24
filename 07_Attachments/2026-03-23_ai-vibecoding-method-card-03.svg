@@ -1,0 +1,47 @@
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgm3" x1="68" y1="72" x2="1012" y2="1278" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2F8F3"/>
+      <stop offset="0.5" stop-color="#F6F1E8"/>
+      <stop offset="1" stop-color="#F5E4D5"/>
+    </linearGradient>
+    <filter id="shadowm3" x="38" y="40" width="1004" height="1274" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.16 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 18px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: 0.18em; }
+      .title { font: 800 56px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .body { font: 500 30px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+      .small { font: 700 22px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+  <rect width="1080" height="1350" fill="#ECE7DE"/>
+  <rect x="74" y="62" width="932" height="1226" rx="34" fill="url(#bgm3)" filter="url(#shadowm3)"/>
+  <rect x="122" y="118" width="246" height="34" rx="17" fill="#1F2A24"/>
+  <text x="148" y="140" class="eyebrow" fill="#F8F4EB">VIBE CODING</text>
+
+  <text x="122" y="256" class="title" fill="#1F2A24">第 3 步：</text>
+  <text x="122" y="324" class="title" fill="#1F2A24">先定路径</text>
+
+  <text x="122" y="452" class="body" fill="#3C4742">很多人最先问的是：</text>
+  <text x="122" y="548" class="title" fill="#A65419">哪个工具最强？</text>
+
+  <text x="122" y="660" class="body" fill="#3C4742">但更关键的问题其实是：</text>
+  <text x="122" y="708" class="body" fill="#245E49">我有没有给 AI 一条容易走通的路。</text>
+
+  <rect x="122" y="790" width="836" height="250" rx="28" fill="#FFF8F1" stroke="#E7C6A7" stroke-width="2"/>
+  <text x="158" y="862" class="small" fill="#342B21">比如先定清楚：</text>
+  <text x="158" y="938" class="body" fill="#245E49">• 技术栈</text>
+  <text x="158" y="994" class="body" fill="#245E49">• 页面结构</text>
+  <text x="158" y="1050" class="body" fill="#245E49">• 数据字段</text>
+  <text x="158" y="1106" class="body" fill="#245E49">• 提交 / 校验 / 登录流程</text>
+
+  <text x="122" y="1208" class="small" fill="#A65419">稳定路径，通常比强大功能更重要。</text>
+</svg>

@@ -29,6 +29,13 @@
 | `pdf-insight-extractor` | candidate | PDF 转 Markdown 后提炼重点 | 用户给 PDF，希望提取摘要、结论、图表信息 | 结合 `pdf-to-ai-markdown` skill 设计流程 |
 | `topic-synthesizer` | candidate | 多来源合并为主题笔记 | 用户给多个来源，希望聚成一个主题 | 明确输入格式和主题输出模板 |
 | `share-draft-generator` | candidate | 从主题笔记生成分享文档 | 用户已有主题笔记，想生成文章或内部分享 | 固定输出模板和受众字段 |
+| `business-loop-designer` | candidate | 评估现有业务是否能跑通闭环，并产出可复用的闭环设计文档 | 用户希望判断某条业务是否适合 agent 化、自动化或系统化改造 | 继续在真实业务场景中验证输入模板、状态机模板和落地清单是否足够稳定 |
+| `prd-delivery-loop` | incubating | 把软件类 PRD 推进到本地搜索、实现计划、写文件和测试执行的闭环 | 用户希望把真实项目做成“PRD -> 实现 -> 测试”的系统，并可接入不同 LLM provider | 继续在真实项目中验证文件写入边界、测试命令策略和 provider 分层是否足够稳定 |
+| `business-loop-panel` | incubating | 用一个本地面板管理多个业务仓库，直接输入需求并查看闭环状态 | 用户希望在一个界面里初始化项目、维护业务记忆、启动运行并在歧义时自动停止 | 继续验证多项目注册表、运行状态展示和项目记忆编辑是否足够稳定 |
+| `article-publish-kit` | active | 文章草稿升级为可发布的内容包 | 用户已有主题或文章，希望生成发布版、SVG 配图、图卡和社交文案 | 继续在真实文章里复用，并保持 SVG 生成、渲染验证、PNG 导出的固定流程 |
+| `article-visual-assets` | active | 从文章与切图文案批量生成可复用的视觉资产 | 用户已有正文、发布建议或切图文案，希望补封面图、结构图、图卡与 PNG 预览 | 持续沉淀图卡版式、命名规范和验证流程 |
+| `markdown-publish-preview` | active | 把本地 Markdown 渲染成可复制的 HTML 预览页 | 用户要把文章贴到飞书等富文本编辑器，但本地图片路径无法直接复制 | 在真实发布场景里继续验证“浏览器复制”是否足够稳定 |
+| `visual-layout-qa` | incubating | 对文本型 SVG 做自动布局检查，优先发现越界、重叠和高风险版式 | 用户持续生成 SVG 图卡、结构图，且经常出现超框、重叠、难以人工预判的问题 | 继续在真实发布任务里验证脚本误报率，并评估是否沉淀为独立 skill |
 
 ## 使用方式
 

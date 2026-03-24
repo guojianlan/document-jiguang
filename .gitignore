@@ -1,4 +1,9 @@
 .DS_Store
+.env
+.tmp/
+__pycache__/
+.pytest_cache/
+.coverage
 .obsidian/workspace.json
 .obsidian/cache
 .obsidian/workspace-mobile.json

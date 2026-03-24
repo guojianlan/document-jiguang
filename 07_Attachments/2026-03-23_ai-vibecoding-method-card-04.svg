@@ -1,0 +1,47 @@
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgm4" x1="70" y1="72" x2="1010" y2="1278" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7E9D8"/>
+      <stop offset="0.5" stop-color="#F4F0E8"/>
+      <stop offset="1" stop-color="#E3EFE8"/>
+    </linearGradient>
+    <filter id="shadowm4" x="38" y="40" width="1004" height="1274" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.16 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 18px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: 0.18em; }
+      .title { font: 800 56px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .body { font: 500 30px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+      .small { font: 700 22px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+  <rect width="1080" height="1350" fill="#ECE7DE"/>
+  <rect x="74" y="62" width="932" height="1226" rx="34" fill="url(#bgm4)" filter="url(#shadowm4)"/>
+  <rect x="122" y="118" width="246" height="34" rx="17" fill="#1F2A24"/>
+  <text x="148" y="140" class="eyebrow" fill="#F8F4EB">VIBE CODING</text>
+
+  <text x="122" y="256" class="title" fill="#1F2A24">第 4 步：</text>
+  <text x="122" y="324" class="title" fill="#1F2A24">人负责推进</text>
+
+  <text x="122" y="452" class="body" fill="#3C4742">到了执行阶段，人的角色不是退场，</text>
+  <text x="122" y="500" class="body" fill="#3C4742">而是从“亲手写”变成“负责调度”。</text>
+
+  <rect x="122" y="592" width="836" height="324" rx="28" fill="#FFF8F1" stroke="#E7C6A7" stroke-width="2"/>
+  <text x="158" y="664" class="small" fill="#342B21">你要持续做四件事：</text>
+  <text x="158" y="740" class="body" fill="#245E49">• 给 AI 明确任务</text>
+  <text x="158" y="796" class="body" fill="#245E49">• 检查这次有没有跑偏</text>
+  <text x="158" y="852" class="body" fill="#245E49">• 决定现在该继续还是验收</text>
+  <text x="158" y="908" class="body" fill="#245E49">• 把有效做法沉淀成规则</text>
+
+  <text x="122" y="1026" class="title" fill="#A65419">AI 负责加速，</text>
+  <text x="122" y="1094" class="title" fill="#245E49">你负责推进。</text>
+
+  <text x="122" y="1208" class="small" fill="#342B21">这一步决定你是在“用 AI”，还是在“管理协作过程”。</text>
+</svg>

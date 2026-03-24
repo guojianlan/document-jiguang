@@ -1,0 +1,98 @@
+{
+  "eyebrow": "VIBE CODING",
+  "title": "全文结构图：5 步工作法 + 误区 + 初学者建议",
+  "subtitle": "把正文里最关键的三层信息收束在一起：先看路径，再避开误区，最后知道初学者该先练什么。",
+  "stepsTitle": "一条 5 步工作法",
+  "steps": [
+    {
+      "index": 1,
+      "title": "先有想法",
+      "accent": "#C76128",
+      "cardBg": "#FFF5EA",
+      "lines": [
+        "先回答要做什么、",
+        "为谁做、先不做什么。"
+      ]
+    },
+    {
+      "index": 2,
+      "title": "先做规划",
+      "accent": "#CC8744",
+      "cardBg": "#FFF8F0",
+      "lines": [
+        "先写最小规格、结构",
+        "和流程，再让 AI 开工。"
+      ]
+    },
+    {
+      "index": 3,
+      "title": "先定路径",
+      "accent": "#5E574E",
+      "cardBg": "#F7F4EC",
+      "circleText": "#FBF7EF",
+      "lines": [
+        "先把技术栈、字段、",
+        "关键流程定清楚。"
+      ]
+    },
+    {
+      "index": 4,
+      "title": "人负责推进",
+      "accent": "#2E7A5C",
+      "cardBg": "#F2FAF5",
+      "circleText": "#F7FFFA",
+      "lines": [
+        "AI 负责加速，",
+        "你负责调度和验收。"
+      ]
+    },
+    {
+      "index": 5,
+      "title": "最后靠人收住",
+      "accent": "#235E49",
+      "cardBg": "#EAF6F0",
+      "circleText": "#F7FFFA",
+      "lines": [
+        "删冗余、补细节，",
+        "判断何时可交付。"
+      ]
+    }
+  ],
+  "misunderstandingsTitle": "三类最常见误区",
+  "misunderstandings": [
+    {
+      "label": "误区 1",
+      "title": "以为自己可以完全不用懂",
+      "body": "AI 会生成内容，但不会替你承担判断和责任。"
+    },
+    {
+      "label": "误区 2",
+      "title": "以为关键是写一个万能 prompt",
+      "body": "真正决定结果的不是 prompt，而是稳定流程。"
+    },
+    {
+      "label": "误区 3",
+      "title": "以为功能越多就越高级",
+      "body": "闭环没跑通之前，功能越多，越容易把自己带乱。"
+    }
+  ],
+  "beginnersTitle": "初学者最该先学的三件事",
+  "beginners": [
+    {
+      "label": "建议 1",
+      "title": "先问自己现在到底缺什么",
+      "body": "先分清你缺的是认知、工具，还是工作流。"
+    },
+    {
+      "label": "建议 2",
+      "title": "把目标改成跑通一个小闭环",
+      "body": "先用 AI 做完一个真实小任务，再复盘。"
+    },
+    {
+      "label": "建议 3",
+      "title": "从第一天就训练结果判断",
+      "body": "多问自己：这是真解决问题，还是只是能跑。"
+    }
+  ],
+  "summary": "一句话收束：先建立正确认知，再用小闭环把工作流跑稳，Vibe Coding 才会从上头感变成可复用的能力。"
+}

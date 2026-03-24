@@ -1,0 +1,81 @@
+{
+  "eyebrow": "OPENSPEC FLOW",
+  "title": "一篇真正有用的使用手册，应该先把闭环说清楚",
+  "subtitle": "先建 change，再收边界，再写行为，再跑验证，最后 Archive。",
+  "steps": [
+    {
+      "stepLabel": "STEP 1",
+      "title": "Init",
+      "bg": "#FFF1E6",
+      "border": "#E7BE9D",
+      "chipBg": "#B65C2D",
+      "chipText": "#FFF8F1",
+      "lines": [
+        "让 change 和 specs",
+        "有稳定落点。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 2",
+      "title": "New Change",
+      "bg": "#FFF8F1",
+      "border": "#E2D7C8",
+      "chipBg": "#7A6A58",
+      "chipText": "#FFF8F1",
+      "lines": [
+        "先定义本轮",
+        "到底在改什么。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 3",
+      "title": "Proposal",
+      "bg": "#EEF7F2",
+      "border": "#BCD8CD",
+      "chipBg": "#2F7B69",
+      "chipText": "#F7FFFB",
+      "lines": [
+        "先收住范围，",
+        "别让问题漂移。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 4",
+      "title": "Design / Spec / Tasks",
+      "bg": "#EEF7F2",
+      "border": "#BCD8CD",
+      "chipBg": "#2F7B69",
+      "chipText": "#F7FFFB",
+      "lines": [
+        "定路径、写行为、",
+        "拆执行顺序。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 5",
+      "title": "Validate",
+      "bg": "#F7F4EC",
+      "border": "#DED4C7",
+      "chipBg": "#494238",
+      "chipText": "#FBF7EF",
+      "lines": [
+        "让这些工件",
+        "真正进入流程。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 6",
+      "title": "Archive",
+      "bg": "#F7F4EC",
+      "border": "#DED4C7",
+      "chipBg": "#494238",
+      "chipText": "#FBF7EF",
+      "lines": [
+        "让结论回到主规格，",
+        "形成新事实。"
+      ]
+    }
+  ],
+  "conclusionTitle": "OpenSpec 最值得学的不是命令，而是这条顺序：",
+  "conclusionBody": "先对齐，再实现；先约束，再加速；先验证，再沉淀。"
+}

@@ -1,0 +1,70 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="72" y1="60" x2="1528" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2E7D8"/>
+      <stop offset="0.52" stop-color="#EEECE5"/>
+      <stop offset="1" stop-color="#DDEAE4"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="112" y1="106" x2="1488" y2="794" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9F3"/>
+      <stop offset="1" stop-color="#F7FCFA"/>
+    </linearGradient>
+    <filter id="shadow" x="44" y="40" width="1512" height="824" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="20"/>
+      <feGaussianBlur stdDeviation="20"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.12 0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0.13 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 22px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: 0.16em; }
+      .title { font: 800 70px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .subtitle { font: 500 28px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+      .tag { font: 700 18px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .cardTitle { font: 700 28px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .cardBody { font: 500 22px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#EEE6DA"/>
+  <rect x="72" y="60" width="1456" height="780" rx="34" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="112" y="106" width="1376" height="688" rx="28" fill="url(#panel)" stroke="#E5D9C9" stroke-width="2"/>
+
+  <circle cx="1326" cy="198" r="104" fill="#DBE9E4"/>
+  <circle cx="1402" cy="288" r="48" fill="#EFC29B"/>
+  <circle cx="244" cy="736" r="54" fill="#EFD8C1"/>
+
+  <rect x="144" y="146" width="286" height="38" rx="19" fill="#1F2A25"/>
+  <text x="168" y="171" class="eyebrow" fill="#F7F4EC">OPENSPEC USER MANUAL</text>
+
+  <text x="144" y="272" class="title" fill="#1F2A25">真正重要的不是命令</text>
+  <text x="144" y="356" class="title" fill="#1F2A25">而是你怎么把一轮 change 跑完整</text>
+
+  <text x="148" y="428" class="subtitle" fill="#59655D">从 init、change、proposal、spec、validate 到 archive，</text>
+  <text x="148" y="466" class="subtitle" fill="#59655D">你真正要掌握的，是工程顺序，而不是操作清单。</text>
+
+  <rect x="144" y="552" width="406" height="176" rx="26" fill="#FFF1E6" stroke="#E9BE98" stroke-width="2"/>
+  <rect x="574" y="552" width="406" height="176" rx="26" fill="#EEF7F2" stroke="#BDD8CD" stroke-width="2"/>
+  <rect x="1004" y="552" width="340" height="176" rx="26" fill="#F7F3EC" stroke="#DED5C7" stroke-width="2"/>
+
+  <rect x="172" y="578" width="94" height="30" rx="15" fill="#B75C2C"/>
+  <text x="196" y="599" class="tag" fill="#FFF8F2">起点</text>
+  <text x="172" y="646" class="cardTitle" fill="#A15124">先建 change</text>
+  <text x="172" y="686" class="cardBody" fill="#6C4A31">先给这轮工作一个稳定落点，</text>
+  <text x="172" y="716" class="cardBody" fill="#6C4A31">不要让上下文散在各处。</text>
+
+  <rect x="602" y="578" width="94" height="30" rx="15" fill="#2F7B67"/>
+  <text x="626" y="599" class="tag" fill="#F7FFFB">主线</text>
+  <text x="602" y="646" class="cardTitle" fill="#255D4D">先约束，再加速</text>
+  <text x="602" y="686" class="cardBody" fill="#39564B">Proposal 收范围，Spec 管行为，</text>
+  <text x="602" y="716" class="cardBody" fill="#39564B">Tasks 才能真正指导实现。</text>
+
+  <rect x="1032" y="578" width="110" height="30" rx="15" fill="#312B24"/>
+  <text x="1056" y="599" class="tag" fill="#FBF7EF">闭环</text>
+  <text x="1032" y="646" class="cardTitle" fill="#312B24">Validate + Archive</text>
+  <text x="1032" y="686" class="cardBody" fill="#555046">检查结构，收口 change，</text>
+  <text x="1032" y="716" class="cardBody" fill="#555046">把结论沉淀回主规格。</text>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "name": "document",
+  "version": "1.0.0",
+  "description": "这是一个面向长期积累的 AI 内容工作仓库，用来统一管理：",
+  "main": "index.js",
+  "scripts": {
+    "preview:md": "node scripts/serve_markdown_publish_preview.js",
+    "preview:md:restart": "bash scripts/restart_markdown_publish_preview.sh",
+    "preview:md:watch": "nodemon --watch scripts/serve_markdown_publish_preview.js --watch scripts/restart_markdown_publish_preview.js --watch .env --ext js,env --exec \"node scripts/serve_markdown_publish_preview.js\"",
+    "render:satori": "node scripts/render_satori_visual.js",
+    "check:svg": "node scripts/check_svg_layout.js",
+    "loop:panel": "python3 -m business_loop.cli serve-panel --open",
+    "loop:test": "python3 -m unittest discover -s tests -v",
+    "test": "python3 -m unittest discover -s tests -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guojianlan/document-jiguang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/guojianlan/document-jiguang/issues"
+  },
+  "homepage": "https://github.com/guojianlan/document-jiguang#readme",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "react": "^19.2.4",
+    "satori": "^0.26.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

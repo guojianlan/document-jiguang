@@ -1,0 +1,112 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="64" x2="1496" y2="916" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6EFE3"/>
+      <stop offset="0.5" stop-color="#F4F1EA"/>
+      <stop offset="1" stop-color="#E8F0EC"/>
+    </linearGradient>
+    <linearGradient id="panelWarm" x1="120" y1="190" x2="760" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7EE"/>
+      <stop offset="1" stop-color="#F9E6D3"/>
+    </linearGradient>
+    <linearGradient id="panelCool" x1="840" y1="190" x2="1480" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3FAF6"/>
+      <stop offset="1" stop-color="#DCEFE6"/>
+    </linearGradient>
+    <filter id="shadow" x="80" y="40" width="1440" height="860" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="20"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.262745 0 0 0 0 0.211765 0 0 0 0 0.12549 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <filter id="softShadow" x="170" y="300" width="1260" height="470" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="12"/>
+      <feGaussianBlur stdDeviation="14"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.12 0 0 0 0 0.12 0 0 0 0 0.12 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .title { font: 700 46px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; fill: #1F2A24; }
+      .subtitle { font: 500 22px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; fill: #56635B; }
+      .panelTitle { font: 700 28px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .bigWord { font: 700 34px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .body { font: 500 22px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; fill: #3C4742; }
+      .small { font: 500 18px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; fill: #68756D; }
+      .chip { font: 600 18px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="980" fill="#F4F0E7"/>
+  <rect x="64" y="52" width="1472" height="876" rx="34" fill="url(#bg)" filter="url(#shadow)"/>
+
+  <text x="120" y="132" class="title">Vibe Coding 认知图</text>
+  <text x="120" y="172" class="subtitle">很多人卡住，不是因为不会写 prompt，而是把 Vibe Coding 用成了“即时生成”，没有进入“工作流协作”。</text>
+
+  <rect x="120" y="214" width="620" height="620" rx="28" fill="url(#panelWarm)" stroke="#E6B489" stroke-width="2"/>
+  <rect x="860" y="214" width="620" height="620" rx="28" fill="url(#panelCool)" stroke="#8AB39D" stroke-width="2"/>
+
+  <text x="160" y="274" class="panelTitle" fill="#9C4E13">很多人误以为的 Vibe Coding</text>
+  <text x="900" y="274" class="panelTitle" fill="#245C46">更稳的 Vibe Coding 路径</text>
+
+  <rect x="160" y="314" width="540" height="88" rx="22" fill="#FFFDF9" stroke="#E7C8AB"/>
+  <text x="190" y="367" class="bigWord" fill="#A65419">“我提需求，AI 直接写完”</text>
+
+  <rect x="900" y="314" width="540" height="88" rx="22" fill="#FAFFFC" stroke="#B6D4C4"/>
+  <text x="930" y="367" class="bigWord" fill="#23614B">“我定义目标，AI 参与完成流程”</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="182" y="444" width="498" height="104" rx="22" fill="#FFF5EA"/>
+    <rect x="900" y="444" width="540" height="104" rx="22" fill="#F3FBF7"/>
+
+    <rect x="182" y="570" width="498" height="104" rx="22" fill="#FFF5EA"/>
+    <rect x="900" y="570" width="540" height="104" rx="22" fill="#F3FBF7"/>
+
+    <rect x="182" y="696" width="498" height="104" rx="22" fill="#FFF5EA"/>
+    <rect x="900" y="696" width="540" height="104" rx="22" fill="#F3FBF7"/>
+  </g>
+
+  <circle cx="228" cy="496" r="22" fill="#D66A2E"/>
+  <text x="219" y="503" class="chip" fill="#FFF8F3">1</text>
+  <text x="270" y="486" class="body">目标模糊</text>
+  <text x="270" y="518" class="small">先让 AI 开始做，再边做边补需求</text>
+
+  <circle cx="946" cy="496" r="22" fill="#2C7A5B"/>
+  <text x="937" y="503" class="chip" fill="#F6FFF9">1</text>
+  <text x="988" y="486" class="body">先定义问题</text>
+  <text x="988" y="518" class="small">先说清楚要解决什么，再让 AI 进入执行</text>
+
+  <circle cx="228" cy="622" r="22" fill="#D66A2E"/>
+  <text x="219" y="629" class="chip" fill="#FFF8F3">2</text>
+  <text x="270" y="612" class="body">过程失控</text>
+  <text x="270" y="644" class="small">改一点补一句，越聊越乱，越改越散</text>
+
+  <circle cx="946" cy="622" r="22" fill="#2C7A5B"/>
+  <text x="937" y="629" class="chip" fill="#F6FFF9">2</text>
+  <text x="988" y="612" class="body">管理流程</text>
+  <text x="988" y="644" class="small">先结构、再实现、再评审、再修正</text>
+
+  <circle cx="228" cy="748" r="22" fill="#D66A2E"/>
+  <text x="219" y="755" class="chip" fill="#FFF8F3">3</text>
+  <text x="270" y="738" class="body">只看“能不能跑”</text>
+  <text x="270" y="770" class="small">结果表面可用，但没有验证质量和边界</text>
+
+  <circle cx="946" cy="748" r="22" fill="#2C7A5B"/>
+  <text x="937" y="755" class="chip" fill="#F6FFF9">3</text>
+  <text x="988" y="738" class="body">判断结果</text>
+  <text x="988" y="770" class="small">不仅看运行结果，也看结构、风险和可维护性</text>
+
+  <path d="M760 520C806 520 804 520 840 520" stroke="#6A7C73" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12"/>
+  <path d="M760 646C806 646 804 646 840 646" stroke="#6A7C73" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12"/>
+  <path d="M760 772C806 772 804 772 840 772" stroke="#6A7C73" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12"/>
+
+  <rect x="120" y="858" width="1360" height="42" rx="21" fill="#1F2A24"/>
+  <text x="154" y="885" class="chip" fill="#F7F5EE">一句话总结：Vibe Coding 的核心，不是“让 AI 替你写”，而是“你开始用工作流的方式和 AI 协作”。</text>
+</svg>

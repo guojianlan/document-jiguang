@@ -1,6 +1,6 @@
 ---
 name: source-auto-summary
-description: Use this skill when the user provides a link, local file, or an existing source note and wants it automatically classified into the knowledge base, then summarized into a structured source note with key facts, viewpoints, and follow-up actions.
+description: Use this skill when the user provides a link, local file, or an existing source note and wants it automatically classified into the knowledge base, summarized into a structured source note, and optionally routed into topic notes or downstream content production.
 ---
 
 # Source Auto Summary
@@ -28,6 +28,7 @@ description: Use this skill when the user provides a link, local file, or an exi
 - 已分类入库的来源记录
 - `02_Notes/SourceNotes` 下更新后的结构化来源笔记
 - 必要时给出建议归属的主题
+- 如果条件满足，继续衔接到主题笔记或发布包装流程
 
 ## 工作流
 
@@ -96,7 +97,25 @@ python3 scripts/intake_source.py "<url-or-path>" [--copy-file] [--topic "<主题
 - 如果已有明确主题，则补充 `topic`
 - 如有稳定主题，补上双链
 
-### 6. 回写说明
+### 6. 判断下游衔接
+
+来源笔记完成后，不要默认就停下。继续判断它应该进入哪一层：
+
+- 如果这是单条来源，且用户只要求摘要，到来源笔记即可
+- 如果多条来源已经明显指向同一问题，应继续整理成主题笔记
+- 如果用户已经明确要写文章、做分享、做系列内容，应把结果继续交给发布链路
+
+默认判断顺序：
+
+1. 先完成来源笔记
+2. 再判断是否需要主题笔记
+3. 再判断是否进入文章或发布包装
+
+如果任务已经进入发布阶段，优先使用：
+
+- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
+
+### 7. 回写说明
 
 如果这次工作中扩展了能力边界，例如：
 
@@ -121,14 +140,15 @@ python3 scripts/intake_source.py "<url-or-path>" [--copy-file] [--topic "<主题
   - [T-来源笔记-链接.md](/Users/apple/Desktop/project/document/04_Templates/T-来源笔记-链接.md)
   - [T-来源笔记-视频.md](/Users/apple/Desktop/project/document/04_Templates/T-来源笔记-视频.md)
   - [T-来源笔记-PDF.md](/Users/apple/Desktop/project/document/04_Templates/T-来源笔记-PDF.md)
-  - [T-来源笔记-文档.md](/Users/apple/Desktop/project/document/04_Templates/T-来源笔记-文档.md)
+- [T-来源笔记-文档.md](/Users/apple/Desktop/project/document/04_Templates/T-来源笔记-文档.md)
 - 工作流说明：
   - [来源摘要输出规范.md](/Users/apple/Desktop/project/document/skills/source-auto-summary/references/来源摘要输出规范.md)
+  - [来源到下游衔接规则.md](/Users/apple/Desktop/project/document/skills/source-auto-summary/references/来源到下游衔接规则.md)
   - [内容处理工作流.md](/Users/apple/Desktop/project/document/05_Workflows/内容处理工作流.md)
 
 ## 边界
 
-- 这个 skill 解决的是“来源入库 + 来源摘要”，不负责直接产出完整分享文章
+- 这个 skill 的核心是“来源入库 + 来源摘要 + 判断下游去向”，不是直接替代完整的发布包装 skill
 - 如果来源不可访问、不可读取、无正文、无字幕或无可解析内容，只能先建档，不能假装完成摘要
 - 涉及最新事实、新闻、产品更新时，后续摘要必须基于可验证内容，不能凭记忆补
 
@@ -138,3 +158,4 @@ python3 scripts/intake_source.py "<url-or-path>" [--copy-file] [--topic "<主题
 - 来源笔记应与来源类型模板保持一致
 - 要明确区分事实、观点和你的判断
 - 能给出主题建议时应给出，但不要强行归类
+- 当来源已经明显具备下游条件时，应主动提示继续做主题沉淀或发布包装

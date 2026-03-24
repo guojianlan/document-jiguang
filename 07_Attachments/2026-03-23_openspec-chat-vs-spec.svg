@@ -1,0 +1,53 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="60" x2="1530" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1E7D9"/>
+      <stop offset="0.55" stop-color="#ECEBE6"/>
+      <stop offset="1" stop-color="#DCE9E4"/>
+    </linearGradient>
+    <style>
+      .eyebrow { font: 700 20px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; letter-spacing: 0.16em; }
+      .title { font: 800 58px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .colTitle { font: 800 34px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .body { font: 500 22px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .item { font: 600 22px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .tag { font: 700 18px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#ECE5DA"/>
+  <rect x="70" y="56" width="1460" height="788" rx="34" fill="url(#bg)"/>
+
+  <rect x="118" y="102" width="250" height="36" rx="18" fill="#1F2A25"/>
+  <text x="142" y="125" class="eyebrow" fill="#F6F3EC">REAL PROJECT CHECK</text>
+
+  <text x="118" y="212" class="title" fill="#1F2A25">真正的差别，不是 AI 写得快不快</text>
+  <text x="118" y="266" class="title" fill="#1F2A25">而是变更能不能被持续约束</text>
+
+  <rect x="118" y="340" width="632" height="418" rx="30" fill="#FFF2E7" stroke="#E6BF9D" stroke-width="2"/>
+  <rect x="850" y="340" width="632" height="418" rx="30" fill="#EDF7F2" stroke="#B9D8CB" stroke-width="2"/>
+
+  <rect x="156" y="376" width="152" height="32" rx="16" fill="#B65D31"/>
+  <text x="182" y="397" class="tag" fill="#FFF7F0">聊天式开发</text>
+  <text x="156" y="456" class="colTitle" fill="#A35224">适合快速推进局部问题</text>
+  <text x="156" y="500" class="body" fill="#6A4A33">但一旦任务变长，就容易出现：</text>
+  <text x="156" y="560" class="item" fill="#6A4A33">- 需求边界写在聊天里</text>
+  <text x="156" y="602" class="item" fill="#6A4A33">- 设计决定埋在上下文里</text>
+  <text x="156" y="644" class="item" fill="#6A4A33">- 改动完成后难以归档</text>
+  <text x="156" y="686" class="item" fill="#6A4A33">- 新加入的人很难快速接手</text>
+
+  <rect x="888" y="376" width="136" height="32" rx="16" fill="#2F7B69"/>
+  <text x="914" y="397" class="tag" fill="#F7FFFB">OpenSpec</text>
+  <text x="888" y="456" class="colTitle" fill="#245D4D">把 change 做成工程对象</text>
+  <text x="888" y="500" class="body" fill="#39564B">它先把本轮变更固定下来，再推进实现：</text>
+  <text x="888" y="560" class="item" fill="#39564B">- Proposal 先收住范围</text>
+  <text x="888" y="602" class="item" fill="#39564B">- Design 先定下路径</text>
+  <text x="888" y="644" class="item" fill="#39564B">- Specs 先约束行为</text>
+  <text x="888" y="686" class="item" fill="#39564B">- Validate 与 Archive 保证闭环</text>
+
+  <path d="M768 549H830" stroke="#9A8C77" stroke-width="6" stroke-linecap="round"/>
+  <path d="M806 531L830 549L806 567" stroke="#70887B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="304" y="786" width="992" height="72" rx="24" fill="#1F2A25"/>
+  <text x="354" y="832" class="body" fill="#F7F4EC">局部生成能力解决的是“先写出来”，而 OpenSpec 解决的是“这轮变更能不能被说清楚、做准确、收得住”。</text>
+</svg>

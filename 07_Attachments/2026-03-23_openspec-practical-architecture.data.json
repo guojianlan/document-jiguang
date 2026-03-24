@@ -1,0 +1,73 @@
+{
+  "eyebrow": "OPENSPEC ECOMMERCE CASE",
+  "title": "一轮电商系统变更，应该怎样从规格走到验证",
+  "subtitle": "Proposal 收边界，Design 定架构，Spec 管行为，Tasks 管施工，测试与 Archive 负责收口。",
+  "businessLineTitle": "业务主线",
+  "businessLineBody": "用户浏览商品 -> 加入购物车 -> 创建订单 -> 扣减库存 -> 完成支付",
+  "stages": [
+    {
+      "stepLabel": "STEP 1",
+      "title": "Proposal",
+      "chipBg": "#B65C2D",
+      "chipText": "#FFF8F1",
+      "lines": [
+        "说明为什么做电商 Demo，",
+        "明确 In Scope / Out of Scope。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 2",
+      "title": "Design",
+      "chipBg": "#BC7B4A",
+      "chipText": "#FFF8F1",
+      "lines": [
+        "分层架构：HTTP、Service、",
+        "Domain、Repo / Persist。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 3",
+      "title": "Specs",
+      "chipBg": "#2F7B69",
+      "chipText": "#F7FFFB",
+      "lines": [
+        "Requirement + Scenario",
+        "约束库存、订单、支付行为。"
+      ]
+    },
+    {
+      "stepLabel": "STEP 4",
+      "title": "Tasks",
+      "chipBg": "#3A8C77",
+      "chipText": "#F7FFFB",
+      "lines": [
+        "先领域模型，再服务编排，",
+        "最后暴露 HTTP 接口。"
+      ]
+    }
+  ],
+  "bottomCards": [
+    {
+      "title": "验证层",
+      "bg": "#EEF7F2",
+      "border": "#BCD8CD",
+      "titleColor": "#255D4D",
+      "bodyColor": "#39564B",
+      "lines": [
+        "单元测试、集成测试、性能基线，",
+        "让 change 不只是“能跑”，还要“能证”。"
+      ]
+    },
+    {
+      "title": "收口层",
+      "bg": "#F7F4EC",
+      "border": "#DED4C7",
+      "titleColor": "#312B24",
+      "bodyColor": "#555046",
+      "lines": [
+        "Validate 确认规格结构正确，",
+        "Archive 让结论回到主规格，形成新事实。"
+      ]
+    }
+  ]
+}

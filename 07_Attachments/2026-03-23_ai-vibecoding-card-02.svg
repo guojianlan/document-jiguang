@@ -1,0 +1,48 @@
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="64" y1="72" x2="1006" y2="1274" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF6F1"/>
+      <stop offset="0.52" stop-color="#F6F1E8"/>
+      <stop offset="1" stop-color="#F5E4D5"/>
+    </linearGradient>
+    <filter id="shadow2" x="38" y="40" width="1004" height="1274" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.16 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 18px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: 0.18em; }
+      .title { font: 800 56px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .body { font: 500 30px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+      .small { font: 600 20px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+  <rect width="1080" height="1350" fill="#ECE7DE"/>
+  <rect x="74" y="62" width="932" height="1226" rx="34" fill="url(#bg2)" filter="url(#shadow2)"/>
+  <rect x="122" y="118" width="214" height="34" rx="17" fill="#1F2A24"/>
+  <text x="147" y="140" class="eyebrow" fill="#F8F4EB">VIBE CODING</text>
+
+  <text x="122" y="274" class="title" fill="#1F2A24">第一次太顺，</text>
+  <text x="122" y="342" class="title" fill="#1F2A24">反而最危险</text>
+
+  <text x="122" y="470" class="body" fill="#3C4742">第一次让 AI 帮你搭页面、</text>
+  <text x="122" y="518" class="body" fill="#3C4742">补功能、修 bug，</text>
+  <text x="122" y="566" class="body" fill="#3C4742">冲击感会非常强。</text>
+
+  <text x="122" y="682" class="body" fill="#3C4742">这很容易让人产生一个错觉：</text>
+
+  <text x="122" y="784" class="title" fill="#245E49">“既然这次这么顺，</text>
+  <text x="122" y="852" class="title" fill="#245E49">以后应该也差不多。”</text>
+
+  <text x="122" y="972" class="body" fill="#3C4742">但第一次顺，通常只是因为：</text>
+  <text x="152" y="1030" class="body" fill="#3C4742">• 任务还很小</text>
+  <text x="152" y="1078" class="body" fill="#3C4742">• 上下文还很短</text>
+  <text x="152" y="1126" class="body" fill="#3C4742">• 依赖关系还不复杂</text>
+
+  <text x="122" y="1210" class="body" fill="#A65419">第一次高光，不代表你已经掌握了 Vibe Coding。</text>
+</svg>

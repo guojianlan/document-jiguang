@@ -51,6 +51,15 @@
 ### 5. 生成输出内容
 当你要做分享、写文章、做群发内容时，从 `03_Outputs/Drafts` 开始写，引用主题笔记而不是重新整理原始材料。
 
+### 6. 做发布包装
+当内容已经准备对外发布时，继续补：
+
+- 发布版正文
+- 发布建议
+- 封面图
+- 社交媒体文案
+- SVG 图卡
+
 ## 你以后可以怎么让我配合
 
 你可以直接给我下面这些输入，我会按这个仓库结构帮你整理：
@@ -91,11 +100,209 @@
 
 - [source-auto-summary](/Users/apple/Desktop/project/document/skills/source-auto-summary/SKILL.md)
 
+当前已可复用的本地 skill：
+
+- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
+- [markdown-publish-preview](/Users/apple/Desktop/project/document/skills/markdown-publish-preview/SKILL.md)
+
+当前已可配合使用的全局外部 skill：
+
+- `web-access`：用于联网搜索、网页读取、动态页面和浏览器自动化
+
 入口见：
 
 - [Skill候选池.md](/Users/apple/Desktop/project/document/08_Skills/Candidates/Skill候选池.md)
 - [Skill开发流程.md](/Users/apple/Desktop/project/document/05_Workflows/Skill开发流程.md)
 - [Skill集成说明.md](/Users/apple/Desktop/project/document/99_System/Skill集成说明.md)
+
+## 业务闭环设计
+
+仓库现在额外沉淀了一套“业务闭环设计”方法，用来回答这类问题：
+
+- 现有业务需求是否可以跑通
+- 哪些环节适合 agent 化或自动化
+- 哪些动作必须保留人工闸门
+- 如何把一次性分析沉淀成别人也能复用的参考文档
+
+这套方法适合内容业务，也适合迁移到其他业务流程。
+
+默认会按下面顺序分析：
+
+1. 判断业务目标和边界
+2. 拆输入、动作、反馈
+3. 明确成功条件和失败条件
+4. 设计状态机和人工闸门
+5. 区分“已经能跑通”和“还缺基础设施”的部分
+6. 给出建议的自动化等级和落地路径
+
+相关入口：
+
+- [业务闭环设计流程](/Users/apple/Desktop/project/document/05_Workflows/业务闭环设计流程.md)
+- [T-业务闭环设计](/Users/apple/Desktop/project/document/04_Templates/T-业务闭环设计.md)
+- [内容业务闭环设计示例](/Users/apple/Desktop/project/document/99_System/内容业务闭环设计示例.md)
+
+## PRD 到测试闭环引擎
+
+仓库现在还提供了一套可运行的 Python 系统，用来把软件类需求从 PRD 推进到测试结果。
+
+当前系统支持：
+
+- 读取 Markdown PRD
+- 提取需求、约束和验收条件
+- 在项目中本地搜索相关上下文
+- 用较轻量模型压缩搜索结果
+- 用较强模型生成实现计划
+- 写入文件并执行测试命令
+- 保存每次运行的状态、日志、阶段产物和备份
+
+代码入口：
+
+- [business_loop](/Users/apple/Desktop/project/document/business_loop)
+
+文档入口：
+
+- [PRD到测试闭环流程](/Users/apple/Desktop/project/document/05_Workflows/PRD到测试闭环流程.md)
+- [PRD到测试闭环系统说明](/Users/apple/Desktop/project/document/99_System/PRD到测试闭环系统说明.md)
+- [业务闭环面板说明](/Users/apple/Desktop/project/document/99_System/业务闭环面板说明.md)
+- [T-PRD-交付需求](/Users/apple/Desktop/project/document/04_Templates/T-PRD-交付需求.md)
+
+最小测试命令：
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+推荐使用顺序：
+
+1. 先对目标仓库执行初始化，声明它是做什么的、允许写哪里、默认跑什么测试
+2. 再直接给 `PRD` 或自然语言需求启动运行
+3. 如果业务规则不清，系统会自动进入 `blocked`，等待人工确认
+
+本地面板入口：
+
+```bash
+python3 -m business_loop.cli serve-panel --open
+bash scripts/start_business_loop_panel.sh
+npm run loop:panel
+```
+
+## 文章发布包装
+
+现在仓库已经支持把一篇内容进一步包装成“可发版内容包”。
+
+典型产物包括：
+
+- 发布版正文
+- 发布建议卡
+- 封面图（源文件 SVG + 发布 PNG）
+- 认知图 / 结构图（源文件 SVG + 发布 PNG）
+- 社交媒体切图文案
+- 图卡（源文件 SVG + 发布 PNG）
+
+相关入口：
+
+- [文章发布包装流程](/Users/apple/Desktop/project/document/05_Workflows/文章发布包装流程.md)
+- [T-分享文章](/Users/apple/Desktop/project/document/04_Templates/T-分享文章.md)
+- [T-发布建议](/Users/apple/Desktop/project/document/04_Templates/T-发布建议.md)
+- [文章配图与图卡流程](/Users/apple/Desktop/project/document/05_Workflows/文章配图与图卡流程.md)
+- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
+- [SVG资产生成与校验说明](/Users/apple/Desktop/project/document/99_System/SVG资产生成与校验说明.md)
+- [Satori视觉资产说明](/Users/apple/Desktop/project/document/99_System/Satori视觉资产说明.md)
+
+默认建议：
+
+- 用 SVG 作为源文件
+- 生成后先渲染 PNG 预览检查
+- 文本型 SVG 默认再跑一次布局检查，优先发现文字越界和重叠
+- 确认无裁切和版式问题后，再按平台需要导出 PNG
+- 如果正文要直接发布到飞书、公众号编辑器等富文本平台，正文里默认引用 PNG
+- PNG 导出必须锁定为 SVG 根尺寸，不允许让当前机器窗口大小决定最终宽高
+- 发布 PNG 支持按目标宽度导出，并自动保持原始宽高比
+- 文本密度高的结构图首次生成就优先使用 `Satori` 模板 + 数据生成，不再默认手写 SVG `text`
+- 如果要跨机器保持高度一致，优先使用稳定字体方案，不要完全依赖系统字体
+
+本地命令：
+
+```bash
+bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg"
+```
+
+例如横版封面按 `1440` 宽导出：
+
+```bash
+bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.png" --width 1440
+```
+
+如果要用 `Satori` 模板生成 SVG：
+
+```bash
+npm run render:satori -- 04_Templates/Visuals/full-structure-map.satori.js 07_Attachments/xxx.data.json 07_Attachments/xxx.svg
+```
+
+如果要检查文本布局风险：
+
+```bash
+npm run check:svg -- 07_Attachments/xxx.svg
+```
+
+## 飞书发布预览
+
+如果你是要把 Markdown 文章复制到飞书文档，直接复制 `.md` 源码通常不够，因为本地图片路径不会自动变成飞书里的图片。
+
+仓库现在提供了一个本地预览服务：
+
+```bash
+node scripts/serve_markdown_publish_preview.js "03_Outputs/Drafts/xxx.md" --open
+```
+
+如果希望端口固定从仓库配置读取，可以在仓库根目录 `.env` 中设置：
+
+```bash
+MARKDOWN_PUBLISH_PREVIEW_PORT=4312
+```
+
+如果要按当前配置一键重启预览服务：
+
+```bash
+bash scripts/restart_markdown_publish_preview.sh
+```
+
+也可以直接用 npm 入口：
+
+```bash
+npm run preview:md
+npm run preview:md:restart
+npm run preview:md:watch -- "03_Outputs/Drafts/xxx.md" --open
+```
+
+它会把 Markdown 渲染成带本地图片的 HTML 预览页，适合从浏览器复制到飞书测试。
+
+现在预览页里还提供了一套“飞书复制版”输出：
+
+- 可以先选择目标平台，例如“飞书”或“通用富文本”
+- 页面正文保持正常阅读样式，不因平台切换而改变
+- 侧边栏可以直接点“复制当前选中内容”
+- 正常的 `Command+C` 仍然保持浏览器默认行为，不会被页面拦截
+
+如果你正在改预览服务本身，比如 `scripts/serve_markdown_publish_preview.js`，更适合用 `nodemon` 监听模式。它会在脚本或 `.env` 变化后自动重启服务。
+
+当前已经支持常见正文结构，包括：
+
+- 标题
+- 段落
+- 有序列表和无序列表
+- 引用块
+- 行内代码
+- fenced code block
+- 表格
+- 分隔线
+- 本地图片与链接
+
+说明见：
+
+- [Markdown发布预览说明.md](/Users/apple/Desktop/project/document/99_System/Markdown发布预览说明.md)
 
 ## 是否适合 Obsidian
 

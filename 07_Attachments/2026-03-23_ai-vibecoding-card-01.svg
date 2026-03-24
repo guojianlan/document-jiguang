@@ -1,0 +1,52 @@
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="70" y1="64" x2="1010" y2="1286" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6E8D8"/>
+      <stop offset="0.5" stop-color="#F4F1E9"/>
+      <stop offset="1" stop-color="#E1EFE7"/>
+    </linearGradient>
+    <filter id="shadow1" x="38" y="40" width="1004" height="1274" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.16 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 18px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: 0.18em; }
+      .title { font: 800 58px "SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif; }
+      .body { font: 500 30px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+      .small { font: 600 20px "SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1350" fill="#EFE8DC"/>
+  <rect x="74" y="62" width="932" height="1226" rx="34" fill="url(#bg1)" filter="url(#shadow1)"/>
+
+  <rect x="122" y="118" width="214" height="34" rx="17" fill="#1F2A24"/>
+  <text x="147" y="140" class="eyebrow" fill="#F8F4EB">VIBE CODING</text>
+
+  <text x="122" y="274" class="title" fill="#1F2A24">很多人误解了</text>
+  <text x="122" y="342" class="title" fill="#1F2A24">Vibe Coding</text>
+
+  <rect x="122" y="412" width="836" height="2" fill="#D8C8B6"/>
+
+  <text x="122" y="518" class="body" fill="#3C4742">很多人把 Vibe Coding</text>
+  <text x="122" y="566" class="body" fill="#3C4742">理解成一句话：</text>
+
+  <text x="122" y="676" class="title" fill="#A65419">“我提需求，AI 写代码。”</text>
+
+  <text x="122" y="786" class="body" fill="#3C4742">这个理解不能说完全错，</text>
+  <text x="122" y="834" class="body" fill="#3C4742">但它只抓住了表面。</text>
+
+  <text x="122" y="942" class="body" fill="#3C4742">真正决定你能不能走下去的，</text>
+  <text x="122" y="990" class="body" fill="#3C4742">不是 prompt 会不会写，</text>
+  <text x="122" y="1038" class="body" fill="#3C4742">而是你有没有开始建立</text>
+  <text x="122" y="1086" class="body" fill="#3C4742">一种新的工作方式。</text>
+
+  <rect x="122" y="1160" width="330" height="42" rx="21" fill="#D16328"/>
+  <text x="150" y="1188" class="small" fill="#FFF8F3">切图文案 01</text>
+</svg>
