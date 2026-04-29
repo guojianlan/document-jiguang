@@ -1,10 +1,24 @@
 ---
-type: topic_note
+type: concept
+aliases: [AI Vibecoding, vibecoding]
+first_seen: 2026-03-23
+updated_at: 2026-04-28
+sources:
+  - 2026-03-23_link_vibe-coders-guide
+  - 2026-03-23_article_openai_practical-guide-building-ai-agents
+  - 2026-03-23_article_openai_get-started-with-codex
+  - 2026-03-23_pdf_openai_how-openai-uses-codex
+  - 2026-03-23_article_openai_agentic-ai-foundation-agents-md
+  - 2026-03-23_article_github_about-custom-agents
+  - 2026-03-23_article_anthropic_claude-code-autonomy
+  - 2026-03-23_article_anthropic_claude-code-sandboxing
+  - 2026-03-23_article_vibecontract
+  - 2026-03-23_article_goodvibe
+related_entities: [Claude Code, Codex, OpenSpec]
+related_concepts: [AI Agent, AI 工作流, autonomy, 模型能力变化]
+maturity: tracked
 status: active
-topic: AI Vibecoding
 tags: [topic, topic/content, topic/workflow]
-created_at: 2026-03-23
-updated_at: 2026-03-23
 ---
 
 # AI Vibecoding
@@ -58,11 +72,13 @@ updated_at: 2026-03-23
 
 - 引入 AGENTS.md、skills、custom agents
 - 说明为什么经验要沉淀成可复用资产
+- **2026-04 补充**：[[Claude Code]] 引入的 [[Claude Code#核心机制|checkpoints / subagents / hooks / background tasks]] 是这一阶段的具体能力载体——hook 让"自动跑测试"变成默认行为，checkpoint 让"敢做大动作"变成可能。这些能力把 Vibecoding 从"会用提示词"推向"会管 agent"
 
 ### 第五阶段：质量与安全
 
 - 让用户意识到工作代码不等于可靠代码
 - 补足 QA、安全、权限边界和治理意识
+- **2026-04 补充**：[[Claude Code]] 的 sandboxing（filesystem + network isolation）是这一阶段的标志性能力——它的核心命题是"[[autonomy|自主性]]越高越需要明确边界"，不是"用了 sandbox 就慢"。详见 [[2026-03-23_article_anthropic_claude-code-sandboxing]]
 
 ## 相关来源
 

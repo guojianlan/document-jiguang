@@ -57,3 +57,6 @@ processed_at: 2026-03-23
 
 - [[AI Vibecoding]]
 - [[AI 工作流]]
+- [[组织如何使用 AI]]
+- [[Codex]] # TODO 待建 entity 页
+- [[OpenAI]] # TODO 待建 entity 页

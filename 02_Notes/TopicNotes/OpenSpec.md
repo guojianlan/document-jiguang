@@ -1,10 +1,16 @@
 ---
-type: topic_note
+type: entity
+aliases: [OpenSpec, openspec]
+first_seen: 2026-03-23
+updated_at: 2026-04-29
+sources:
+  - 2026-03-23_link_openspec-practical-guide
+  - 2026-03-23_link_openspec-e4-bd-bf-e7-94-a8-e6-89-8b-e5-86-8c
+  - 2026-03-23_link_openspec-ai-workflow-analysis
+related_entities: [Claude Code, Codex]
+related_concepts: [AI 工作流, AI Vibecoding, AI Agent, AI 内容生产]
 status: active
-topic: OpenSpec
 tags: [topic, topic/workflow, topic/ai-coding]
-created_at: 2026-03-23
-updated_at: 2026-03-23
 ---
 
 # OpenSpec
@@ -41,10 +47,15 @@ updated_at: 2026-03-23
 - [[2026-03-23_link_openspec-e4-bd-bf-e7-94-a8-e6-89-8b-e5-86-8c]]
 - [[2026-03-23_link_openspec-ai-workflow-analysis]]
 
+## 与其他 entity 的对照
+
+- **vs [[Claude Code]]**：Claude Code 是 coding agent 工具产品，OpenSpec 是规格驱动的协作流程框架——叠加使用最佳：OpenSpec 写 change，Claude Code 跑实现（详见 [[Claude Code#与其他 entity 的对照]]）
+- **vs [[Codex]]**：Codex 用 AGENTS.md + cloud sandbox 路线，OpenSpec 用 proposal/design/spec/tasks 工件路线；前者把约定写在仓库根，后者把约定写在每次 change
+
 ## 当前可输出方向
 
 - 面向中文读者的 OpenSpec 入门教程
-- OpenSpec 与 AI 工作流的关系分析
+- OpenSpec 与 [[AI 工作流]] 的关系分析
 - OpenSpec 最小实践案例
 - 面向团队的落地建议与误区清单
 

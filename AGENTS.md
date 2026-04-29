@@ -37,16 +37,24 @@
 
 ## 3. 默认工作方式
 
+本仓库采用 [LLM Wiki 模式](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md)（Karpathy）：知识在 wiki 层持续累积，发布在 publishing 层派生。两层正交。
+
+wiki 层三种核心操作：
+- `/ingest`（[SKILL.md](/Users/apple/Desktop/project/document/.claude/skills/ingest/SKILL.md)）：处理新来源，fan-out 触达 5-10 wiki 页
+- `/query`（[SKILL.md](/Users/apple/Desktop/project/document/.claude/skills/query/SKILL.md)）：检索 wiki 回答，可归档为 synthesis
+- `/lint`（[SKILL.md](/Users/apple/Desktop/project/document/.claude/skills/lint/SKILL.md)）：周期性检查矛盾、过时、孤儿、缺交叉引用
+
+每次操作必更新 [index.md](/Users/apple/Desktop/project/document/06_Maps/index.md) 和 [log.md](/Users/apple/Desktop/project/document/log.md)。
+
 当用户给出一个链接、本地文件、视频、PDF、Word、PPT、Excel、CSV 或主题要求时，默认按下面顺序处理：
 
 1. 判断来源类型
-2. 自动分类入库
-3. 生成来源笔记
-4. 提炼摘要
-5. 提取关键信息
-6. 区分事实、观点、判断
-7. 判断是否归入某个主题笔记
-8. 如果用户需要，再继续生成对外输出
+2. 自动分类入库（`scripts/intake_source.py` 把 raw 文件归到 `01_Sources/<type>/`）
+3. 跑 `/ingest`：读全文 + 与用户对话 1-3 轮 + 写 source 摘要 + fan-out 更新 entities/concepts/syntheses + 更 index.md + 追 log.md
+4. fan-out 触达 < 3 页视为 ingest 失败：要么源没新东西（标 `status: thin`），要么 wiki 缺相应 entity/concept 页（按需补建）
+5. 区分事实、观点、判断（落在 source 摘要里，不要放到 entity / concept 页）
+6. 如果触达 ≥ 2 个 entity/concept 且组合此前未综合 → 创 synthesis 骨架（`publishability: 0`）
+7. 如果用户需要发布，从 `publishability ≥ 1` 的 synthesis 出发跑 `/publish-article`，不直接拿 source 摘要写发布稿
 
 自动入库工具：
 
@@ -105,6 +113,7 @@
 3. 再补发布建议
 4. 再补视觉资产，例如封面图、认知图、SVG 图卡
 5. 最后补社交传播文案
+6. 发布版正文落盘前必须跑一次 [critique](/Users/apple/Desktop/project/document/.claude/skills/critique/SKILL.md)，按 4 维度（信息密度 / 独特视角 / 可操作性 / 阅读节奏）评分，低分维度强制返工后再发
 
 相关说明：
 
@@ -367,6 +376,24 @@ skill 候选池与流程入口：
 - [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
 - [markdown-publish-preview](/Users/apple/Desktop/project/document/skills/markdown-publish-preview/SKILL.md)
 
+当前已可复用的 Claude Code 入口 skill（位于 `.claude/skills/`）：
+
+wiki 层：
+
+- [ingest](/Users/apple/Desktop/project/document/.claude/skills/ingest/SKILL.md)：处理新来源，fan-out 触达 5-10 wiki 页
+- [query](/Users/apple/Desktop/project/document/.claude/skills/query/SKILL.md)：检索 wiki 回答问题，可归档为 synthesis
+- [lint](/Users/apple/Desktop/project/document/.claude/skills/lint/SKILL.md)：周期性 wiki 健康度检查
+
+publishing 层：
+
+- [critique](/Users/apple/Desktop/project/document/.claude/skills/critique/SKILL.md)：文章产出后按 4 维度评分并强制返工，去 AI 味
+- [publish-article](/Users/apple/Desktop/project/document/.claude/skills/publish-article/SKILL.md)：发布包装入口，指向 `article-publish-kit`
+- [render-svg](/Users/apple/Desktop/project/document/.claude/skills/render-svg/SKILL.md)：视觉资产入口，指向 `article-visual-assets`
+
+基础层：
+
+- [verify](/Users/apple/Desktop/project/document/.claude/skills/verify/SKILL.md)：跑测试 + SVG 布局校验
+
 当前已安装并可优先使用的全局外部 skill：
 
 - `web-access`
@@ -396,6 +423,8 @@ skill 候选池与流程入口：
 - 同一篇内容优先拆成分层产物，便于后续继续编辑和复用
 - 当发布目标是飞书等富文本编辑器时，优先考虑先渲染 HTML 预览再复制，而不是直接复制 Markdown 源码
 - 对可重复使用的方法和流程，优先沉淀为“参考文档 + 模板”的组合，方便他人按自己的业务重新定制
+- 发布前默认跑一次 `/critique` 去 AI 味校验，命中硬规则（"而是"句、协作路标词、戏剧化揭露、模板段、客服口吻）必须返工
+- 反 AI 味规则沉淀在 [.claude/skills/critique/references/zh-ai-tells.md](/Users/apple/Desktop/project/document/.claude/skills/critique/references/zh-ai-tells.md) 与 [rule-taxonomy.md](/Users/apple/Desktop/project/document/.claude/skills/critique/references/rule-taxonomy.md)，发现新模式按规则 A 回写
 
 输出原则：
 

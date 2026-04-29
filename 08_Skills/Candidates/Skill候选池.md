@@ -36,6 +36,10 @@
 | `article-visual-assets` | active | 从文章与切图文案批量生成可复用的视觉资产 | 用户已有正文、发布建议或切图文案，希望补封面图、结构图、图卡与 PNG 预览 | 持续沉淀图卡版式、命名规范和验证流程 |
 | `markdown-publish-preview` | active | 把本地 Markdown 渲染成可复制的 HTML 预览页 | 用户要把文章贴到飞书等富文本编辑器，但本地图片路径无法直接复制 | 在真实发布场景里继续验证“浏览器复制”是否足够稳定 |
 | `visual-layout-qa` | incubating | 对文本型 SVG 做自动布局检查，优先发现越界、重叠和高风险版式 | 用户持续生成 SVG 图卡、结构图，且经常出现超框、重叠、难以人工预判的问题 | 继续在真实发布任务里验证脚本误报率，并评估是否沉淀为独立 skill |
+| `critique` | active | 文章产出后按 4 维度（信息密度 / 独特视角 / 可操作性 / 阅读节奏）评分并强制返工低分段落，去除 AI 味 | 文章草稿、发布版、主题笔记、社交文案产出后，或用户感觉"读起来怪怪的、AI 味太重" | 落在 `.claude/skills/critique/`，含 `references/zh-ai-tells.md` 与 `rule-taxonomy.md`；继续在真实文章上跑、补充新发现的 AI 痕迹模式 |
+| `ingest` | active | 把新 raw source 处理进 wiki：写摘要 + fan-out 更新 entities / concepts / syntheses + 更 index + 追 log，预期触达 5-10 页 | 用户在 `00_Inbox/` 或 `01_Sources/` 加了新文件 / 链接 / PDF | 落在 `.claude/skills/ingest/`，按 LLM Wiki 模式（Karpathy）实现；Phase 2 迁移目录后需更新硬编码路径 |
+| `query` | active | 检索 wiki 回答问题、按需归档为 synthesis 页、暴露 wiki 缺口 | 用户提知识性问题、对比 / 综述 / 时间线、文章前的素材聚合 | 落在 `.claude/skills/query/`；与 `/ingest`、`/lint` 配合形成知识复利 |
+| `lint` | active | 周期性扫 wiki 矛盾 / 过时 / 孤儿 / 缺交叉引用 / 烂尾 TODO / 薄来源 / synthesis 候选 | 每周一次、批量 ingest 后、写文章前、用户感觉 wiki 乱了 | 落在 `.claude/skills/lint/`；阈值可调，调整需同步 `99_System/llm-wiki约定.md` |
 
 ## 使用方式
 

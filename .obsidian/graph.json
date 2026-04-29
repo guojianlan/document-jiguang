@@ -1,0 +1,58 @@
+{
+  "collapse-filter": false,
+  "search": "path:\"02_Notes\" OR file:\"06_Maps/index\"",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"02_Notes/SourceNotes\"",
+      "color": {
+        "a": 1,
+        "rgb": 4886754
+      }
+    },
+    {
+      "query": "path:\"02_Notes/TopicNotes\" [\"type\":\"entity\"]",
+      "color": {
+        "a": 1,
+        "rgb": 12390624
+      }
+    },
+    {
+      "query": "path:\"02_Notes/TopicNotes\" [\"type\":\"concept\"]",
+      "color": {
+        "a": 1,
+        "rgb": 8311585
+      }
+    },
+    {
+      "query": "path:\"02_Notes/TopicNotes\" [\"type\":\"topic_note\"]",
+      "color": {
+        "a": 1,
+        "rgb": 9868950
+      }
+    },
+    {
+      "query": "path:\"06_Maps\"",
+      "color": {
+        "a": 1,
+        "rgb": 16098851
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 7.19270833333333,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.6981446842825294,
+  "close": true
+}

@@ -1,15 +1,18 @@
 ---
-type: source_note
+type: source
 source_type: article
-status: processed
-topic: AI Vibecoding
-tags: [source/article, status/processed, topic/workflow]
 source_title: Enabling Claude Code to work more autonomously
 source_url: https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously
+source_path: null  # raw 仅以 URL 形式存在，未本地化
 author: Anthropic
 publisher: Anthropic
 published_at: 2025-09-29
 processed_at: 2026-03-23
+ingested_at: 2026-04-28
+entities: [Claude Code, Anthropic]
+concepts: [AI Agent, autonomy, AI 工作流, AI Vibecoding, 模型能力变化]
+status: ingested
+tags: [source/article, topic/workflow]
 ---
 
 # Enabling Claude Code to work more autonomously

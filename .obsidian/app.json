@@ -1,0 +1,25 @@
+{
+  "userIgnoreFilters": [
+    ".claude/",
+    "scripts/",
+    "business_loop/",
+    "tests/",
+    "node_modules/",
+    ".tmp/",
+    "__pycache__/",
+    ".pytest_cache/",
+    ".coverage",
+    "01_Sources/Articles/openspace-demo/",
+    "00_Inbox/",
+    "04_Templates/",
+    "05_Workflows/",
+    "99_System/",
+    "08_Skills/",
+    "skills/",
+    "07_Attachments/",
+    "06_Maps/AI知识库总览.md"
+  ],
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false
+}
