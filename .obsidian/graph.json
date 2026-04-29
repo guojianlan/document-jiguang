@@ -15,31 +15,31 @@
       }
     },
     {
-      "query": "path:\"wiki/concepts\" [\"type\":\"entity\"]",
+      "query": "path:\"wiki/entities\"",
       "color": {
         "a": 1,
         "rgb": 12390624
       }
     },
     {
-      "query": "path:\"wiki/concepts\" [\"type\":\"concept\"]",
+      "query": "path:\"wiki/concepts\"",
       "color": {
         "a": 1,
         "rgb": 8311585
       }
     },
     {
-      "query": "path:\"wiki/concepts\" [\"type\":\"topic_note\"]",
+      "query": "path:\"wiki/syntheses\"",
       "color": {
         "a": 1,
-        "rgb": 9868950
+        "rgb": 16098851
       }
     },
     {
       "query": "path:\"06_Maps\"",
       "color": {
         "a": 1,
-        "rgb": 16098851
+        "rgb": 14392079
       }
     }
   ],

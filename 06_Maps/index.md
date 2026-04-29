@@ -78,7 +78,7 @@
 - **AGENTS.md / claude-code-autonomy / sandboxing 三件套（digest）** — Anthropic 在 2026-03 的协作文档族系
 - **Codex 实战时间线（timeline）** — 从 OpenAI Codex GA 到组织内部使用的演进证据
 
-> 这些是 `/lint` 应该主动建议的合成候选。Phase 1 阶段先记在这，Phase 2 迁移后落 `wiki/syntheses/`。
+> 这些是 `/lint` 应该主动建议的合成候选，落 `wiki/syntheses/`。
 
 ---
 
@@ -100,6 +100,8 @@ grep -c "^|" 06_Maps/index.md
 # 找某个 entity 在 sources 里出现多少次
 grep -ic "openspec" wiki/sources/*.md
 
-# 找未在 index 的 wiki 页（孤儿）
-diff <(ls wiki/concepts | sed 's/.md$//') <(grep -oE '\[\[[^]]+\]\]' 06_Maps/index.md | sort -u | tr -d '[]')
+# 找未在 index 的 wiki 页（孤儿）— 同时扫 entities 与 concepts
+{ ls wiki/entities; ls wiki/concepts; } | sed 's/.md$//' | sort -u > /tmp/wiki-pages.txt
+grep -oE '\[\[[^]]+\]\]' 06_Maps/index.md | tr -d '[]' | sort -u > /tmp/index-refs.txt
+comm -23 /tmp/wiki-pages.txt /tmp/index-refs.txt
 ```
