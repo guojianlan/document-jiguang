@@ -30,6 +30,16 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - 索引：`06_Maps/index.md` 初始化
 - Phase 1 完成，等待第一次实战 ingest
 
+## [2026-04-29 13:30] system | Phase 2 LLM Wiki 目录迁移完成
+- baseline commit: 3bc1a07
+- stage 2.1 (9e631eb): 创建 raw/, wiki/, outputs/ 顶层骨架
+- stage 2.2 (787abda): 146 个 git mv，01_Sources→raw/sources、02_Notes/SourceNotes→wiki/sources、02_Notes/TopicNotes 按 type 分到 wiki/{entities,concepts}、03_Outputs→outputs、07_Attachments→raw/attachments、00_Inbox→raw/inbox
+- stage 2.3 (17a8eab): 39 个文件路径硬编码替换 + 修补过度替换（AGENTS.md 仓库结构、index.md entities 路径、SKILL.md entity 位置、llm-wiki约定.md 三层架构表）
+- stage 2.4 (eedcabe): Obsidian graph.json colorGroups 切到新目录（entities / concepts / syntheses 各自路径过滤），app.json 让 raw/inbox/ 在 Obsidian 可见
+- stage 2.5: 验证全部通过——intake_source.py --help 正常、所有目录存在、零旧路径残留、wikilinks 解析无误、git working tree clean
+- friction: bulk sed 把所有 02_Notes/TopicNotes 一律映射到 wiki/concepts，导致 entity 引用初次落错位置（wiki/concepts 应该是 wiki/entities）；事后逐文件修复。教训：未来类似批量替换应分维度处理具体名字（Claude Code/Anthropic/OpenSpec → wiki/entities）后再做兜底替换
+- 接下来：Phase 3 计划——跑 ≥ 5 次实战 ingest 验证 fan-out，建 Codex/OpenAI 等待补 entity，触发第一个 synthesis
+
 ## [2026-04-29 11:00] lint | 旧 topic_note schema 迁移
 - 迁移到新 schema：AI 产品观察、AI 内容生产、组织如何使用 AI（→ type: concept）、OpenSpec（→ type: entity）
 - 加 backfill wikilinks 让它们进入 wiki 连通图（避免视觉孤岛）
