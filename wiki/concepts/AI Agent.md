@@ -2,7 +2,7 @@
 type: concept
 aliases: [AI Agent, agent, autonomous agent, coding agent]
 first_seen: 2026-03-20
-updated_at: 2026-04-28
+updated_at: 2026-04-29
 sources:
   - 2026-03-23_article_anthropic_claude-code-autonomy
   - 2026-03-23_article_anthropic_claude-code-sandboxing
@@ -32,15 +32,16 @@ status: active
 
 ### 工具型 agent（coding agent 路线）
 
-代表：[[Claude Code]]、[[Codex]] # TODO 待建页
+代表：[[Claude Code]]、[[Codex]]
 
 - 把 agent 包成"在终端 / 仓库里持续工作"的产品
-- 关键能力：[[autonomy|自主性]]、checkpoint、subagent、hook、background task、sandbox
+- 关键能力：[[autonomy|自主性]]、checkpoint、subagent、hook、background task、sandbox、AGENTS.md 约定
 - 主要价值：把"对话式协作"提升到"任务式协作"
 
 来源证据：
-- Anthropic 把 Claude Code 推到"可回退的自主"路线（[[2026-03-23_article_anthropic_claude-code-autonomy]]、[[2026-03-23_article_anthropic_claude-code-sandboxing]]）
-- OpenAI 把 Codex 推到"AGENTS.md + cloud sandbox"路线（[[2026-03-23_article_openai_get-started-with-codex]]、[[2026-03-23_pdf_openai_how-openai-uses-codex]]）
+- [[Anthropic]] 把 [[Claude Code]] 推到"可回退的自主"路线（[[2026-03-23_article_anthropic_claude-code-autonomy]]、[[2026-03-23_article_anthropic_claude-code-sandboxing]]）
+- [[OpenAI]] 把 [[Codex]] 推到"AGENTS.md + cloud sandbox"路线（[[2026-03-23_article_openai_get-started-with-codex]]、[[2026-03-23_pdf_openai_how-openai-uses-codex]]）
+- 两条路线对比已落 [[claude-code-vs-codex_comparison]]
 
 ### 框架型 agent（"build your own agent"路线）
 

@@ -7,7 +7,7 @@ sources:
   - 2026-03-23_article_anthropic_claude-code-autonomy
   - 2026-03-23_article_anthropic_claude-code-sandboxing
   - 2026-03-23_article_openai_get-started-with-codex
-related_entities: [Claude Code, Anthropic, Codex]
+related_entities: [Claude Code, Anthropic, Codex, OpenAI]
 related_concepts: [模型能力变化, autonomy, AI Agent]
 maturity: tracked
 status: active
@@ -34,11 +34,12 @@ tags: [topic, topic/product]
 - 产品哲学：autonomy 与 safety 绑成一件事
 - 来源：[[2026-03-23_article_anthropic_claude-code-autonomy]]、[[2026-03-23_article_anthropic_claude-code-sandboxing]]
 
-### OpenAI 路线（[[Codex]] # TODO 待建页）
+### [[OpenAI]] 路线（[[Codex]]）
 
 - "AGENTS.md + cloud sandbox"——把任务推到隔离环境跑长任务
 - 产品哲学：autonomy 通过环境隔离实现，模型本身不动
-- 来源：[[2026-03-23_article_openai_get-started-with-codex]]、[[2026-03-23_pdf_openai_how-openai-uses-codex]]
+- 生态策略：拉同盟做开放标准（[Linux Foundation 旗下 AAIF](https://openai.com/index/agentic-ai-foundation/)）让多工具共享 AGENTS.md
+- 来源：[[2026-03-23_article_openai_get-started-with-codex]]、[[2026-03-23_pdf_openai_how-openai-uses-codex]]、[[2026-03-23_article_openai_agentic-ai-foundation-agents-md]]
 
 ## 我倾向的判断
 
@@ -60,6 +61,9 @@ tags: [topic, topic/product]
 ## 相关阅读
 
 - [[Claude Code]]
+- [[Codex]]
 - [[Anthropic]]
+- [[OpenAI]]
 - [[模型能力变化]]
 - [[autonomy]]
+- [[claude-code-vs-codex_comparison]]

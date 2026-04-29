@@ -2,14 +2,16 @@
 type: concept
 aliases: [AI 工作流, AI workflow, agentic workflow]
 first_seen: 2026-03-20
-updated_at: 2026-04-28
+updated_at: 2026-04-29
 sources:
   - 2026-03-23_article_anthropic_claude-code-autonomy
   - 2026-03-23_article_anthropic_claude-code-sandboxing
   - 2026-03-23_link_openspec-ai-workflow-analysis
   - 2026-03-23_link_openspec-practical-guide
   - 2026-03-23_pdf_openai_how-openai-uses-codex
-related_entities: [Claude Code, OpenSpec, Codex]
+  - 2026-03-23_article_openai_get-started-with-codex
+  - 2026-03-23_article_openai_agentic-ai-foundation-agents-md
+related_entities: [Claude Code, OpenSpec, Codex, Anthropic, OpenAI]
 related_concepts: [AI Agent, autonomy, AI Vibecoding, 模型能力变化]
 maturity: tracked
 status: active
@@ -52,8 +54,9 @@ status: active
 
 代表：[[Codex]]、本仓库的 AGENTS.md
 
-- 把"agent 在这个仓库怎么工作"写成约定文件（来源：[[2026-03-23_pdf_openai_how-openai-uses-codex]]、[[2026-03-23_article_openai_agentic-ai-foundation-agents-md]]）
+- 把"agent 在这个仓库怎么工作"写成约定文件（来源：[[2026-03-23_pdf_openai_how-openai-uses-codex]]、[[2026-03-23_article_openai_agentic-ai-foundation-agents-md]]、[[2026-03-23_article_openai_get-started-with-codex]]）
 - 每次 agent 进项目先读约定，再行动
+- 自 2025-08 起 **60,000+ 项目** 采用 AGENTS.md，[[OpenAI]] 牵头与 [[Anthropic]]、Google、Microsoft、AWS 共建 [Linux Foundation 旗下的 Agentic AI Foundation](https://openai.com/index/agentic-ai-foundation/) 把它推为开放标准
 - **判断**：约定文件 = 工作流的"宪法"
 
 ## 我倾向的判断

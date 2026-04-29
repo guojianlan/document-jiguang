@@ -30,6 +30,18 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - 索引：`06_Maps/index.md` 初始化
 - Phase 1 完成，等待第一次实战 ingest
 
+## [2026-04-29 14:30] ingest | get-started-with-codex (Phase 3 #1)
+- summary written: wiki/sources/2026-03-23_article_openai_get-started-with-codex.md（修订 frontmatter 为新 schema）
+- new entities: Codex, OpenAI
+- new concepts: —
+- entities updated: —
+- concepts updated: AI Agent, AI Vibecoding, AI 工作流, AI 产品观察, autonomy
+- new pages: 2 entities + 1 synthesis = 3 (Codex.md, OpenAI.md, claude-code-vs-codex_comparison.md)
+- synthesis seeded: 是 — wiki/syntheses/claude-code-vs-codex_comparison.md (publishability: 1)
+- pages touched: 11 (1 source frontmatter + 2 new entities + 5 concept updates + 1 new synthesis + index + log)
+- 此次 ingest 利用了 wiki 里已存在的 3 个相关 source（agentic-ai-foundation、how-openai-uses-codex、practical-guide-building-ai-agents）补全 Codex/OpenAI entity 的内容深度——一个浅入门来源也能跑出 11 页 fan-out
+- synthesis 首次落地：Claude Code vs Codex 对照已成 publishability=1，是 Phase 3 第一个可发布候选
+
 ## [2026-04-29 13:30] system | Phase 2 LLM Wiki 目录迁移完成
 - baseline commit: 3bc1a07
 - stage 2.1 (9e631eb): 创建 raw/, wiki/, outputs/ 顶层骨架

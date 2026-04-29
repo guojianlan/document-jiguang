@@ -1,14 +1,17 @@
 ---
-type: source_note
+type: source
 source_type: article
-status: processed
-topic: AI Vibecoding
-tags: [source/article, status/processed, topic/workflow]
 source_title: Get started with Codex
 source_url: https://openai.com/codex/get-started/
+source_path: null  # 仅 URL，未本地化
 author: OpenAI
 publisher: OpenAI
 processed_at: 2026-03-23
+ingested_at: 2026-04-29
+entities: [Codex, OpenAI]
+concepts: [AI Vibecoding, AI 工作流, AI Agent]
+status: ingested
+tags: [source/article, topic/workflow]
 ---
 
 # Get started with Codex

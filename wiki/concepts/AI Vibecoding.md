@@ -2,7 +2,7 @@
 type: concept
 aliases: [AI Vibecoding, vibecoding]
 first_seen: 2026-03-23
-updated_at: 2026-04-28
+updated_at: 2026-04-29
 sources:
   - 2026-03-23_link_vibe-coders-guide
   - 2026-03-23_article_openai_practical-guide-building-ai-agents
@@ -14,7 +14,7 @@ sources:
   - 2026-03-23_article_anthropic_claude-code-sandboxing
   - 2026-03-23_article_vibecontract
   - 2026-03-23_article_goodvibe
-related_entities: [Claude Code, Codex, OpenSpec]
+related_entities: [Claude Code, Codex, OpenSpec, Anthropic, OpenAI]
 related_concepts: [AI Agent, AI 工作流, autonomy, 模型能力变化]
 maturity: tracked
 status: active
@@ -62,6 +62,7 @@ tags: [topic, topic/content, topic/workflow]
 - 只选一个主工具做上手路线
 - 不要一开始做工具大全
 - 让用户先跑通第一个真实任务
+- **2026-04 补充**：[[Codex]] 的官方入门把上手降到 4 步——装 → 登 → 选 Git 仓库 → 启动第一个任务（来源：[[2026-03-23_article_openai_get-started-with-codex]]）。这是"降低第一步门槛"的具体落地，可作为本阶段范例
 
 ### 第三阶段：工作流升级
 

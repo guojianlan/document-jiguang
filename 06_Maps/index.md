@@ -9,9 +9,9 @@
 | 类别 | 数量 | 路径 |
 |---|---|---|
 | sources | 13 | `wiki/sources/` |
-| entities | 3 | `wiki/entities/` |
+| entities | 5 | `wiki/entities/` |
 | concepts | 8 | `wiki/concepts/` |
-| syntheses | 0 | `wiki/syntheses/` |
+| syntheses | 1 | `wiki/syntheses/` |
 
 > Phase 2 已完成：物理目录按 type 分隔（entities / concepts / sources / syntheses）。schema 层 `04_Templates`、`05_Workflows`、`99_System`、`08_Skills` 留在原位。
 
@@ -24,8 +24,10 @@
 | [[OpenSpec]] | 工具/方法 | 把 AI 编程从依赖聊天历史升级为基于规格工件的可审查协作流程 | link_openspec-practical-guide、link_openspec-ai-workflow-analysis | active |
 | [[Claude Code]] | 工具/产品 | Anthropic 的 coding agent，路线 = 可回退的自主 + 沙箱边界 | claude-code-autonomy、claude-code-sandboxing | active |
 | [[Anthropic]] | 公司/出品方 | Claude / Claude Code 出品方，autonomy + safety 绑成一件事 | claude-code-autonomy、claude-code-sandboxing | active |
+| [[Codex]] | 工具/产品 | OpenAI 的 coding agent，路线 = AGENTS.md + cloud sandbox | get-started-with-codex、how-openai-uses-codex、agentic-ai-foundation | active |
+| [[OpenAI]] | 公司/出品方 | Codex 出品方 + AGENTS.md 标准发起方，主导 Linux Foundation 旗下 AAIF | get-started-with-codex、agentic-ai-foundation、how-openai-uses-codex | active |
 
-> 待补 entities：Codex、Cursor、OpenAI、GitHub Copilot、Satori、Obsidian。这些已在 sources 里反复出现但还没建独立页。
+> 待补 entities：Cursor、GitHub Copilot、Satori、Obsidian。这些已在 sources 里反复出现但还没建独立页。
 
 ---
 
@@ -72,11 +74,15 @@
 
 ## Syntheses（对比 / 分析 / 时间线 / 复盘）
 
-暂无。预期 syntheses 候选：
+| 名称 | 类型 | 一句话 | publishability | 状态 |
+|---|---|---|---|---|
+| [[claude-code-vs-codex_comparison]] | comparison | Claude Code 与 Codex 两条 autonomy 路线对照、生态策略差异、组合使用建议 | 1 | active |
+
+待落地的 syntheses 候选：
 
 - **OpenSpec vs Vibecoding（comparison）** — 两种 AI 编程范式的对比，已有 ≥ 6 个相关来源
-- **AGENTS.md / claude-code-autonomy / sandboxing 三件套（digest）** — Anthropic 在 2026-03 的协作文档族系
-- **Codex 实战时间线（timeline）** — 从 OpenAI Codex GA 到组织内部使用的演进证据
+- **AGENTS.md / claude-code-autonomy / sandboxing 三件套（digest）** — Anthropic 在 2025-09 / 2025-10 的协作文档族系
+- **Codex 实战时间线（timeline）** — 从 OpenAI Codex GA 到 AAIF 成立的演进证据
 
 > 这些是 `/lint` 应该主动建议的合成候选，落 `wiki/syntheses/`。
 
