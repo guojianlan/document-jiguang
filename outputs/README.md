@@ -4,8 +4,8 @@
 
 ## 子目录
 
-- `drafts/` ← 原 `03_Outputs/Drafts/`：发布版正文 + 发布建议 + 视觉资产 + 社交切图文案 等
-- `published/` ← 原 `03_Outputs/Published/`：已对外发布的版本
+- `drafts/`：发布版正文 + 发布建议 + 视觉资产 + 社交切图文案 等
+- `published/`：已对外发布的版本
 
 ## 与 wiki 的关系
 

@@ -1,6 +1,6 @@
 ---
 name: ingest
-description: Process a new raw source (article, link, video, PDF, document) into the wiki. Read the source, write a structured summary, fan-out updates to relevant entities/concepts/syntheses pages, refresh index.md, append log.md. Use whenever a new source enters 00_Inbox/ or 01_Sources/ and the user wants it integrated into the knowledge base.
+description: Process a new raw source (article, link, video, PDF, document) into the wiki. Read the source, write a structured summary, fan-out updates to relevant entities/concepts/syntheses pages, refresh index.md, append log.md. Use whenever a new source enters raw/inbox/ or raw/sources/ and the user wants it integrated into the knowledge base.
 ---
 
 # ingest
@@ -9,7 +9,7 @@ description: Process a new raw source (article, link, video, PDF, document) into
 
 ## 何时使用
 
-- 用户在 `00_Inbox/` 或 `01_Sources/` 新增了文件 / URL / PDF
+- 用户在 `raw/inbox/` 或 `raw/sources/` 新增了文件 / URL / PDF
 - 用户说"把这篇文章入库"、"把这个链接处理一下"、"我刚加了几个来源"
 - 完成一次外部阅读 / 视频 / 播客后，希望沉淀到 wiki
 
@@ -38,7 +38,7 @@ description: Process a new raw source (article, link, video, PDF, document) into
 
 ### 2. 写 source 摘要页（必）
 
-落到 `02_Notes/SourceNotes/<YYYY-MM-DD>_<type>_<slug>.md`（沿用现有命名规范）。
+落到 `wiki/sources/<YYYY-MM-DD>_<type>_<slug>.md`（沿用现有命名规范）。
 
 frontmatter 按约定：
 
@@ -60,28 +60,28 @@ status: ingested
 
 对 step 1 列出的每个相关 entity：
 
-- 如果 entity 页已存在（在 `02_Notes/TopicNotes/`）：
+- 如果 entity 页已存在（在 `wiki/entities/`）：
   - 在 `## 我看到的实际表现` 加一行证据，引用本次 source
   - 如果本次 source 与之前判断矛盾，在 `## 待补 / 待证伪` 加一条
   - 如果引出与其他 entity 的新对照，在 `## 与其他 entity 的对照` 加
 - 如果 entity 页不存在：
-  - 创建新页（按 [LLM Wiki 约定](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md) 中 entity frontmatter 与段落约定）
+  - 创建新页到 `wiki/entities/<name>.md`（按 [LLM Wiki 约定](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md) 中 entity frontmatter 与段落约定）
   - 至少先写"是什么"段，其他段标 `# TODO` 后续完善
 
 每个 entity 改动 = 1 页 fan-out。
 
 ### 4. Fan-out 更新 concepts
 
-同 step 3，对每个相关 concept：
+同 step 3，对每个相关 concept（在 `wiki/concepts/`）：
 
 - 已存在 → 在 `## 当前的几种主流理解` 加新视角；矛盾时改 `## 我倾向的判断`
-- 不存在 → 新建 + 至少写"定义"段
+- 不存在 → 新建到 `wiki/concepts/<name>.md` + 至少写"定义"段
 
 ### 5. 评估 synthesis 触发
 
 如果本次 source 同时触达 ≥ 2 个 entity 或 ≥ 2 个 concept，且这种组合在 wiki 里不曾综合过：
 
-- 创建 synthesis 骨架页（位置：Phase 1 暂放 `02_Notes/TopicNotes/_synthesis_<slug>.md`，Phase 2 迁到 `wiki/syntheses/`）
+- 创建 synthesis 骨架页到 `wiki/syntheses/<slug>_<form>.md`（form: comparison / timeline / debate / digest）
 - frontmatter 里 `publishability: 0`、列 `based_on_sources` 与 `based_on_entities/concepts`
 - 正文先写一句"为什么这个组合值得合成"，其他段标 `# TODO`
 
@@ -100,7 +100,7 @@ status: ingested
 
 ```text
 ## [<YYYY-MM-DD HH:MM>] ingest | <source-slug>
-- summary written: 02_Notes/SourceNotes/<file>.md
+- summary written: wiki/sources/<file>.md
 - entities updated: <list>
 - concepts updated: <list>
 - new pages: <count> (<names>)
@@ -128,7 +128,7 @@ status: ingested
 
 ```
 ingest 完成：<source-slug>
-- 摘要：02_Notes/SourceNotes/<file>.md
+- 摘要：wiki/sources/<file>.md
 - entities updated: <list> (<count> 页)
 - concepts updated: <list> (<count> 页)
 - new entities/concepts: <list>
@@ -142,7 +142,7 @@ ingest 完成：<source-slug>
 
 ## 边界
 
-- 不替代 [scripts/intake_source.py](/Users/apple/Desktop/project/document/scripts/intake_source.py) 的"自动分类入库"——脚本负责把 raw 文件归到正确的 `01_Sources/<type>/` 子目录；本 skill 负责 wiki 层的处理。Phase 3 后会把脚本和 skill 串起来。
+- 不替代 [scripts/intake_source.py](/Users/apple/Desktop/project/document/scripts/intake_source.py) 的"自动分类入库"——脚本负责把 raw 文件归到正确的 `raw/sources/<type>/` 子目录；本 skill 负责 wiki 层的处理。Phase 3 后会把脚本和 skill 串起来。
 - 不做事实核查——source 里的事实信息就是事实（除非和 wiki 已有事实直接冲突，那是 lint 的工作）
 - 不做发布包装——这是 `/publish-article` 的工作。如果发现某个 synthesis 值得发布，标 `publishability: 1` 然后让用户决定要不要走发布流程
 
@@ -159,4 +159,4 @@ ingest 完成：<source-slug>
 - **机械填表**：每个 entity 都加一行"本次 source 也提到了 X"——这是噪音不是 fan-out
 - **跳过对话**：直接读完源就开写。Karpathy 设计这套是因为人脑在前期介入价值最高
 - **过早合成**：source 里有 1 个新观点就开 synthesis 页。等 ≥ 3 来源谈同一组合再合成
-- **path drift**：把摘要写到 `03_Outputs/Drafts/` 或乱放——摘要必须落在 sources，发布产物必须从 synthesis 派生
+- **path drift**：把摘要写到 `outputs/drafts/` 或乱放——摘要必须落在 sources，发布产物必须从 synthesis 派生

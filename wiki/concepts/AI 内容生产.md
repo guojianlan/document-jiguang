@@ -27,9 +27,9 @@ tags: [topic, topic/content]
 
 本仓库按 [LLM Wiki 模式](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md) 把 AI 内容生产拆成三层：
 
-1. **来源层**：raw sources 进 `01_Sources/`，由 [[Claude Code]] 跑 `/ingest` 写 SourceNote 摘要
-2. **wiki 层**：摘要 fan-out 触达 entities / concepts / syntheses，知识在 `02_Notes/` 累积
-3. **发布层**：从 syntheses 派生发布稿到 `03_Outputs/`，跑 `/publish-article` + `/critique` 去 AI 味
+1. **来源层**：raw sources 进 `raw/sources/`，由 [[Claude Code]] 跑 `/ingest` 写 SourceNote 摘要
+2. **wiki 层**：摘要 fan-out 触达 entities / concepts / syntheses，知识在 `wiki/` 累积
+3. **发布层**：从 syntheses 派生发布稿到 `outputs/`，跑 `/publish-article` + `/critique` 去 AI 味
 
 **判断**：AI 内容生产的真正杠杆**不在写**，**在累积**。每篇文章只是一次发布，但 wiki 越用越富，下次写就更省力。
 
@@ -60,4 +60,4 @@ tags: [topic, topic/content]
 - [[AI 工作流]]
 - [[AI Vibecoding]]
 - [[Claude Code]]
-- 仓库实际产出：`03_Outputs/Drafts/`
+- 仓库实际产出：`outputs/drafts/`

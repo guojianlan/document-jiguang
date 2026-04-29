@@ -35,15 +35,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Wiki 模式（重要）
 
-仓库按 Karpathy 的 LLM Wiki 模式运转。任何新来源进入仓库（`00_Inbox/` 或 `01_Sources/`）后默认跑 `/ingest`，触达 5-10 个 wiki 页（source 摘要 + entities + concepts + index + log）。fan-out 不到 3 页视为失败。详见 [99_System/llm-wiki约定.md](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md)。
+仓库按 Karpathy 的 LLM Wiki 模式运转。任何新来源进入仓库（`raw/inbox/` 或 `raw/sources/`）后默认跑 `/ingest`，触达 5-10 个 wiki 页（source 摘要 + entities + concepts + index + log）。fan-out 不到 3 页视为失败。详见 [99_System/llm-wiki约定.md](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md)。
 
 发布时从 `publishability ≥ 1` 的 synthesis 页出发跑 `/publish-article`，不直接拿 source 摘要写发布稿。
 
 ### 写入边界
 
-- 草稿与发布产物落到 `03_Outputs/Drafts/` 与 `03_Outputs/Published/`
-- 视觉资产落到 `07_Attachments/` 或对应文章目录
-- 来源原件保留在 `01_Sources/`，不要原地改写
+- 草稿与发布产物落到 `outputs/drafts/` 与 `outputs/published/`
+- 视觉资产落到 `raw/attachments/` 或对应文章目录
+- 来源原件保留在 `raw/sources/`，不要原地改写
 - 自动化脚本属于 `scripts/`，业务闭环引擎属于 `business_loop/`
 
 ### 必读规则（来自 AGENTS.md）

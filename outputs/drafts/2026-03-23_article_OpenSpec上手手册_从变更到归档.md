@@ -9,7 +9,7 @@ created_at: 2026-03-23
 
 # OpenSpec 上手手册：从一次变更开始，把 AI 编程跑成可验证流程
 
-![OpenSpec 变更结构图](../../07_Attachments/2026-03-23_openspec-change-architecture.png)
+![OpenSpec 变更结构图](../../raw/attachments/2026-03-23_openspec-change-architecture.png)
 
 如果把 OpenSpec 理解成一套工程工具，它最适合的上手方式不是先记所有概念，而是先跑通一条完整闭环。
 

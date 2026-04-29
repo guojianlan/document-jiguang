@@ -36,25 +36,25 @@
 ## 本地校验命令
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg"
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg"
 ```
 
 这个命令现在默认会在渲染预览后继续执行一次布局检查：
 
 ```bash
-node scripts/check_svg_layout.js "07_Attachments/xxx.svg"
+node scripts/check_svg_layout.js "raw/attachments/xxx.svg"
 ```
 
 如果希望顺手导出一个 PNG：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.png"
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachments/xxx.png"
 ```
 
 如果要按发布宽度导出，而不是按 SVG 原始宽度导出：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.png" --width 1440
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachments/xxx.png" --width 1440
 ```
 
 如果只是做校验预览，建议命名为：

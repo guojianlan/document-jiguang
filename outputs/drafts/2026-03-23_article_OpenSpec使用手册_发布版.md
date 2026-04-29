@@ -9,7 +9,7 @@ created_at: 2026-03-23
 
 # OpenSpec 使用手册：真正重要的不是命令，而是你怎么把一轮 change 跑完整
 
-![OpenSpec 使用手册封面图](../../07_Attachments/2026-03-23_openspec-manual-cover.png)
+![OpenSpec 使用手册封面图](../../raw/attachments/2026-03-23_openspec-manual-cover.png)
 
 很多人第一次接触 OpenSpec，最容易把注意力放在命令上。
 
@@ -220,7 +220,7 @@ openspec new change update-ui
 一个好名字最直接的价值是：  
 你几个月之后再看到它，依然能大致猜到当时在解决什么问题。
 
-![OpenSpec 使用手册流程图](../../07_Attachments/2026-03-23_openspec-manual-flow.png)
+![OpenSpec 使用手册流程图](../../raw/attachments/2026-03-23_openspec-manual-flow.png)
 
 ### 2. 创建后会得到什么
 

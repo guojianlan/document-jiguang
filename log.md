@@ -39,7 +39,7 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - friction: AI 产品观察 此前真的没有任何 backfill 路径——证明仅有 index 引用不足以让 wiki 连通；index.md 不能算入 fan-out 度量
 
 ## [2026-04-28 15:50] ingest | claude-code-autonomy（test run）
-- summary written: 02_Notes/SourceNotes/2026-03-23_article_anthropic_claude-code-autonomy.md（修订 frontmatter 为新 schema）
+- summary written: wiki/sources/2026-03-23_article_anthropic_claude-code-autonomy.md（修订 frontmatter 为新 schema）
 - new entities: Claude Code, Anthropic
 - new concepts: autonomy
 - entities updated: —
@@ -48,6 +48,6 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - synthesis seeded: 否（暂记 candidate: "Claude Code vs Codex 路线对比"，等 Codex entity 建后再跑 /query 触发）
 - pages touched: 9
 - known design frictions:
-  - friction 1: 仓库内 raw source 对网络文章默认仅以 URL 存在，01_Sources/Articles 不含原文 → /ingest SKILL.md 应明确"raw 可为 URL only"
+  - friction 1: 仓库内 raw source 对网络文章默认仅以 URL 存在，raw/sources/Articles 不含原文 → /ingest SKILL.md 应明确"raw 可为 URL only"
   - friction 2: 旧 SourceNote frontmatter 的 `topic` 字段是单值，新 schema 用 `entities[]` + `concepts[]`——批量迁移时需做格式转换
   - friction 3: SKILL.md 要求 step 1 与用户对话 1-3 轮，但 test run 跳过——后续真实 ingest 应执行

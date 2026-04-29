@@ -45,7 +45,7 @@ node scripts/serve_markdown_publish_preview.js
 如果想直接打开某一篇文章：
 
 ```bash
-node scripts/serve_markdown_publish_preview.js "03_Outputs/Drafts/2026-03-23_article_AI Vibecoding到底是什么_发布版.md" --open
+node scripts/serve_markdown_publish_preview.js "outputs/drafts/2026-03-23_article_AI Vibecoding到底是什么_发布版.md" --open
 ```
 
 默认端口：
@@ -67,7 +67,7 @@ MARKDOWN_PUBLISH_PREVIEW_PORT=4312
 也可以自定义：
 
 ```bash
-node scripts/serve_markdown_publish_preview.js "03_Outputs/Drafts/xxx.md" --port 4313 --open
+node scripts/serve_markdown_publish_preview.js "outputs/drafts/xxx.md" --port 4313 --open
 ```
 
 ## 监听模式
@@ -75,7 +75,7 @@ node scripts/serve_markdown_publish_preview.js "03_Outputs/Drafts/xxx.md" --port
 如果你正在开发预览服务本身，希望在修改脚本后自动重启，可以使用 `nodemon`：
 
 ```bash
-npm run preview:md:watch -- "03_Outputs/Drafts/xxx.md" --open
+npm run preview:md:watch -- "outputs/drafts/xxx.md" --open
 ```
 
 当前监听范围包括：
@@ -98,7 +98,7 @@ bash scripts/restart_markdown_publish_preview.sh
 如果希望重启后直接定位到某篇文章，也可以把文章路径继续传进去：
 
 ```bash
-bash scripts/restart_markdown_publish_preview.sh "03_Outputs/Drafts/xxx.md" --open
+bash scripts/restart_markdown_publish_preview.sh "outputs/drafts/xxx.md" --open
 ```
 
 脚本会在仓库 `.tmp/` 下写入日志和 pid 文件，便于后续排查。

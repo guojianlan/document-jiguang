@@ -8,14 +8,12 @@
 
 | 类别 | 数量 | 路径 |
 |---|---|---|
-| sources | 13 | `02_Notes/SourceNotes/` |
-| entities | 3 | `02_Notes/TopicNotes/` |
-| concepts | 8 | `02_Notes/TopicNotes/` |
-| syntheses | 0 | （Phase 2 后落 `wiki/syntheses/`） |
+| sources | 13 | `wiki/sources/` |
+| entities | 3 | `wiki/entities/` |
+| concepts | 8 | `wiki/concepts/` |
+| syntheses | 0 | `wiki/syntheses/` |
 
-> 全部 11 个 TopicNote 已完成 schema 迁移（type=entity / concept），无 topic_note 残留。
-
-> Phase 1 阶段，entities 与 concepts 物理上同住 `02_Notes/TopicNotes/`，靠 frontmatter `type` 字段区分。Phase 2 迁移后才物理分目录。
+> Phase 2 已完成：物理目录按 type 分隔（entities / concepts / sources / syntheses）。schema 层 `04_Templates`、`05_Workflows`、`99_System`、`08_Skills` 留在原位。
 
 ---
 
@@ -50,7 +48,7 @@
 
 ## Sources（来源摘要）
 
-按摘录日期倒序。每条对应 `02_Notes/SourceNotes/` 下一份摘要。
+按摘录日期倒序。每条对应 `wiki/sources/` 下一份摘要。
 
 ### 2026-03
 
@@ -100,8 +98,8 @@
 grep -c "^|" 06_Maps/index.md
 
 # 找某个 entity 在 sources 里出现多少次
-grep -ic "openspec" 02_Notes/SourceNotes/*.md
+grep -ic "openspec" wiki/sources/*.md
 
 # 找未在 index 的 wiki 页（孤儿）
-diff <(ls 02_Notes/TopicNotes | sed 's/.md$//') <(grep -oE '\[\[[^]]+\]\]' 06_Maps/index.md | sort -u | tr -d '[]')
+diff <(ls wiki/concepts | sed 's/.md$//') <(grep -oE '\[\[[^]]+\]\]' 06_Maps/index.md | sort -u | tr -d '[]')
 ```

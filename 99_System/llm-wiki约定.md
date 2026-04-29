@@ -17,15 +17,15 @@
 
 ## 三层架构
 
-按 Karpathy 的定义对齐到本仓库目录（Phase 1 阶段路径，Phase 2 会迁移）。
+按 Karpathy 的定义对齐到本仓库目录（Phase 2 已完成，目录结构按本表）：
 
-| Karpathy 层 | 本仓库（Phase 1 当前） | 本仓库（Phase 2 目标） | 谁拥有 |
-|---|---|---|---|
-| **Raw sources** | `00_Inbox/`、`01_Sources/`、`07_Attachments/` | `raw/inbox/`、`raw/sources/`、`raw/attachments/` | 你（不可被 LLM 修改）|
-| **The wiki** | `02_Notes/SourceNotes/`、`02_Notes/TopicNotes/` | `wiki/sources/`、`wiki/entities/`、`wiki/concepts/`、`wiki/syntheses/` | LLM（你只读）|
-| **The schema** | `AGENTS.md` + `CLAUDE.md` + `99_System/` | 同上 | 共同维护 |
+| Karpathy 层 | 本仓库目录 | 谁拥有 |
+|---|---|---|
+| **Raw sources** | `raw/inbox/`、`raw/sources/`、`raw/attachments/` | 用户（不可被 LLM 修改）|
+| **The wiki** | `wiki/sources/`、`wiki/entities/`、`wiki/concepts/`、`wiki/syntheses/` | LLM（用户只读浏览）|
+| **The schema** | `AGENTS.md` + `CLAUDE.md` + `99_System/` | 共同维护 |
 
-> Phase 2 之前所有 skill 暂时对接旧路径，迁移完成后统一改写。
+不属于 Karpathy 三层但保留在仓库内的 meta 目录：`04_Templates/`、`05_Workflows/`、`06_Maps/`、`08_Skills/`、`scripts/`、`skills/`、`.claude/skills/`、`business_loop/`、`tests/`。
 
 ---
 
@@ -35,7 +35,7 @@
 
 ### 1. sources（来源摘要）
 
-- **位置**：`02_Notes/SourceNotes/`（Phase 2 → `wiki/sources/`）
+- **位置**：`wiki/sources/`
 - **作用**：每个 raw source 对应一份 wiki 摘要——结构化提取、事实/观点/判断分离
 - **命名**：`YYYY-MM-DD_<type>_<slug>.md`（已有规范，沿用）
 - **frontmatter**：
@@ -44,7 +44,7 @@
 ---
 type: source
 source_type: article | link | video | pdf | document
-source_path: 01_Sources/Articles/<file>.md
+source_path: raw/sources/Articles/<file>.md
 ingested_at: 2026-04-28
 entities: [OpenSpec, Anthropic]
 concepts: [spec-driven 开发, AI Agent]
@@ -54,7 +54,7 @@ status: ingested
 
 ### 2. entities（具体物/工具/产品/人物/组织）
 
-- **位置**：`02_Notes/TopicNotes/`（Phase 2 → `wiki/entities/`）
+- **位置**：`wiki/entities/`
 - **作用**：每个具体名词一页——OpenSpec、Claude Code、Anthropic、Codex、Cursor 等
 - **命名**：`<EntityName>.md`（保留 Obsidian wikilink 友好的纯名字）
 - **frontmatter**：
@@ -80,7 +80,7 @@ status: active
 
 ### 3. concepts（抽象概念/模式/方法）
 
-- **位置**：`02_Notes/TopicNotes/`（Phase 2 → `wiki/concepts/`）
+- **位置**：`wiki/concepts/`
 - **作用**：每个抽象概念一页——"AI Agent"、"AI Vibecoding"、"spec-driven 开发"、"prompt caching" 等
 - **命名**：`<concept-slug>.md`
 - **frontmatter**：
@@ -107,7 +107,7 @@ status: active
 
 ### 4. syntheses（对比/分析/时间线/分享文档）
 
-- **位置**：暂无对应目录（Phase 2 → `wiki/syntheses/`）
+- **位置**：`wiki/syntheses/`（初始为空，由 `/query` 与 `/lint` 触发归档填充）
 - **作用**：把 ≥ 2 个来源或 ≥ 2 个 entity/concept 拉到一起的产物——对比表、时间线、争议综述、复盘
 - **触发**：`/query` 跑出值得保留的回答，归档成一个 syntheses 页；或 `/lint` 发现 ≥ 3 个来源谈同一概念时主动合成
 - **命名**：`<topic-slug>_<form>.md`（form: comparison / timeline / debate / digest）
@@ -122,7 +122,7 @@ based_on_sources: [...]
 based_on_entities: [...]
 based_on_concepts: [...]
 publishability: 0 | 1 | 2  # 0=纯内部知识 1=可改成发布稿 2=已派生发布稿
-derived_outputs: [03_Outputs/Drafts/<file>.md]
+derived_outputs: [outputs/drafts/<file>.md]
 ---
 ```
 
@@ -144,7 +144,7 @@ Karpathy 强调"一个来源更新 10-15 页"。在本仓库的具体含义：
 
 每收到一个新来源，**最少**要做 4 步、**预期**触达 5-10 页：
 
-1. **写 source 摘要页**（必）：`02_Notes/SourceNotes/<file>.md`
+1. **写 source 摘要页**（必）：`wiki/sources/<file>.md`
 2. **更新涉及的 entities 页**（每个相关实体 1 页）：在 `## 我看到的实际表现` 加证据，在 `## 与其他 entity 的对照` 加新对比
 3. **更新涉及的 concepts 页**（每个相关概念 1 页）：在 `## 当前的几种主流理解` 加新视角，必要时改 `## 我倾向的判断`
 4. **更新 [index.md](/Users/apple/Desktop/project/document/06_Maps/index.md)**（必）：source 入新条目；如果创建了新 entity/concept 也入新条目
@@ -174,7 +174,7 @@ Karpathy 强调"一个来源更新 10-15 页"。在本仓库的具体含义：
 
 ```text
 ## [2026-04-28 14:30] ingest | <source-slug>
-- summary written: 02_Notes/SourceNotes/<file>.md
+- summary written: wiki/sources/<file>.md
 - entities updated: OpenSpec, Claude Code
 - concepts updated: spec-driven 开发
 - pages touched: 5
@@ -192,11 +192,11 @@ Karpathy 强调"一个来源更新 10-15 页"。在本仓库的具体含义：
 
 ## 与 publishing 层的关系
 
-publishing 层（`03_Outputs/`、`/publish-article`、`/critique`、`/render-svg`）**不直接触碰 wiki**，但通过 synthesis 页连接：
+publishing 层（`outputs/`、`/publish-article`、`/critique`、`/render-svg`）**不直接触碰 wiki**，但通过 synthesis 页连接：
 
 1. 一个值得发的话题 → 在 `wiki/syntheses/` 有对应页（`publishability ≥ 1`）
-2. `/publish-article` 把 synthesis 页转写成发布版正文 → 落 `03_Outputs/Drafts/`
-3. 发布版正文跑 `/critique` 通过 → 落 `03_Outputs/Published/`
+2. `/publish-article` 把 synthesis 页转写成发布版正文 → 落 `outputs/drafts/`
+3. 发布版正文跑 `/critique` 通过 → 落 `outputs/published/`
 4. 在 synthesis 页 frontmatter 的 `derived_outputs` 字段写入派生的 draft 路径，标 `publishability: 2`
 
 这样：**wiki 是知识的"主线"**，**outputs 是发布的"派生分支"**，互不污染。
@@ -208,7 +208,7 @@ publishing 层（`03_Outputs/`、`/publish-article`、`/critique`、`/render-svg
 | skill | 类型 | 对接 |
 |---|---|---|
 | `/ingest`、`/query`、`/lint` | 新增（wiki 层）| 维护 wiki + index + log |
-| `/publish-article` | 现有（publishing 层）| 输入改为 synthesis 页路径，输出仍到 `03_Outputs/Drafts/` |
+| `/publish-article` | 现有（publishing 层）| 输入改为 synthesis 页路径，输出仍到 `outputs/drafts/` |
 | `/critique` | 现有（publishing 层）| 不变 |
 | `/render-svg` | 现有（publishing 层）| 不变 |
 | `/verify` | 现有（基础）| 不变 |
@@ -216,9 +216,8 @@ publishing 层（`03_Outputs/`、`/publish-article`、`/critique`、`/render-svg
 
 ---
 
-## Phase 演进
+## Phase 演进历史
 
-- **Phase 1**：本文件 + 三个 skill + index.md + log.md，零文件移动
-- **Phase 2**：raw/ + wiki/ + outputs/ 三层目录迁移（约 1-2 周）
-- **Phase 3**：脚本与文档路径修正、Obsidian 链接批量替换
-- **Phase 4**：实战验证，跑 ≥ 5 次 ingest 看 fan-out 是否真的发生
+- **Phase 1**（已完成）：本文件 + 三个 skill + index.md + log.md，零文件移动
+- **Phase 2**（已完成）：raw/ + wiki/ + outputs/ 三层目录迁移 + 路径硬编码替换 + Obsidian 配置更新
+- **Phase 3**（计划）：实战验证——跑 ≥ 5 次 ingest 看 fan-out 是否真的发生；建 Codex / OpenAI / Cursor 等待补 entity 页；触发第一个 synthesis

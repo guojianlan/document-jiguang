@@ -531,7 +531,7 @@ function renderMarkdownToHtml(markdownPath, mode = "screen") {
 }
 
 function listMarkdownFiles() {
-  const roots = ["03_Outputs", "02_Notes", "references"];
+  const roots = ["outputs", "wiki", "references"];
   const files = [];
 
   function walk(relativeDir) {

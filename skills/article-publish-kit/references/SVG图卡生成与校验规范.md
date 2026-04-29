@@ -27,13 +27,13 @@
 ## 本仓库建议命令
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg"
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg"
 ```
 
 或：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.png"
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachments/xxx.png"
 ```
 
 ## 完成标准

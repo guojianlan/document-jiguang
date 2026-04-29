@@ -11,10 +11,10 @@ created_at: 2026-03-23
 
 ## 当前已完成图卡
 
-- [封面图（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_openspec-manual-cover.png)
-- [封面图源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_openspec-manual-cover.svg)
-- [流程图（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_openspec-manual-flow.png)
-- [流程图源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_openspec-manual-flow.svg)
+- [封面图（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_openspec-manual-cover.png)
+- [封面图源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_openspec-manual-cover.svg)
+- [流程图（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_openspec-manual-flow.png)
+- [流程图源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_openspec-manual-flow.svg)
 
 ## 推荐组合
 

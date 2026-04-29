@@ -11,26 +11,26 @@ created_at: 2026-03-23
 
 ## 当前已完成图卡
 
-- [封面图（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-cover.png)
-- [封面图源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-cover.svg)
-- [认知图（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-cognition-map.png)
-- [认知图源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-cognition-map.svg)
-- [图卡 01](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-card-01.svg)
-- [图卡 02](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-card-02.svg)
-- [图卡 03](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-card-03.svg)
-- [图卡 04](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-card-04.svg)
-- [5 步总览卡（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-00.png)
-- [5 步总览卡源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-00.svg)
-- [5 步卡 01：先有想法（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-01.png)
-- [5 步卡 01 源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-01.svg)
-- [5 步卡 02：先做规划（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-02.png)
-- [5 步卡 02 源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-02.svg)
-- [5 步卡 03：先定路径（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-03.png)
-- [5 步卡 03 源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-03.svg)
-- [5 步卡 04：人负责推进（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-04.png)
-- [5 步卡 04 源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-04.svg)
-- [5 步卡 05：最后靠人打磨（发布 PNG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-05.png)
-- [5 步卡 05 源文件（SVG）](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-method-card-05.svg)
+- [封面图（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-cover.png)
+- [封面图源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-cover.svg)
+- [认知图（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-cognition-map.png)
+- [认知图源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-cognition-map.svg)
+- [图卡 01](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-card-01.svg)
+- [图卡 02](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-card-02.svg)
+- [图卡 03](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-card-03.svg)
+- [图卡 04](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-card-04.svg)
+- [5 步总览卡（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-00.png)
+- [5 步总览卡源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-00.svg)
+- [5 步卡 01：先有想法（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-01.png)
+- [5 步卡 01 源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-01.svg)
+- [5 步卡 02：先做规划（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-02.png)
+- [5 步卡 02 源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-02.svg)
+- [5 步卡 03：先定路径（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-03.png)
+- [5 步卡 03 源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-03.svg)
+- [5 步卡 04：人负责推进（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-04.png)
+- [5 步卡 04 源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-04.svg)
+- [5 步卡 05：最后靠人打磨（发布 PNG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-05.png)
+- [5 步卡 05 源文件（SVG）](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-method-card-05.svg)
 
 ## 已完成的方法论图卡组
 
@@ -38,7 +38,7 @@ created_at: 2026-03-23
 
 内容来源：
 
-- [社交媒体切图文案](/Users/apple/Desktop/project/document/03_Outputs/Drafts/2026-03-23_article_AI%20Vibecoding到底是什么_社交媒体切图文案.md) 中的“新增图卡组：Vibe Coding 5 步工作法”
+- [社交媒体切图文案](/Users/apple/Desktop/project/document/outputs/drafts/2026-03-23_article_AI%20Vibecoding到底是什么_社交媒体切图文案.md) 中的“新增图卡组：Vibe Coding 5 步工作法”
 
 当前素材：
 

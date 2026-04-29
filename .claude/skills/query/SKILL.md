@@ -77,7 +77,7 @@ description: Answer a question against the wiki by reading index.md, drilling in
 
 如果两条任一为 yes：**归档成 synthesis 页**。
 
-- 位置：`02_Notes/TopicNotes/_synthesis_<slug>.md`（Phase 1）→ `wiki/syntheses/<slug>_<form>.md`（Phase 2）
+- 位置：`wiki/syntheses/<slug>_<form>.md`（form: comparison / timeline / debate / digest）
 - frontmatter：
 
 ```yaml

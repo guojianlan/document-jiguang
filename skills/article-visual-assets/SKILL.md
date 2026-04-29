@@ -58,7 +58,7 @@ description: Use this skill when the user already has an article, publish brief,
 默认优先产出：
 
 - 可编辑 SVG 源文件
-- 命名进入 `07_Attachments`
+- 命名进入 `raw/attachments`
 
 如果是结构图、认知图、全文总览图这类文本密度高的资产，优先改用：
 
@@ -75,13 +75,13 @@ description: Use this skill when the user already has an article, publish brief,
 每次生成或修改 SVG 后，必须执行：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.preview.png"
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachments/xxx.preview.png"
 ```
 
 如果已经进入发布阶段，横版图默认可直接按统一宽度导出，例如：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.png" --width 1440
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachments/xxx.png" --width 1440
 ```
 
 重点检查：

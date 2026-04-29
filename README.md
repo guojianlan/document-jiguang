@@ -15,14 +15,14 @@
 
 ## 目录结构
 
-- `00_Inbox`：临时收集区，先放素材和待处理事项
-- `01_Sources`：外部来源原始记录，按来源类型分类
-- `02_Notes`：处理后的笔记，分为来源笔记和主题笔记
-- `03_Outputs`：对外输出内容，包括草稿和已发布文档
+- `raw/inbox`：临时收集区，先放素材和待处理事项
+- `raw/sources`：外部来源原始记录，按来源类型分类
+- `wiki`：处理后的笔记，分为来源笔记和主题笔记
+- `outputs`：对外输出内容，包括草稿和已发布文档
 - `04_Templates`：标准模板
 - `05_Workflows`：固定工作流和 SOP
 - `06_Maps`：总览页和主题导航页
-- `07_Attachments`：图片、截图、导出文件等附件
+- `raw/attachments`：图片、截图、导出文件等附件
 - `08_Skills`：skill 候选池和孵化区
 - `99_System`：命名规则、标签规则、Obsidian 使用建议
 - `skills`：仓库内 skill 草稿工作区
@@ -30,10 +30,10 @@
 ## 推荐使用方式
 
 ### 1. 收内容
-把链接、PDF、视频链接、文章摘录先放到 `00_Inbox`，或者直接让我帮你处理。
+把链接、PDF、视频链接、文章摘录先放到 `raw/inbox`，或者直接让我帮你处理。
 
 ### 2. 建来源笔记
-按内容类型选用 `04_Templates` 里的模板，沉淀到 `01_Sources` 或 `02_Notes/SourceNotes`。
+按内容类型选用 `04_Templates` 里的模板，沉淀到 `raw/sources` 或 `wiki/sources`。
 
 ### 3. 做结构化拆解
 至少提取以下几类信息：
@@ -46,10 +46,10 @@
 - 可复用表达
 
 ### 4. 聚合成主题
-当多个来源都指向同一个主题时，在 `02_Notes/TopicNotes` 下建立主题笔记，并把来源链接过去。
+当多个来源都指向同一个主题时，在 `wiki/concepts` 下建立主题笔记，并把来源链接过去。
 
 ### 5. 生成输出内容
-当你要做分享、写文章、做群发内容时，从 `03_Outputs/Drafts` 开始写，引用主题笔记而不是重新整理原始材料。
+当你要做分享、写文章、做群发内容时，从 `outputs/drafts` 开始写，引用主题笔记而不是重新整理原始材料。
 
 ### 6. 做发布包装
 当内容已经准备对外发布时，继续补：
@@ -226,25 +226,25 @@ npm run loop:panel
 本地命令：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg"
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg"
 ```
 
 例如横版封面按 `1440` 宽导出：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.png" --width 1440
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachments/xxx.png" --width 1440
 ```
 
 如果要用 `Satori` 模板生成 SVG：
 
 ```bash
-npm run render:satori -- 04_Templates/Visuals/full-structure-map.satori.js 07_Attachments/xxx.data.json 07_Attachments/xxx.svg
+npm run render:satori -- 04_Templates/Visuals/full-structure-map.satori.js raw/attachments/xxx.data.json raw/attachments/xxx.svg
 ```
 
 如果要检查文本布局风险：
 
 ```bash
-npm run check:svg -- 07_Attachments/xxx.svg
+npm run check:svg -- raw/attachments/xxx.svg
 ```
 
 ## 飞书发布预览
@@ -254,7 +254,7 @@ npm run check:svg -- 07_Attachments/xxx.svg
 仓库现在提供了一个本地预览服务：
 
 ```bash
-node scripts/serve_markdown_publish_preview.js "03_Outputs/Drafts/xxx.md" --open
+node scripts/serve_markdown_publish_preview.js "outputs/drafts/xxx.md" --open
 ```
 
 如果希望端口固定从仓库配置读取，可以在仓库根目录 `.env` 中设置：
@@ -274,7 +274,7 @@ bash scripts/restart_markdown_publish_preview.sh
 ```bash
 npm run preview:md
 npm run preview:md:restart
-npm run preview:md:watch -- "03_Outputs/Drafts/xxx.md" --open
+npm run preview:md:watch -- "outputs/drafts/xxx.md" --open
 ```
 
 它会把 Markdown 渲染成带本地图片的 HTML 预览页，适合从浏览器复制到飞书测试。

@@ -21,19 +21,32 @@
 
 ## 2. 当前仓库结构
 
-- `00_Inbox`：待处理输入
-- `01_Sources`：原始来源归档
-- `02_Notes/SourceNotes`：来源笔记
-- `02_Notes/TopicNotes`：主题笔记
-- `03_Outputs`：对外输出
+按 [Karpathy LLM Wiki 三层架构](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md)：
+
+**raw 层**（用户拥有，LLM 只读）：
+- `raw/inbox`：待处理输入
+- `raw/sources`：原始来源归档（Articles / Links / Videos / PDFs / Documents）
+- `raw/attachments`：附件（图片、SVG、JSON 数据）
+
+**wiki 层**（LLM 拥有，用户只读浏览）：
+- `wiki/sources`：来源摘要（每个 raw source 一份）
+- `wiki/entities`：具体物 / 工具 / 产品 / 公司
+- `wiki/concepts`：抽象概念 / 模式 / 方法
+- `wiki/syntheses`：对比 / 综述 / 时间线（由 `/query` 归档）
+
+**outputs 层**（发布产物）：
+- `outputs/drafts`：发布版正文 + 发布建议 + 视觉资产
+- `outputs/published`：已对外发布
+
+**schema / meta 层**（不属 Karpathy 三层，schema 由 `AGENTS.md` + `CLAUDE.md` 承担）：
 - `04_Templates`：模板
 - `05_Workflows`：工作流
-- `06_Maps`：导航与总览
-- `07_Attachments`：附件
+- `06_Maps`：导航（含 `index.md`）
 - `08_Skills`：skill 候选池与孵化区
 - `99_System`：系统约定、命名规则、自动化说明
 - `scripts`：自动化脚本
 - `skills`：仓库内 skill 草稿工作区
+- `.claude/skills/`：Claude Code 入口 skill
 
 ## 3. 默认工作方式
 
@@ -49,7 +62,7 @@ wiki 层三种核心操作：
 当用户给出一个链接、本地文件、视频、PDF、Word、PPT、Excel、CSV 或主题要求时，默认按下面顺序处理：
 
 1. 判断来源类型
-2. 自动分类入库（`scripts/intake_source.py` 把 raw 文件归到 `01_Sources/<type>/`）
+2. 自动分类入库（`scripts/intake_source.py` 把 raw 文件归到 `raw/sources/<type>/`）
 3. 跑 `/ingest`：读全文 + 与用户对话 1-3 轮 + 写 source 摘要 + fan-out 更新 entities/concepts/syntheses + 更 index.md + 追 log.md
 4. fan-out 触达 < 3 页视为 ingest 失败：要么源没新东西（标 `status: thin`），要么 wiki 缺相应 entity/concept 页（按需补建）
 5. 区分事实、观点、判断（落在 source 摘要里，不要放到 entity / concept 页）
@@ -263,7 +276,7 @@ python3 scripts/intake_source.py "<url-or-path>"
 入口：
 
 ```bash
-node scripts/serve_markdown_publish_preview.js "03_Outputs/Drafts/xxx.md" --open
+node scripts/serve_markdown_publish_preview.js "outputs/drafts/xxx.md" --open
 ```
 
 重启入口：
@@ -275,7 +288,7 @@ bash scripts/restart_markdown_publish_preview.sh
 监听入口：
 
 ```bash
-npm run preview:md:watch -- "03_Outputs/Drafts/xxx.md" --open
+npm run preview:md:watch -- "outputs/drafts/xxx.md" --open
 ```
 
 飞书复制模式：

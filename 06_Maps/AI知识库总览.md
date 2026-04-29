@@ -22,20 +22,20 @@
 
 ## 来源库
 
-- 文章：`01_Sources/Articles`
-- 链接：`01_Sources/Links`
-- 视频：`01_Sources/Videos`
-- PDF：`01_Sources/PDFs`
+- 文章：`raw/sources/Articles`
+- 链接：`raw/sources/Links`
+- 视频：`raw/sources/Videos`
+- PDF：`raw/sources/PDFs`
 
 ## 笔记区
 
-- 来源笔记：`02_Notes/SourceNotes`
-- 主题笔记：`02_Notes/TopicNotes`
+- 来源笔记：`wiki/sources`
+- 主题笔记：`wiki/concepts`
 
 ## 输出区
 
-- 草稿：`03_Outputs/Drafts`
-- 已发布：`03_Outputs/Published`
+- 草稿：`outputs/drafts`
+- 已发布：`outputs/published`
 
 ## 建议优先追踪的主题
 

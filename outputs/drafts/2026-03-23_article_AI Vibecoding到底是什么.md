@@ -9,7 +9,7 @@ created_at: 2026-03-23
 
 # Vibe Coding 到底是什么：为什么它很火，但很多人一开始就用错了
 
-![Vibe Coding 封面图](../../07_Attachments/2026-03-23_ai-vibecoding-cover.svg)
+![Vibe Coding 封面图](../../raw/attachments/2026-03-23_ai-vibecoding-cover.svg)
 
 ## 标题备选
 
@@ -49,7 +49,7 @@ created_at: 2026-03-23
 - 为什么很多人第一周就会走偏
 - 对初学者来说，最该先补的到底是什么
 
-![Vibe Coding 认知图](../../07_Attachments/2026-03-23_ai-vibecoding-cognition-map.svg)
+![Vibe Coding 认知图](../../raw/attachments/2026-03-23_ai-vibecoding-cognition-map.svg)
 
 ## 一、为什么 Vibe Coding 这么容易让人上头
 

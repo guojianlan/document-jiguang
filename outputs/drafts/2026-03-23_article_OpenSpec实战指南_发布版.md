@@ -9,7 +9,7 @@ created_at: 2026-03-23
 
 # OpenSpec 实战指南：我怎么维护一个可跑、可验、可继续演进的电商案例
 
-![OpenSpec 实战指南封面图](../../07_Attachments/2026-03-23_openspec-practical-cover.png)
+![OpenSpec 实战指南封面图](../../raw/attachments/2026-03-23_openspec-practical-cover.png)
 
 这篇文章我不想再把它写成一份“概念介绍”。
 
@@ -91,7 +91,7 @@ Proposal 里还给了很关键的一层约束，也就是 SLO：
 
 ## 三、我会把 Design 当成防止 AI 乱长代码的护栏
 
-![OpenSpec 实战架构图](../../07_Attachments/2026-03-23_openspec-practical-architecture.png)
+![OpenSpec 实战架构图](../../raw/attachments/2026-03-23_openspec-practical-architecture.png)
 
 当 Proposal 把 Why 和 Scope 定下来之后，我接着看的就是 `design.md`。
 

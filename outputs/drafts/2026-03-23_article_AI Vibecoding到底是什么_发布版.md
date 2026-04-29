@@ -9,7 +9,7 @@ created_at: 2026-03-23
 
 # 大多数人都误解了 Vibe Coding：真正该学的不是 prompt，而是工作方式
 
-![Vibe Coding 封面图](../../07_Attachments/2026-03-23_ai-vibecoding-cover.png)
+![Vibe Coding 封面图](../../raw/attachments/2026-03-23_ai-vibecoding-cover.png)
 
 如果你刚开始用 AI 写代码、搭页面、做原型，你大概率已经体验过那种很强的“上头感”。
 
@@ -27,7 +27,7 @@ created_at: 2026-03-23
 - 它到底是什么，不是什么
 - 新手怎么才能从“随机试 AI”走向“稳定做出东西”
 
-![Vibe Coding 认知图](../../07_Attachments/2026-03-23_ai-vibecoding-cognition-map.png)
+![Vibe Coding 认知图](../../raw/attachments/2026-03-23_ai-vibecoding-cognition-map.png)
 
 ## 一、为什么 Vibe Coding 这么容易让人上头
 
@@ -143,7 +143,7 @@ AI 可以很快给你第一版，但它不会自动替你承担判断。
 
 **Vibe Coding 不是一种偷懒技巧，而是一种新的软件工作方式。**
 
-![Vibe Coding 全文结构图](../../07_Attachments/2026-03-23_ai-vibecoding-full-structure-map.png)
+![Vibe Coding 全文结构图](../../raw/attachments/2026-03-23_ai-vibecoding-full-structure-map.png)
 
 ## 三、新手最容易掉进的三个坑
 

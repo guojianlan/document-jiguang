@@ -11,7 +11,7 @@ revision_notes: 按 /critique 4 维度返工。"而是"句 7→0，极值判断 
 
 # OpenSpec 实战指南：我怎么维护一个可跑、可验、可继续演进的电商案例
 
-![OpenSpec 实战指南封面图](../../07_Attachments/2026-03-23_openspec-practical-cover.png)
+![OpenSpec 实战指南封面图](../../raw/attachments/2026-03-23_openspec-practical-cover.png)
 
 这篇文章我不想再写成一份"概念介绍"。
 
@@ -92,7 +92,7 @@ Proposal 里还有一层 SLO 约束。
 
 ## 三、Design 用来防止 AI 边写边发明架构
 
-![OpenSpec 实战架构图](../../07_Attachments/2026-03-23_openspec-practical-architecture.png)
+![OpenSpec 实战架构图](../../raw/attachments/2026-03-23_openspec-practical-architecture.png)
 
 Proposal 把 Why 和 Scope 定下来之后，我接着看 `design.md`。
 

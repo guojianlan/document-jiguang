@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "path:\"02_Notes\" OR file:\"06_Maps/index\"",
+  "search": "path:\"wiki\" OR file:\"06_Maps/index\"",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -8,28 +8,28 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:\"02_Notes/SourceNotes\"",
+      "query": "path:\"wiki/sources\"",
       "color": {
         "a": 1,
         "rgb": 4886754
       }
     },
     {
-      "query": "path:\"02_Notes/TopicNotes\" [\"type\":\"entity\"]",
+      "query": "path:\"wiki/concepts\" [\"type\":\"entity\"]",
       "color": {
         "a": 1,
         "rgb": 12390624
       }
     },
     {
-      "query": "path:\"02_Notes/TopicNotes\" [\"type\":\"concept\"]",
+      "query": "path:\"wiki/concepts\" [\"type\":\"concept\"]",
       "color": {
         "a": 1,
         "rgb": 8311585
       }
     },
     {
-      "query": "path:\"02_Notes/TopicNotes\" [\"type\":\"topic_note\"]",
+      "query": "path:\"wiki/concepts\" [\"type\":\"topic_note\"]",
       "color": {
         "a": 1,
         "rgb": 9868950

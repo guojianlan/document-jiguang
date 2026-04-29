@@ -73,8 +73,8 @@
 ```bash
 node scripts/render_satori_visual.js \
   04_Templates/Visuals/full-structure-map.satori.js \
-  07_Attachments/xxx.data.json \
-  07_Attachments/xxx.svg
+  raw/attachments/xxx.data.json \
+  raw/attachments/xxx.svg
 ```
 
 也可以通过 npm 脚本入口：
@@ -82,8 +82,8 @@ node scripts/render_satori_visual.js \
 ```bash
 npm run render:satori -- \
   04_Templates/Visuals/full-structure-map.satori.js \
-  07_Attachments/xxx.data.json \
-  07_Attachments/xxx.svg
+  raw/attachments/xxx.data.json \
+  raw/attachments/xxx.svg
 ```
 
 ### 4. 先做布局检查，再导出 PNG
@@ -91,7 +91,7 @@ npm run render:satori -- \
 从现在开始，文本型 SVG 在导出 PNG 前，建议至少再跑一次布局检查：
 
 ```bash
-node scripts/check_svg_layout.js 07_Attachments/xxx.svg
+node scripts/check_svg_layout.js raw/attachments/xxx.svg
 ```
 
 如果这一步报出明显的 `overflow` 或 `overlap`，优先回到模板或数据层修，而不是继续手改 SVG 坐标。
@@ -101,13 +101,13 @@ node scripts/check_svg_layout.js 07_Attachments/xxx.svg
 继续复用仓库现有导出命令：
 
 ```bash
-bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachments/xxx.png" --width 1440
+bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachments/xxx.png" --width 1440
 ```
 
 ## 当前约定
 
 - 对于文本密度高的结构图，`数据文件 + Satori 模板` 是默认首选源信息
-- 生成出的 `.svg` 仍然保留在 `07_Attachments`
+- 生成出的 `.svg` 仍然保留在 `raw/attachments`
 - 实际发布优先引用 `.png`
 - 横版发布图默认宽度仍为 `1440`
 - 如果 `check_svg_layout.js` 已经能识别出明显越界或重叠，则不应把该 SVG 视为完成
@@ -116,7 +116,7 @@ bash scripts/validate_svg_asset.sh "07_Attachments/xxx.svg" --png "07_Attachment
 
 全文结构图：
 
-- 数据：[2026-03-23_ai-vibecoding-full-structure-map.data.json](/Users/apple/Desktop/project/document/07_Attachments/2026-03-23_ai-vibecoding-full-structure-map.data.json)
+- 数据：[2026-03-23_ai-vibecoding-full-structure-map.data.json](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-full-structure-map.data.json)
 - 模板：[full-structure-map.satori.js](/Users/apple/Desktop/project/document/04_Templates/Visuals/full-structure-map.satori.js)
 - 脚本：[render_satori_visual.js](/Users/apple/Desktop/project/document/scripts/render_satori_visual.js)
 

@@ -12,7 +12,7 @@ description: Use this skill when the user provides a link, local file, or an exi
 - 给你一篇文章链接，希望自动整理并摘要
 - 给你一个本地 PDF、Word、PPT、Excel、CSV、视频文件，希望自动入库并生成来源笔记
 - 给你一个视频链接，希望先归档，再提取结构、观点和可复用表达
-- 已经有 `02_Notes/SourceNotes` 下的来源笔记，希望补全摘要和关键信息
+- 已经有 `wiki/sources` 下的来源笔记，希望补全摘要和关键信息
 
 如果用户只是想讨论主题，不涉及具体来源入库或来源摘要，不要触发这个 skill。
 
@@ -26,7 +26,7 @@ description: Use this skill when the user provides a link, local file, or an exi
 ## 输出
 
 - 已分类入库的来源记录
-- `02_Notes/SourceNotes` 下更新后的结构化来源笔记
+- `wiki/sources` 下更新后的结构化来源笔记
 - 必要时给出建议归属的主题
 - 如果条件满足，继续衔接到主题笔记或发布包装流程
 

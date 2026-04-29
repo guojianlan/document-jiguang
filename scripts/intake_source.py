@@ -16,15 +16,15 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parent.parent
 
 SOURCE_DIRS = {
-    "article": ROOT / "01_Sources" / "Articles",
-    "link": ROOT / "01_Sources" / "Links",
-    "video": ROOT / "01_Sources" / "Videos",
-    "pdf": ROOT / "01_Sources" / "PDFs",
-    "document": ROOT / "01_Sources" / "Documents",
-    "unknown": ROOT / "00_Inbox",
+    "article": ROOT / "raw/sources" / "Articles",
+    "link": ROOT / "raw/sources" / "Links",
+    "video": ROOT / "raw/sources" / "Videos",
+    "pdf": ROOT / "raw/sources" / "PDFs",
+    "document": ROOT / "raw/sources" / "Documents",
+    "unknown": ROOT / "raw/inbox",
 }
 
-NOTE_DIR = ROOT / "02_Notes" / "SourceNotes"
+NOTE_DIR = ROOT / "wiki" / "sources"
 
 VIDEO_HOSTS = {
     "youtube.com",
@@ -84,7 +84,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--copy-file",
         action="store_true",
-        help="Copy local files into 01_Sources/<Type> instead of just referencing their original path",
+        help="Copy local files into raw/sources/<Type> instead of just referencing their original path",
     )
     return parser.parse_args()
 
