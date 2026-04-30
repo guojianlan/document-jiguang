@@ -11,7 +11,7 @@
 | sources | 13 | `wiki/sources/` |
 | entities | 6 | `wiki/entities/` |
 | concepts | 8 | `wiki/concepts/` |
-| syntheses | 1 | `wiki/syntheses/` |
+| syntheses | 2 | `wiki/syntheses/` |
 
 > Phase 2 已完成：物理目录按 type 分隔（entities / concepts / sources / syntheses）。schema 层 `04_Templates`、`05_Workflows`、`99_System`、`08_Skills` 留在原位。
 
@@ -78,12 +78,13 @@
 | 名称 | 类型 | 一句话 | publishability | 状态 |
 |---|---|---|---|---|
 | [[claude-code-vs-codex_comparison]] | comparison | Claude Code 与 Codex 两条 autonomy 路线对照、生态策略差异、组合使用建议 | 1 | active |
+| [[openspec-vibecoding_digest]] | digest | OpenSpec 在 Vibecoding 5 阶段成长路径里的咬合点 + 学术背书 | 1 | active |
 
 待落地的 syntheses 候选：
 
-- **OpenSpec vs Vibecoding（comparison）** — 两种 AI 编程范式的对比，已有 ≥ 6 个相关来源
 - **AGENTS.md / claude-code-autonomy / sandboxing 三件套（digest）** — Anthropic 在 2025-09 / 2025-10 的协作文档族系
 - **Codex 实战时间线（timeline）** — 从 OpenAI Codex GA 到 AAIF 成立的演进证据
+- **三大 coding agent 经验沉淀范式对照（comparison）** — Claude skill / Codex AGENTS.md / Copilot profile，三方正交
 
 > 这些是 `/lint` 应该主动建议的合成候选，落 `wiki/syntheses/`。
 

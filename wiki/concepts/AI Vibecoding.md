@@ -68,6 +68,7 @@ tags: [topic, topic/content, topic/workflow]
 
 - 让用户从“会问”升级为“会交付”
 - 解释任务拆解、上下文、测试、回退、评审这些基本环节
+- **2026-04 补充**：[[2026-03-23_link_vibe-coders-guide|Vibe Coder's Guide]] 把这一阶段独立成 5 步（Ideation → Plan/Blueprint → Tools → Builders → Polish），其中 Step 2 "Plan/Blueprint" 直接呼应 [[OpenSpec]] 的 spec-driven 思路——"Vibe Coding 不是少做规划，而是更依赖规划"。Phase 3 的工具落地优先选项：[[OpenSpec]] proposal/design/spec/tasks 工件
 
 ### 第四阶段：agent 化与项目级协作
 
@@ -81,6 +82,7 @@ tags: [topic, topic/content, topic/workflow]
 - 让用户意识到工作代码不等于可靠代码
 - 补足 QA、安全、权限边界和治理意识
 - **2026-04 补充**：[[Claude Code]] 的 sandboxing（filesystem + network isolation）是这一阶段的标志性能力——它的核心命题是"[[autonomy|自主性]]越高越需要明确边界"，不是"用了 sandbox 就慢"。详见 [[2026-03-23_article_anthropic_claude-code-sandboxing]]
+- **2026-04 补充（学术背书）**：两篇 arXiv 论文独立得出与本阶段一致的判断——[[2026-03-23_article_vibecontract|VibeContract]] 指出 "Vibecoding 缺的不是更强的生成，而是 QA 机制"；[[2026-03-23_article_goodvibe|GoodVibe]] 指出 "安全性可以被显式优化，而不是默认寄希望于模型自然写对"。两条独立证据指向同一结论：**vibecoding 进阶的瓶颈不在 prompt 能力，在工件能力**——这给 [[OpenSpec]] 这类 spec-driven 工具提供了学术背书。详见 [[openspec-vibecoding_digest]]
 
 ## 相关来源
 

@@ -30,6 +30,19 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - 索引：`06_Maps/index.md` 初始化
 - Phase 1 完成，等待第一次实战 ingest
 
+## [2026-04-30 09:30] ingest | vibecoding 三件套 (Phase 3 #3-5)
+- summary written: 3 个 source 摘要已存（vibecontract / goodvibe / vibe-coders-guide），仅做 fan-out
+- new entities: —
+- new concepts: —
+- entities updated: OpenSpec（加 § 与 Vibecoding 5 阶段的咬合，引入学术背书 + vibe-coders-guide 间接证据）
+- concepts updated: AI Vibecoding（Phase 3 加 vibe-coders-guide 5 步对照；Phase 5 加 vibecontract / goodvibe 学术背书）
+- new pages: 1 synthesis = 1 (openspec-vibecoding_digest.md, publishability: 1)
+- synthesis seeded: ✅ **OpenSpec × Vibecoding digest**——本批 ingest 的核心产出
+- pages touched: 6（3 source frontmatter 之前已升级 + 1 entity update + 1 concept update + 1 new synthesis + index）
+- 关键 insight：三个独立来源（vibe-coders-guide 教学方法、vibecontract 学术 QA、goodvibe 学术安全）**独立得出与 OpenSpec 一致的判断** —— "vibecoding 进阶瓶颈不在 prompt，在工件"。这是 wiki 第二个 publishability=1 synthesis
+- 决策：3 个 source 内容浅但**互相佐证强**——单看每个都不够 fan-out，组合起来直接触发 synthesis。这是"批量 ingest 跑 synthesis"的范式，与 ingest #1 单源跑 synthesis 形成对照
+- friction：vibecontract / goodvibe 内容浅（论文摘要级）但仓库未标 thin——本次也未补 thin 标签，因为它们在组合证据里有价值（"thin in isolation, dense in combination"）；约定层未来需要补充对这种情况的处理
+
 ## [2026-04-29 16:30] ingest | github_about-custom-agents (Phase 3 #2)
 - summary written: wiki/sources/2026-03-23_article_github_about-custom-agents.md（仅 frontmatter 升级到新 schema，正文已存）
 - new entities: GitHub Copilot

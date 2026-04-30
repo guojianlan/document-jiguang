@@ -41,11 +41,24 @@ tags: [topic, topic/workflow, topic/ai-coding]
 - 它最适合中等复杂度以上、需要跨会话推进、需要验证和长期维护的任务
 - 它不应该被神化。对特别小的一次性任务，完整工作流可能会显得过重
 
+## 与 Vibecoding 5 阶段的咬合
+
+OpenSpec 不该作为 Vibecoding 入门工具——但它是 [[AI Vibecoding]] **第 3 阶段（工作流升级）和第 5 阶段（质量与安全）的具体落地**。三条独立证据：
+
+- [[2026-03-23_link_vibe-coders-guide]] Step 2 "Plan/Blueprint" 直接说 "Vibe Coding 不是少做规划，而是更依赖规划"——动作词 `Markdown Specs` / `User Stories` 就是 OpenSpec 的 proposal + spec 工件
+- [[2026-03-23_article_vibecontract]] 学术论文：Vibecoding 缺的是 QA 机制——OpenSpec 的 scenarios + 验证段就是 QA 工件
+- [[2026-03-23_article_goodvibe]] 学术论文：安全性需显式优化——OpenSpec 的 design 段是天然约束工件位置
+
+完整对照详见 [[openspec-vibecoding_digest]]。
+
 ## 相关来源
 
 - [[2026-03-23_link_openspec-practical-guide]]
 - [[2026-03-23_link_openspec-e4-bd-bf-e7-94-a8-e6-89-8b-e5-86-8c]]
 - [[2026-03-23_link_openspec-ai-workflow-analysis]]
+- [[2026-03-23_link_vibe-coders-guide]]（间接证据：5 步方法论 Step 2 等价于 OpenSpec 思路）
+- [[2026-03-23_article_vibecontract]]（学术背书：QA 缺口）
+- [[2026-03-23_article_goodvibe]]（学术背书：安全约束）
 
 ## 与其他 entity 的对照
 
@@ -64,3 +77,4 @@ tags: [topic, topic/workflow, topic/ai-coding]
 - 更多来自官方文档的命令细节与 profile 选择差异
 - 一个真正贴近中文团队的 brownfield 接入案例
 - 和其他 spec/workflow 框架的横向比较
+- # TODO 用 OpenSpec 跑一个本仓库真实任务，验证 [[openspec-vibecoding_digest]] 的 5 阶段对照
