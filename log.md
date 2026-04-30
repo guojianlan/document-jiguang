@@ -30,6 +30,17 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - 索引：`06_Maps/index.md` 初始化
 - Phase 1 完成，等待第一次实战 ingest
 
+## [2026-04-30 11:00] publish | claude-code-codex 两个都装 (Phase 4 #1)
+- 来源 synthesis: wiki/syntheses/claude-code-vs-codex_comparison.md (publishability: 1)
+- 产出文件:
+  - outputs/drafts/2026-04-30_article_claude-code-codex_两个都装_发布版.md (正文)
+  - outputs/drafts/2026-04-30_article_claude-code-codex_两个都装_发布建议.md (发布建议)
+- critique 一轮: 信息密度 4 / 独特视角 4 / 可操作性 5 / 阅读节奏 2（冒号×7 严重超额、P29 全面综述开场）
+- critique 二轮（返工后）: 4 / 4 / 5 / 4，硬规则全清，总分 17/20 通过
+- 返工要点: 7 个冒号全部改写为破折号或完整句子；P29 "下面这篇讲三件事" 删除；7 处"最..." 极值判断收敛到 1 处
+- 视觉资产: TODO（封面图 + 对照表 SVG 图卡，建议走 Satori 模板）
+- 这是 Phase 4 第一次 wiki → publish 链路验证：synthesis (publishability=1) → /publish-article → /critique → 返工 → 通过
+
 ## [2026-04-30 09:30] ingest | vibecoding 三件套 (Phase 3 #3-5)
 - summary written: 3 个 source 摘要已存（vibecontract / goodvibe / vibe-coders-guide），仅做 fan-out
 - new entities: —
