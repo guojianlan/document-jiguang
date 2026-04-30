@@ -1,0 +1,78 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="84" y1="64" x2="1512" y2="836" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0EAF8"/>
+      <stop offset="0.5" stop-color="#F4F1E9"/>
+      <stop offset="1" stop-color="#E1F0E6"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="112" y1="112" x2="1488" y2="788" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF8FF"/>
+      <stop offset="1" stop-color="#F5FBF7"/>
+    </linearGradient>
+    <filter id="shadow" x="52" y="42" width="1496" height="816" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="20"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.152941 0 0 0 0 0.133333 0 0 0 0 0.0980392 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 22px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; letter-spacing: 0.14em; }
+      .title { font: 800 64px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .subtitle { font: 500 26px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .cardEyebrow { font: 700 18px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; letter-spacing: 0.1em; }
+      .cardTitle { font: 700 30px "SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .cardBody { font: 500 19px "SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+      .plus { font: 800 48px "SF Pro Display",sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#EFE8DC"/>
+  <rect x="72" y="60" width="1456" height="780" rx="34" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="112" y="108" width="1376" height="684" rx="28" fill="url(#hero)" stroke="#E5DCEC" stroke-width="2"/>
+
+  <circle cx="1340" cy="180" r="80" fill="#EBE3F5"/>
+  <circle cx="1410" cy="248" r="38" fill="#D6C4EC"/>
+  <circle cx="240" cy="720" r="52" fill="#D2EAD9"/>
+  <circle cx="298" cy="668" r="22" fill="#B8DBC2"/>
+
+  <rect x="144" y="146" width="380" height="38" rx="19" fill="#1E2A24"/>
+  <text x="168" y="171" class="eyebrow" fill="#F8F4EB">CODING AGENT · 路线对比</text>
+
+  <text x="144" y="262" class="title" fill="#1F2A24">买一个就够</text>
+  <text x="144" y="356" class="title" fill="#1F2A24">但你最好两个都装</text>
+
+  <text x="148" y="408" class="subtitle" fill="#56635B">Claude Code 和 Codex 解决的不是同一层问题</text>
+  <text x="148" y="446" class="subtitle" fill="#56635B">所以工程实践里，它们经常叠加使用</text>
+
+  <rect x="144" y="510" width="408" height="240" rx="26" fill="#F5EFFC" stroke="#C9B7DC" stroke-width="2"/>
+  <rect x="596" y="510" width="408" height="240" rx="26" fill="#EEF7F1" stroke="#B8D8C5" stroke-width="2"/>
+  <rect x="1048" y="510" width="396" height="240" rx="26" fill="#F7F4EC" stroke="#DDD4C6" stroke-width="2"/>
+
+  <rect x="172" y="538" width="148" height="28" rx="14" fill="#7C4FB5"/>
+  <text x="190" y="557" class="cardEyebrow" fill="#F8F4FF">CLAUDE CODE</text>
+  <text x="172" y="606" class="cardTitle" fill="#5A3690">边界 + 回退</text>
+  <text x="172" y="650" class="cardBody" fill="#4F4263">checkpoint + sandbox</text>
+  <text x="172" y="678" class="cardBody" fill="#4F4263">hooks 自动校验</text>
+  <text x="172" y="724" class="cardBody" fill="#7C5FA0">代价可回退，敢做大动作</text>
+
+  <rect x="624" y="538" width="120" height="28" rx="14" fill="#2E7A5C"/>
+  <text x="642" y="557" class="cardEyebrow" fill="#F7FFFA">CODEX</text>
+  <text x="624" y="606" class="cardTitle" fill="#235E49">约定 + 隔离</text>
+  <text x="624" y="650" class="cardBody" fill="#355447">AGENTS.md 约定</text>
+  <text x="624" y="678" class="cardBody" fill="#355447">cloud sandbox 跑长任务</text>
+  <text x="624" y="724" class="cardBody" fill="#3F7A60">跨工具行为一致</text>
+
+  <rect x="1076" y="538" width="148" height="28" rx="14" fill="#342B21"/>
+  <text x="1094" y="557" class="cardEyebrow" fill="#FBF7EF">本仓库</text>
+  <text x="1076" y="606" class="cardTitle" fill="#342B21">两者叠加</text>
+  <text x="1076" y="650" class="cardBody" fill="#5A4D38">AGENTS.md 写约定</text>
+  <text x="1076" y="678" class="cardBody" fill="#5A4D38">.claude/settings.json 挂 hook</text>
+  <text x="1076" y="724" class="cardBody" fill="#7E6B4A">两边强项都拿</text>
+
+  <text x="566" y="640" class="plus" fill="#7C4FB5">+</text>
+  <text x="1018" y="640" class="plus" fill="#2E7A5C">=</text>
+</svg>

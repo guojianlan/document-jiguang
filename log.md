@@ -30,6 +30,15 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - 索引：`06_Maps/index.md` 初始化
 - Phase 1 完成，等待第一次实战 ingest
 
+## [2026-04-30 14:00] query | 如何了解 agents、如何做 agents
+- pages searched: 14（index + 4 entities + 5 concepts + 4 sources）
+- pages cited: [[AI Agent]]、[[AI Vibecoding]]、[[AI 工作流]]、[[autonomy]]、[[Claude Code]]、[[Codex]]、[[GitHub Copilot]]、[[OpenSpec]]、[[claude-code-vs-codex_comparison]]、[[openspec-vibecoding_digest]] + 10 sources
+- answer filed: ✅ wiki/syntheses/agent-learning-path_digest.md（publishability: 1）
+- gaps reported: 5（非 coding 领域 agent / 多 agent 框架 / 翻车事故 / Cursor/Windsurf / 中文社区）
+- pages touched: 3（new synthesis + index + log）
+- 关键 insight：这是 wiki 第一个"学习路径型 digest"——把 [[AI Vibecoding]] 5 阶段 + [[AI Agent]] 三主流理解 + [[AI 工作流]] 四沉淀范式 + [[autonomy]] 程度变量整合到同一答案。验证了"高覆盖选题直接命中 synthesis"的范式
+- 与已有 syntheses 的位置：[[claude-code-vs-codex_comparison]]（工具买哪个）、[[openspec-vibecoding_digest]]（什么时候升级 spec-driven）、本 digest（完整学习路径，入门篇）—— 三者构成 publishability=1 系列
+
 ## [2026-04-30 11:00] publish | claude-code-codex 两个都装 (Phase 4 #1)
 - 来源 synthesis: wiki/syntheses/claude-code-vs-codex_comparison.md (publishability: 1)
 - 产出文件:

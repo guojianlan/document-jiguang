@@ -11,7 +11,7 @@
 | sources | 13 | `wiki/sources/` |
 | entities | 6 | `wiki/entities/` |
 | concepts | 8 | `wiki/concepts/` |
-| syntheses | 2 | `wiki/syntheses/` |
+| syntheses | 3 | `wiki/syntheses/` |
 
 > Phase 2 已完成：物理目录按 type 分隔（entities / concepts / sources / syntheses）。schema 层 `04_Templates`、`05_Workflows`、`99_System`、`08_Skills` 留在原位。
 
@@ -79,6 +79,7 @@
 |---|---|---|---|---|
 | [[claude-code-vs-codex_comparison]] | comparison | Claude Code 与 Codex 两条 autonomy 路线对照、生态策略差异、组合使用建议 | 1 | active |
 | [[openspec-vibecoding_digest]] | digest | OpenSpec 在 Vibecoding 5 阶段成长路径里的咬合点 + 学术背书 | 1 | active |
+| [[agent-learning-path_digest]] | digest | 如何了解 agents、如何做 agents——四件事理解 + 5 阶段实践路径 | 1 | active |
 
 待落地的 syntheses 候选：
 
