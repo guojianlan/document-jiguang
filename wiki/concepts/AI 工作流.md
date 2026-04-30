@@ -11,7 +11,7 @@ sources:
   - 2026-03-23_pdf_openai_how-openai-uses-codex
   - 2026-03-23_article_openai_get-started-with-codex
   - 2026-03-23_article_openai_agentic-ai-foundation-agents-md
-related_entities: [Claude Code, OpenSpec, Codex, Anthropic, OpenAI]
+related_entities: [Claude Code, OpenSpec, Codex, GitHub Copilot, Anthropic, OpenAI]
 related_concepts: [AI Agent, autonomy, AI Vibecoding, 模型能力变化]
 maturity: tracked
 status: active
@@ -50,6 +50,13 @@ status: active
 - agent 的工作 = 把 spec 翻译成代码 + 测试
 - **判断**：工作流的稳定性来自 spec 工件，不来自 agent 本身
 
+### "Profile / 角色化复用"路线
+
+代表：[[GitHub Copilot]] custom agents
+
+- 把 agent 角色（行为、工具、上下文）写成 profile，跨 GitHub.com / IDE / Copilot CLI 三表面复用（来源：[[2026-03-23_article_github_about-custom-agents]]）
+- **判断**：从"调一个万能 agent"走向"挑角色 agent"——工作流颗粒度从"项目级"细化到"任务/角色级"
+
 ### "AGENTS.md 约定"路线
 
 代表：[[Codex]]、本仓库的 AGENTS.md
@@ -61,7 +68,7 @@ status: active
 
 ## 我倾向的判断
 
-- **三条路线不冲突**：agent 自带能力 + spec 工件 + AGENTS.md 约定可以叠加
+- **四条路线不冲突**：agent 自带能力 + spec 工件 + AGENTS.md 约定 + custom agents profile 可以叠加
 - **个人工作流的最大杠杆是 hook**——一个 SVG 校验 hook 比 10 个 prompt 都改你的输出节奏
 - **团队工作流的最大杠杆是约定文件**——AGENTS.md / OpenSpec change 让多人协作时 agent 行为一致
 - **工作流不要追求完美再动手**——先用一两个 hook 起步，遇到问题再加规则

@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: article
-status: processed
-topic: AI Vibecoding
-tags: [source/article, status/processed, topic/content]
+status: ingested
+ingested_at: 2026-04-29
+entities: []
+concepts: [AI Vibecoding]
 source_title: VibeContract: The Missing Quality Assurance Piece in Vibe Coding
 source_url: https://arxiv.org/abs/2603.15691
 author: arXiv

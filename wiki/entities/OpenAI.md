@@ -2,7 +2,7 @@
 type: entity
 aliases: [OpenAI]
 first_seen: 2026-03-23
-ingested_at: 2026-04-29
+updated_at: 2026-04-29
 sources:
   - 2026-03-23_article_openai_get-started-with-codex
   - 2026-03-23_pdf_openai_how-openai-uses-codex
@@ -50,7 +50,7 @@ AI 公司，GPT 系列模型与 [[Codex]] 的出品方。在仓库当前覆盖�
 
 ## 待补 / 待证伪
 
-- # TODO OpenAI 与 Microsoft 在 Codex / GitHub Copilot 上的边界
+- # TODO OpenAI 与 Microsoft 在 [[Codex]] / [[GitHub Copilot]] 上的边界（Copilot 已建页，但商业边界仍待补一手资料）
 - # TODO 模型代际（GPT-4 → GPT-5 等）对 Codex 工具能力的实际影响
 - # TODO 价格 / API tier / batch 等成本工具的变化
 

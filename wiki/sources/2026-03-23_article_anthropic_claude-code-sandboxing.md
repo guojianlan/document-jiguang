@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: article
-status: processed
-topic: AI Vibecoding
-tags: [source/article, status/processed, topic/workflow]
+status: ingested
+ingested_at: 2026-04-29
+entities: [Claude Code, Anthropic]
+concepts: [autonomy, AI Vibecoding, AI 工作流]
 source_title: Making Claude Code more secure and autonomous with sandboxing
 source_url: https://www.anthropic.com/engineering/claude-code-sandboxing
 author: Anthropic

@@ -2,6 +2,7 @@
 type: entity
 aliases: [Claude Code, claude-code, ClaudeCode]
 first_seen: 2026-03-23
+updated_at: 2026-04-29
 sources:
   - 2026-03-23_article_anthropic_claude-code-autonomy
   - 2026-03-23_article_anthropic_claude-code-sandboxing
@@ -46,7 +47,7 @@ Anthropic 出的 coding agent 产品，把 Claude 模型包装成可以在终端
 
 ## 待补 / 待证伪
 
-- # TODO 与 GitHub Copilot Coding Agent 的对照（[[2026-03-23_article_github_about-custom-agents]] 已采集）
+- # TODO 与 [[GitHub Copilot]] 在 skill / profile 抽象上的真实使用差异（已建页 + 已建对照表，但仓库内尚无双轨实战）
 - # TODO 实际 hook 误报率与上下文消耗 — 需要实战观测，不能靠官方 release notes 判断
 - # TODO subagent 在大型 monorepo 的并行收益 — 仓库内尚未跑过对照
 - # TODO 与 Cursor 的协作位（如果你同时用，是叠加还是替代）

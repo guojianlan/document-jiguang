@@ -14,7 +14,7 @@ sources:
   - 2026-03-23_article_anthropic_claude-code-sandboxing
   - 2026-03-23_article_vibecontract
   - 2026-03-23_article_goodvibe
-related_entities: [Claude Code, Codex, OpenSpec, Anthropic, OpenAI]
+related_entities: [Claude Code, Codex, GitHub Copilot, OpenSpec, Anthropic, OpenAI]
 related_concepts: [AI Agent, AI 工作流, autonomy, 模型能力变化]
 maturity: tracked
 status: active
@@ -74,6 +74,7 @@ tags: [topic, topic/content, topic/workflow]
 - 引入 AGENTS.md、skills、custom agents
 - 说明为什么经验要沉淀成可复用资产
 - **2026-04 补充**：[[Claude Code]] 引入的 [[Claude Code#核心机制|checkpoints / subagents / hooks / background tasks]] 是这一阶段的具体能力载体——hook 让"自动跑测试"变成默认行为，checkpoint 让"敢做大动作"变成可能。这些能力把 Vibecoding 从"会用提示词"推向"会管 agent"
+- **2026-04 补充**：[[GitHub Copilot]] 的 custom agents profile（来源：[[2026-03-23_article_github_about-custom-agents]]）是"角色化复用"的标志——把"经验 prompt"升级为"agent profile"，跨 GitHub.com / IDE / CLI 复用。这一阶段的三种沉淀范式已经成形：Claude Code skill（项目级）、AGENTS.md（标准级）、custom agents profile（角色级），可叠加使用
 
 ### 第五阶段：质量与安全
 

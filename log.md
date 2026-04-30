@@ -30,6 +30,36 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
 - 索引：`06_Maps/index.md` 初始化
 - Phase 1 完成，等待第一次实战 ingest
 
+## [2026-04-29 16:30] ingest | github_about-custom-agents (Phase 3 #2)
+- summary written: wiki/sources/2026-03-23_article_github_about-custom-agents.md（仅 frontmatter 升级到新 schema，正文已存）
+- new entities: GitHub Copilot
+- new concepts: —
+- entities updated: Claude Code（待补缩窄）、OpenAI（待补细化）
+- concepts updated: AI Agent（加 Profile 型 agent 路线）、AI 产品观察（加 GitHub/Microsoft 路线）、AI Vibecoding（Phase 4 三种沉淀范式成形）、AI 工作流（加 Profile/角色化路线 + 四条路线判断）
+- new pages: 1 entity = 1 (GitHub Copilot.md)
+- synthesis seeded: 否（claude-code-vs-codex_comparison 反向回链了一句"可升级为三方对比"——视为 future synthesis 候选）
+- pages touched: 9（1 source + 1 new entity + 4 concepts + 2 entities update + 1 synthesis backref + index）
+- 关键 insight：Copilot 是 wiki 内**第三条 coding agent 路线**——profile-based 多角色 agent。三方对比表已埋在 [[GitHub Copilot]] 页，下次 query "三大 coding agent 对比"会自然综合
+- friction：进入 ingest 时 source frontmatter 已被 lint [b] 步骤批量升到新 schema——验证了 lint 与 ingest 应协同（先 lint 升 schema，再 ingest 跑 fan-out）
+
+## [2026-04-29 16:00] lint | Phase 3 #1 后健康度 + 批量修复
+- issues found: 17（11 source schema 旧 + 4 entity frontmatter 不一致 + 1 待 ingest GitHub Copilot 源 + 1 仅 index 引用孤儿待修）
+- fixed: 15（11 source frontmatter 升级到新 schema with entities/concepts、4 entity frontmatter 日期字段统一为 updated_at）
+- deferred: 2（38 个 TODO 全部 ≤ 1 天未达 30 天阈值不动；AI 产品观察/内容生产 仅 index 引用待后续 ingest 自然修复）
+- contradictions: 0
+- stale: 0
+- orphans: 0
+- synthesis candidates: OpenSpec × AI Vibecoding（≥ 4 source 跨度 1 月，index 已挂候选）；三大 coding agent profile/skill/AGENTS.md 三方对比（待 Cursor 补一手）
+- 此次 lint 是首次"扫描 → 批量修复 → 直接连跑 ingest"的链路验证：source frontmatter 升级让 ingest #2 不需要重写 schema，只补 fan-out
+
+## [2026-04-29 15:10] query | Claude Code vs Codex 核心差异
+- pages searched: 5（index + 2 entities + 1 synthesis + 1 concept）
+- pages cited: [[claude-code-vs-codex_comparison]]、[[Claude Code]]、[[Codex]]、[[autonomy]]、[[AI 工作流]]
+- answer filed: not filed —— synthesis 已于 ingest #1 存在，避免重复归档
+- gaps reported: 3（缺第三方测评、Cursor/Windsurf 路线归属、价格/API tier 对比）
+- pages touched: 1（仅 log）
+- 此次 query 是首次"已建 synthesis 直接命中"的案例 —— 验证 ingest 时建好 synthesis 后续 query 几乎零成本
+
 ## [2026-04-29 14:30] ingest | get-started-with-codex (Phase 3 #1)
 - summary written: wiki/sources/2026-03-23_article_openai_get-started-with-codex.md（修订 frontmatter 为新 schema）
 - new entities: Codex, OpenAI

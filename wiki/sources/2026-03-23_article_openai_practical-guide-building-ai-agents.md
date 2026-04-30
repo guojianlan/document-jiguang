@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: article
-status: processed
-topic: AI Vibecoding
-tags: [source/article, status/processed, topic/agent]
+status: ingested
+ingested_at: 2026-04-29
+entities: [OpenAI]
+concepts: [AI Agent, AI 工作流]
 source_title: A practical guide to building agents
 source_url: https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/
 author: OpenAI

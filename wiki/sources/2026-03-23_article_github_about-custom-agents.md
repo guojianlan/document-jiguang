@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: article
-status: processed
-topic: AI Vibecoding
-tags: [source/article, status/processed, topic/agent]
+status: ingested
+ingested_at: 2026-04-29
+entities: [GitHub Copilot]
+concepts: [AI Agent, AI Vibecoding, AI 工作流]
 source_title: About custom agents
 source_url: https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-custom-agents
 author: GitHub Docs

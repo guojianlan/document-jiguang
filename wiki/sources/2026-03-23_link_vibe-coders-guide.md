@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: link
-status: processed
-topic: AI Vibecoding
-tags: [source/link, status/processed, topic/content]
+status: ingested
+ingested_at: 2026-04-29
+entities: []
+concepts: [AI Vibecoding, AI Agent, AI 工作流]
 source_title: Vibe Coder's Guide
 source_url: https://vibecoders.guide/
 platform: website

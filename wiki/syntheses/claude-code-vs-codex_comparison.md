@@ -72,7 +72,7 @@ triggered_by: ingest #1 in Phase 3 (Codex)
 
 ## 待补 / 待证伪
 
-- # TODO Cursor、Windsurf 这种 IDE 类的路线归属——是 Claude 风格 hook 还是 Codex 风格约定文件？（[[2026-03-23_article_github_about-custom-agents]] 已采集，但 Cursor / Windsurf 缺一手来源）
+- # TODO Cursor、Windsurf 这种 IDE 类的路线归属——是 Claude 风格 hook 还是 Codex 风格约定文件还是 [[GitHub Copilot]] 风格 profile？（Copilot 已建页发现存在第三条 "profile 路线"，本对照表后续可升级为三方对比；Cursor / Windsurf 仍缺一手来源）
 - # TODO 两条路线在大型 monorepo 的真实表现差异
 - # TODO 价格 / API tier 对比
 - # TODO 中文开发者社区采用率分布

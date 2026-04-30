@@ -7,7 +7,8 @@ sources:
   - 2026-03-23_article_anthropic_claude-code-autonomy
   - 2026-03-23_article_anthropic_claude-code-sandboxing
   - 2026-03-23_article_openai_get-started-with-codex
-related_entities: [Claude Code, Anthropic, Codex, OpenAI]
+  - 2026-03-23_article_github_about-custom-agents
+related_entities: [Claude Code, Anthropic, Codex, OpenAI, GitHub Copilot]
 related_concepts: [模型能力变化, autonomy, AI Agent]
 maturity: tracked
 status: active
@@ -41,6 +42,13 @@ tags: [topic, topic/product]
 - 生态策略：拉同盟做开放标准（[Linux Foundation 旗下 AAIF](https://openai.com/index/agentic-ai-foundation/)）让多工具共享 AGENTS.md
 - 来源：[[2026-03-23_article_openai_get-started-with-codex]]、[[2026-03-23_pdf_openai_how-openai-uses-codex]]、[[2026-03-23_article_openai_agentic-ai-foundation-agents-md]]
 
+### GitHub / Microsoft 路线（[[GitHub Copilot]]）
+
+- "Custom agents + 多表面复用"——profile 编码 agent 角色，跨 GitHub.com / IDE / CLI 三个表面共享
+- 产品哲学：把进阶 agent 使用从"挑工具"推到"挑角色"
+- 来源：[[2026-03-23_article_github_about-custom-agents]]
+- 路线判断：颗粒度落在"角色"——和 Anthropic 的"项目级 skill"、OpenAI 的"项目级 AGENTS.md"形成三重正交
+
 ## 我倾向的判断
 
 - **看产品别只看 release notes**——很多"新能力"是产品壳升级而非模型升级（详见 [[模型能力变化]]）
@@ -54,7 +62,7 @@ tags: [topic, topic/product]
 
 ## 待补
 
-- # TODO Cursor、Windsurf、GitHub Copilot 等 IDE 类产品的路线观察（[[2026-03-23_article_github_about-custom-agents]] 已采集，但 Cursor / Windsurf 缺一手来源）
+- # TODO Cursor、Windsurf 等 IDE 类产品的路线观察（[[GitHub Copilot]] 已建页，Cursor / Windsurf 仍缺一手来源）
 - # TODO 中文 AI 产品（豆包、Kimi、文心、通义）的对照
 - # TODO B 端 AI 产品（API、Bedrock、Vertex）的视角
 
@@ -62,6 +70,7 @@ tags: [topic, topic/product]
 
 - [[Claude Code]]
 - [[Codex]]
+- [[GitHub Copilot]]
 - [[Anthropic]]
 - [[OpenAI]]
 - [[模型能力变化]]

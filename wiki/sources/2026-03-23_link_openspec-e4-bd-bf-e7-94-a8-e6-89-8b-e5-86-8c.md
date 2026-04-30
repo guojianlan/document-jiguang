@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: link
-status: processed
-topic: OpenSpec
-tags: [source/link, topic/OpenSpec, status/processed]
+status: ingested
+ingested_at: 2026-04-29
+entities: [OpenSpec]
+concepts: [AI 工作流]
 source_title: OpenSpec使用手册
 processed_at: 2026-03-23
 source_url: https://github.com/ForceInjection/OpenSpec-practise/blob/main/docs/OpenSpec%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.md

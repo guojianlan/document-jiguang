@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: pdf
-status: processed
-topic: AI Vibecoding
-tags: [source/pdf, status/processed, topic/workflow]
+status: ingested
+ingested_at: 2026-04-29
+entities: [OpenAI, Codex]
+concepts: [组织如何使用 AI, AI 工作流, AI Vibecoding]
 source_title: How OpenAI uses Codex
 source_url: https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf
 author: OpenAI

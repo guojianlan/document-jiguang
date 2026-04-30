@@ -1,9 +1,10 @@
 ---
-type: source_note
+type: source
 source_type: article
-status: processed
-topic: AI Vibecoding
-tags: [source/article, status/processed, topic/agent]
+status: ingested
+ingested_at: 2026-04-29
+entities: [OpenAI, Codex, Anthropic]
+concepts: [AI Agent, AI 工作流, 模型能力变化]
 source_title: OpenAI co-founds the Agentic AI Foundation under the Linux Foundation
 source_url: https://openai.com/index/agentic-ai-foundation//
 author: OpenAI

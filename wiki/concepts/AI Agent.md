@@ -10,7 +10,7 @@ sources:
   - 2026-03-23_article_openai_agentic-ai-foundation-agents-md
   - 2026-03-23_article_openai_practical-guide-building-ai-agents
   - 2026-03-23_pdf_openai_how-openai-uses-codex
-related_entities: [Claude Code, Codex, Anthropic, OpenAI]
+related_entities: [Claude Code, Codex, GitHub Copilot, Anthropic, OpenAI]
 related_concepts: [autonomy, AI 工作流, 模型能力变化, AI Vibecoding]
 maturity: tracked
 status: active
@@ -45,11 +45,20 @@ status: active
 
 ### 框架型 agent（"build your own agent"路线）
 
-代表：OpenAI Agents SDK、GitHub 自定义 agent
+代表：OpenAI Agents SDK、AGENTS.md 标准
 
 - 提供"如何搭建 agent"的 SDK / 协议
 - 重心在 agent 定义、上下文管理、工具协议
-- 来源：[[2026-03-23_article_openai_practical-guide-building-ai-agents]]、[[2026-03-23_article_github_about-custom-agents]]、[[2026-03-23_article_openai_agentic-ai-foundation-agents-md]]
+- 来源：[[2026-03-23_article_openai_practical-guide-building-ai-agents]]、[[2026-03-23_article_openai_agentic-ai-foundation-agents-md]]
+
+### Profile 型 agent（"角色化复用"路线）
+
+代表：[[GitHub Copilot]] custom agents
+
+- 把"agent 扮演什么角色"用 profile（Markdown + YAML frontmatter）显式编码（来源：[[2026-03-23_article_github_about-custom-agents]]）
+- profile 含 name、description、prompt、tools、MCP server
+- 同一 profile 可在 GitHub.com / IDE / Copilot CLI 三个表面复用
+- **判断**：profile 是把"prompt 经验"沉淀为"角色资产"——和 [[Claude Code]] 的 skill 异曲同工，但抽象在"角色"层而非"项目"层
 
 ## 我倾向的判断
 

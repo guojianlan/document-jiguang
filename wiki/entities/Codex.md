@@ -2,7 +2,7 @@
 type: entity
 aliases: [Codex, codex, OpenAI Codex]
 first_seen: 2026-03-23
-ingested_at: 2026-04-29
+updated_at: 2026-04-29
 sources:
   - 2026-03-23_article_openai_get-started-with-codex
   - 2026-03-23_pdf_openai_how-openai-uses-codex

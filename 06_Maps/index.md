@@ -9,7 +9,7 @@
 | 类别 | 数量 | 路径 |
 |---|---|---|
 | sources | 13 | `wiki/sources/` |
-| entities | 5 | `wiki/entities/` |
+| entities | 6 | `wiki/entities/` |
 | concepts | 8 | `wiki/concepts/` |
 | syntheses | 1 | `wiki/syntheses/` |
 
@@ -26,8 +26,9 @@
 | [[Anthropic]] | 公司/出品方 | Claude / Claude Code 出品方，autonomy + safety 绑成一件事 | claude-code-autonomy、claude-code-sandboxing | active |
 | [[Codex]] | 工具/产品 | OpenAI 的 coding agent，路线 = AGENTS.md + cloud sandbox | get-started-with-codex、how-openai-uses-codex、agentic-ai-foundation | active |
 | [[OpenAI]] | 公司/出品方 | Codex 出品方 + AGENTS.md 标准发起方，主导 Linux Foundation 旗下 AAIF | get-started-with-codex、agentic-ai-foundation、how-openai-uses-codex | active |
+| [[GitHub Copilot]] | 工具/产品 | GitHub/Microsoft 的 coding agent，路线 = custom agents profile + 跨表面复用 | github_about-custom-agents | active |
 
-> 待补 entities：Cursor、GitHub Copilot、Satori、Obsidian。这些已在 sources 里反复出现但还没建独立页。
+> 待补 entities：Cursor、Satori、Obsidian。这些已在 sources 里反复出现但还没建独立页。
 
 ---
 
@@ -58,7 +59,7 @@
 |---|---|---|---|
 | `2026-03-23_article_anthropic_claude-code-autonomy.md` | article | Anthropic | Claude Code、AI Agent、autonomy |
 | `2026-03-23_article_anthropic_claude-code-sandboxing.md` | article | Anthropic | Claude Code、sandboxing |
-| `2026-03-23_article_github_about-custom-agents.md` | article | GitHub Docs | GitHub Copilot、AI Agent |
+| `2026-03-23_article_github_about-custom-agents.md` | article | GitHub Docs | GitHub Copilot、AI Agent、AI 工作流 |
 | `2026-03-23_article_goodvibe.md` | article | arXiv | AI Vibecoding |
 | `2026-03-23_article_openai_agentic-ai-foundation-agents-md.md` | article | OpenAI | AGENTS.md、AI Agent |
 | `2026-03-23_article_openai_get-started-with-codex.md` | article | OpenAI | Codex |

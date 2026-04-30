@@ -2,6 +2,7 @@
 type: entity
 aliases: [Anthropic]
 first_seen: 2026-03-23
+updated_at: 2026-04-29
 sources:
   - 2026-03-23_article_anthropic_claude-code-autonomy
   - 2026-03-23_article_anthropic_claude-code-sandboxing
