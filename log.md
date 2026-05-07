@@ -136,3 +136,315 @@ grep "^## \[2026-04" log.md                # 2026 年 4 月所有事件
   - friction 1: 仓库内 raw source 对网络文章默认仅以 URL 存在，raw/sources/Articles 不含原文 → /ingest SKILL.md 应明确"raw 可为 URL only"
   - friction 2: 旧 SourceNote frontmatter 的 `topic` 字段是单值，新 schema 用 `entities[]` + `concepts[]`——批量迁移时需做格式转换
   - friction 3: SKILL.md 要求 step 1 与用户对话 1-3 轮，但 test run 跳过——后续真实 ingest 应执行
+
+## [2026-05-06 后续] ingest | shugex_openspec-superpowers-from-zero-to-one
+- summary written: wiki/sources/2026-04-19_article_shugex_openspec-superpowers-from-zero-to-one.md
+- raw archived: raw/sources/articles/2026-04-19_wechat_shugex_openspec-superpowers-from-zero-to-one.md
+- fetched via: web-access skill (CDP) — WebFetch 被微信反爬挡掉，CDP 直连用户日常 Chrome 拿到完整 16729 字正文
+- new entities: Superpowers
+- entities updated: OpenSpec（增加 Superpowers 协作段 + `/opsx:apply` 归属澄清）
+- concepts updated: AI 工作流（新增"文件系统 handshake 模式"子分支）
+- new syntheses: openspec-superpowers_workflow_digest（publishability:1）— OpenSpec × Superpowers handshake + 两层 spec 区分 + 三级审查 pattern + 实战时序
+- index.md 更新: sources 13→14、entities 6→7、syntheses 3→4
+- pages touched: 7（source、Superpowers、OpenSpec、AI 工作流、新 synthesis、index.md、log.md）
+- side effect: 新装 web-access skill 到 .claude/skills/，回写 AGENTS.md 第 7 节"浏览器/联网层"
+- judgments captured（在 source "我的判断" 段）:
+  - 最有沉淀价值的不是工作流细节而是"两个 spec 的区分"
+  - 文件系统 handshake 是 spec-driven 工具链能松耦合扩展的关键
+  - 三级审查子代理是 multi-agent 退化成质量门禁的具体范式
+  - 角色坍缩论留观察——更准的判断是"懂 spec 与只懂代码的人差距在拉大"
+
+## [2026-05-06 后续] ingest | 艾逗笔（idoubi）24 篇全档案
+- summary written: wiki/sources/2023-11-10 → 2026-04-05 共 24 个 source 文件
+- raw archived: raw/sources/articles/idoubi/ 共 24 个 .md（Jina markdown 抽取，零反爬）
+- fetched via: 直接 curl + Jina r.jina.ai/ 转 markdown（无需 CDP，因 idoubi.ai 是开放 Next.js 站）
+- new entities: MCP, 艾逗笔 (2 个)
+- entities updated: Claude Code（横评 + Vibe Coding 实战 + open-agent-sdk）
+- concepts updated: AI Vibecoding（新增 Phase 6 候选段：全自动 Vibe Coding）、AI Agent（新增三大件框架 + multi-agent 三种正交编排矩阵）
+- new syntheses: idoubi-vibecoding-journey_timeline（publishability:1）、mcp-foundations_digest（publishability:1）
+- index.md 更新: sources 14→38、entities 7→9、syntheses 4→6
+- pages touched: 33（24 source + MCP + 艾逗笔 + Claude Code + AI Vibecoding + AI Agent + 2 synthesis + index + log）
+- discovery: idoubi 用 GitHub Issues + idoubi.ai + 掘金三处镜像，idoubi.ai 是 24 篇精选权威源（无反爬）
+- judgments captured（散在各 source 的"我的判断"段，重点）:
+  - "支付率 0.03%"（ThinkAny）+ "出书 ROI 未回本"+ "出海 MRR 1k" 组成 wiki 的 AI 应用反神话证据集
+  - "建筑师 vs 泥瓦匠" 比喻可作为 [[AI Vibecoding]] Phase 6 标准说法
+  - MCP 类比 LSP 比类比 HTTP 更准（结构同构）
+  - multi-agent 至少 3 种正交编排（时间串行 / 空间分工 / 同步广播），不是单一概念
+  - idoubi 2026-04 流露"做这些产品的意义在哪里"——下一次范式可能是更窄更深
+- side effect: 验证了 web-access 之外的另一条抓取路径——纯静态 Next.js 站直接 curl + Jina，无需 CDP
+
+## [2026-05-06 后续] system | wiki taxonomy v2 切换（破坏性低部分）
+- 决策：放弃自动建 entity，切到 3 层模型（5 domain + 按需 topic + 自由 mentions）
+- 触发：用户指出"自动建 entity 等于 LLM 替用户定义分类法"
+- 已完成（破坏性低部分，方案 B）：
+  - 38 个 source frontmatter 全部迁移：删 entities/concepts，加 domains + mentions
+  - 删 wiki/entities/艾逗笔.md（自然人 entity 不再建立）
+  - 自动生成 06_Maps/mentions.md（182 unique mention，30 个 ≥3 次为 topic 晋升候选）
+  - 06_Maps/taxonomy.md v1 落地（5 domain + 候选清单 + 决策记录头部）
+  - 99_System/llm-wiki约定.md 加 v2 顶部告示
+  - .claude/skills/ingest/SKILL.md 改 frontmatter 模板 + fan-out 改"提议而非创建"
+  - 06_Maps/index.md 类别速览改为 v2 状态
+- 未完成（待用户分批批准）：
+  - wiki/entities/ + wiki/concepts/ → wiki/topics/ 合并迁移
+  - 30 个 topic 晋升候选逐个批准
+  - 旧 entity / concept 页里"我的判断"段重新切给 topic 页
+- 决策记录：
+  - memory/feedback_user_owned_taxonomy.md（原则）
+  - memory/project_wiki_taxonomy_model.md（当前模型 + 再评估钩子 + 退出方案）
+- 再评估时间点：2026-08-06 / 100 sources / 用户反馈"提议太烦/太少"
+
+## [2026-05-06 17:30] refactor | v2 topic 迁移（Direction B）
+
+- 9 个 topic 页建立 in `wiki/topics/`：claude-code, mcp, openspec, codex, ai-agent, vibe-coding-path, ai-workflow, autonomy, model-capability-shift
+- 7 页降级 `wiki/_drafts/`：Anthropic, OpenAI, GitHub Copilot, Superpowers, AI 产品观察, AI 内容生产, 组织如何使用 AI
+- AI 产品观察内容合并入 `topics/ai-agent.md`（厂商路线段 + 路线观察方法论段）
+- 删除空目录 `wiki/entities/` + `wiki/concepts/`
+- 创建 `wiki/_drafts/README.md`：草稿池规则 + 当前 7 页处置候选
+- 更新 `06_Maps/index.md`：Topics 表（9 行）替代 Entities + Concepts 双表；快速命令更新
+- 决策依据：用户审核 16 页处置清单后批准
+  - 公司不建 topic（Anthropic / OpenAI 路线作为子段进 ai-agent topic）
+  - AI 产品观察与 ai-agent 重复 → 合并
+  - 孤证页（Copilot / Superpowers / AI 内容生产 / 组织如何使用 AI）→ 草稿池等候
+- pages touched: 12（9 新建 + 1 _drafts/README.md + index.md + log.md）
+- 后续：mentions.md 不需更（domains/mentions 字段未变）；现有 wikilink 通过 alias 自动解析到 _drafts/ 与 topics/
+
+## [2026-05-06 18:10] cleanup | T1+T2+T3 目录清理
+
+**T1 安全清理**：
+- mv `userstory.md` → `99_System/`
+- mv `gstack_publish_ready_final_clean.md` → `outputs/published/`
+- mv `AI_Vibecoding_文章审核与再次生成指导建议.docx` → `raw/_archive/`
+- mv `04_Templates/Visuals/*.satori.js` → `scripts/satori-templates/`（3 个文件）
+- mv `references/ai_workflow_article_outline_template_v4.md` → `04_Templates/T-文章大纲-AI工作流类.md`
+- 删空目录：`references/`、`04_Templates/Visuals/`
+- 删旧导航：`06_Maps/AI知识库总览.md`（被 index.md 替代，引用过时路径）
+
+**T2 结构合并**：
+- mv `08_Skills/Candidates/Skill候选池.md` → `skills/_candidates/`
+- mv `08_Skills/Incubating/source-auto-summary.md` → `skills/_incubating/`
+- 删空目录 `08_Skills/`（含 .gitkeep）
+
+**T3 模板审计**：
+- 13 → 12，删 `T-主题笔记.md`（旧 v1，无引用，与 taxonomy.md 的 v2 topic 模板重复）
+
+**引用更新**（10 个文件）：
+- `08_Skills/...` 路径 → `skills/_candidates/...`：CLAUDE.md / AGENTS.md / README.md / 5 个 SKILL.md / 99_System/llm-wiki约定.md / 05_Workflows/Skill开发流程.md / .claude/skills/critique/SKILL.md / skills/_candidates/Skill候选池.md
+- `04_Templates/Visuals/...` → `scripts/satori-templates/...`：README.md / 99_System/Satori视觉资产说明.md
+- 删 README.md 里 `AI 知识库总览` 链接
+
+**净效果**：
+- 根目录 33 项 → 30 项（少 3 个孤儿文件）
+- 顶层目录数：删 `references/` + `08_Skills/`，多 `raw/_archive/`（净 -1）
+- skill 集中点从 3 处变 2 处（.claude/skills/ + skills/）
+- 04_Templates/ 13 → 12 个模板
+- pages touched: 14（10 引用更新 + 4 文件移动归位）
+
+## [2026-05-07 10:05] refactor | skill 跨工具统一架构（.agents/skills/ 标准化）
+
+**事实核查（先确认事实再动手）**：
+- Codex CLI 实际读 `.agents/skills/` 项目级（**不是** `~/.codex/skills/`，那是历史误传）
+- OpenCode 同时原生读 `.agents/skills/` + `.claude/skills/` + `.opencode/skills/`
+- Claude Code 仅读 `.claude/skills/`
+- Gemini CLI 无 skill 目录概念，只读 `GEMINI.md` 上下文文件
+- AGENTS.md（文件）是 Linux Foundation AAIF 正式标准；`.agents/skills/`（目录）是 OpenAI + OpenCode 推动的事实标准但未正式背书
+
+**执行**：
+- 创建 `.agents/skills/`，把所有 skill 真身搬过去（10 个）：
+  - 6 自治 skill 从 `.claude/skills/` 直接迁：critique, ingest, lint, query, verify, web-access
+  - 2 转发型薄壳合并入 kit：`.claude/skills/publish-article` + `skills/article-publish-kit` → `.agents/skills/publish-article`；`.claude/skills/render-svg` + `skills/article-visual-assets` → `.agents/skills/render-svg`
+  - 2 独立工具迁入：`skills/markdown-publish-preview`、`skills/source-auto-summary` → `.agents/skills/`
+- `.claude/skills/<name>` 全部改为 symlink → `../../.agents/skills/<name>`（10 个 symlink，已验证全活）
+- skill 元数据搬到 99_System/：`Skill候选池.md` + `Skill孵化-source-auto-summary.md`
+- 删 `skills/` 顶层目录
+- 创建 `GEMINI.md`：项目根上下文，Gemini CLI 读到后能知道有哪些 skill 可手动调
+
+**引用同步**（11 个文件）：
+- AGENTS.md：重写"Skill 跨工具发现机制"段，改 10 个 skill 的路径，标注 `~/.codex/skills/` 是无效配置
+- CLAUDE.md：Skill 位置段改写，说明 .agents/skills/ 是真身、.claude/skills/ 是 symlink
+- README.md / 99_System/llm-wiki约定.md / 99_System/Skill候选池.md / 99_System/Skill孵化-*.md / 99_System/内容业务闭环设计示例.md / 05_Workflows/Skill开发流程.md / 04_Templates/T-反AI味检查清单.md
+- .agents/skills/ 内 SKILL.md 的相互引用全部改为 .agents/skills/
+
+**净效果**：
+- 真身物理位置统一在 `.agents/skills/`（10 个 skill）
+- Codex / OpenCode 自动发现，无需安装 / 配置
+- Claude Code 通过项目级 symlink 自动发现
+- Gemini CLI 通过 GEMINI.md 知道有哪些可手动调
+- 删 skills/ 顶层目录（再少一个根目录条目）
+- 删两对薄壳冗余（publish-article + article-publish-kit、render-svg + article-visual-assets）
+- 用户的 `~/.codex/skills/web-access` 残留：保留无害（按用户决定）
+- pages touched: ~25
+
+## [2026-05-07 11:30] ingest | 12 篇 wechat 批量 ingest（4 公众号 + 会设计 6 篇）
+
+**Tier 1（4 篇深度 fan-out）**：
+- `2026-04-01_longjing-agent_harness-engineering` → 提议新 topic [[agent-internals]]（inside-out 视角，wiki 关键空白）
+- `2026-04-18_zhihuiwenshu_superpowers-claude-code-engineering` → Superpowers 第 2 source，仍差 1 source 达 v2 阈值；同时强化 [[claude-skill-ecosystem]] 候选证据
+- `2026-04-08_ai-chongdianguan_awesome-design-md` → 提议新 topic [[design-md-pattern]]（达 3 source 阈值）+ 触发 synthesis 候选 [[markdown-as-spec_digest]]
+- `2026-03-17_huishe-ji_one-skill-remove-ai-flavor-6-design-skills` → 提议新 topic [[claude-skill-ecosystem]]
+
+**Tier 2（4 篇更新现有 topic）**：
+- `2026-03-25_huishe-ji_figma-official-mcp` → 更 mcp topic 时间线 + claude-code 集成证据
+- `2026-04-30_huishe-ji_claude-design-alternative-30-skills` → 强化 design-md-pattern + claude-skill-ecosystem 双候选
+- `2026-03-13_huishe-ji_vibe-coding-claude-code-yolo-auto-test` → 更 vibe-coding-path 第二阶段
+- `2026-05-02_shangyanai_gpt-image-2-ui-seo-agent` → 填 ai-agent 待补段（非 coding agent 案例）
+
+**Tier 3（4 篇 status: thin，仅入 source 池）**：
+- `2026-04-30_ai-zhudaimatang_taste-skill`、`2026-04-30_bazijichanpinhua_codex-fighter-game`、`2026-04-29_huishe-ji_27-tools`、`2026-05-03_huishe-ji_refero.design`
+
+**topic 页更新**（5 个）：
+- mcp.md：+3 sources，+ Q1 2026 时间线 3 节点（Figma MCP / DESIGN.md / MCP×Skill）
+- vibe-coding-path.md：+2 sources，+ 第二阶段 YOLO mode 段，+ 多模态拼装样本段
+- claude-code.md：+6 sources，+ 内部架构 inside-out 段（12 组件表），+ release 时间线 2 节点
+- ai-agent.md：+3 sources，+ 第四种 multi-agent 范式（上下文卫生型 Subagent）+ Superpowers 系统化调试，+ 待补段填 SEO Agent
+- ai-workflow.md：+2 sources，+ Superpowers 跨工具支持段，+ Harness 内部 workflow 段
+
+**catalog 更新**：
+- mentions.md 重生成：182 → 273 唯一 mention（+91）；310 → 440 总出现（+130）；30 → 37 候选 ≥3 source（+7）
+- index.md：sources 38 → 50；新增 12 行入 sources 表
+
+**待用户批准的提议**：
+- 新 topic：`agent-internals` / `design-md-pattern` / `claude-skill-ecosystem`
+- Superpowers 晋升候选（达 2 source，差 1 source）
+- 新 synthesis：`markdown-as-spec_digest`（OpenSpec / DESIGN.md / AGENTS.md / SKILL.md 4 个 pattern 的统一观察）
+
+- pages touched: 21（12 source + 5 topic + index + log + mentions + 1 待提议清单）
+
+## [2026-05-07 12:00] promote | 4 topic 全批 + 1 synthesis 创建 + Superpowers 晋升
+
+**新建 4 个 topic**：
+- `wiki/topics/design-md-pattern.md`：4 source（awesome-design-md / Open Design / refero / Figma MCP），命名"DESIGN.md = AI 时代设计师与工程师协作契约"
+- `wiki/topics/agent-internals.md`：4 source（longjing-agent 主 + Superpowers 辅助 + idoubi 三大件），inside-out 12 组件视角，破例建（1 主 source 但密度高）
+- `wiki/topics/claude-skill-ecosystem.md`：6 source，Q1 2026 公开 100+ skill 生态 snapshot
+- `wiki/topics/superpowers.md`：2 source（shugex + zhihuiwenshu），破例晋升（差 1 source 达阈值，但 14 skill + 跨 6 工具事实成熟）
+
+**新建 1 个 synthesis**：
+- `wiki/syntheses/markdown-as-spec_digest.md`：4 个独立工件 pattern（OpenSpec / DESIGN.md / AGENTS.md / SKILL.md）走到同一答案——"人类规则正在变成 AI 可消费的 markdown"。`publishability: 1`，可发布候选
+
+**草稿池更新**：
+- 删 `wiki/_drafts/entity_Superpowers.md`（已晋升）
+- _drafts/README.md 加 "## 已晋升离开" 段记录
+
+**索引更新**：
+- 06_Maps/index.md：topics 9 → 13，syntheses 6 → 7，_drafts 7 → 6；topic 表 + synthesis 表新增条目；2026-03 重复 section 去重
+- 06_Maps/taxonomy.md：加 "## 已晋升记录" 段记录 4 个 topic 晋升及破例理由
+
+**总结：v2 wiki 现状**：
+- 50 sources / 13 topics / 7 syntheses / 6 drafts
+- 273 mentions / 37 候选（≥3 source）
+- 已晋升 topic 池跨 5 domain（ai-coding / ai-agent / indie-dev / wiki-meta / infra）
+- pages touched: 9（4 新 topic + 1 新 synthesis + 1 删 + 3 更新）
+
+## [2026-05-07 12:30] promote | mentions 候选筛选 → 2 个 topic 晋升
+
+按 lint + mentions 分析筛选 37 候选，其中只有 2 个值得晋升（其他已被现有 topic 吸收 / 是工具列表 / 时效已过）：
+
+- `wiki/topics/indie-dev-sop.md`：16 source（idoubi 全系列 2023-2026），含 5 步 SOP + 6 感悟 + 反神话集（ThinkAny 0.03% / sora.fm takedown 等）+ 9 产品矩阵
+- `wiki/topics/agents-md.md`：4 source，AAIF 跨厂商标准；本仓库 AGENTS.md 自身就是 8 个月实践样本
+
+**淘汰候选** + 理由：
+- gpts / cursor / vercel / cloudflare / stripe / nextjs：工具厂商或时效已过，留 mention
+- agent-skills / sandboxing / spec-driven / multi-agent-orchestration：已被 claude-skill-ecosystem / autonomy / openspec / ai-agent 吸收
+
+**index/taxonomy 同步**：topics 13 → 15；taxonomy.md "已晋升记录" +2
+
+**lint 顺手修复**：6 处 [[艾逗笔]] 断链改为纯文本（自然人删除遗留）
+
+publish-article 子 agent 在背景跑 markdown-as-spec_digest 发布包，等通知。
+
+## [2026-05-07 15:00] publish | markdown-as-spec_digest 完整发布包落盘
+
+**4 产物**（outputs/drafts/）：
+- `2026-05-07_article_markdown-as-spec_发布版.md`（9KB）
+- `2026-05-07_article_markdown-as-spec_发布建议.md`（8KB）
+- `2026-05-07_article_markdown-as-spec_认知图.svg`（389KB）+ PNG 预览（185KB，Chrome headless 0 越界 0 重叠）
+- `2026-05-07_article_markdown-as-spec_社交媒体切图文案.md`（4KB）
+
+**critique 评分** 16/20，全部 ≥ 3：
+- 信息密度 4 / 独特视角 4 / 可操作性 4 / 阅读节奏 4
+- 硬规则：而是 ×1（边界内）/ 协作路标 / 客服 / 戏剧化 / 模板段 / 行话堆叠 / 伪学术 全 0
+
+**返工记录**：
+- 17 个冒号 → 改 6 处"预告型/戏剧型"为破折号或句号
+- 新建 Satori 模板 `scripts/satori-templates/four-by-five-matrix.satori.js` + 数据 `raw/attachments/markdown-as-spec_matrix-data.json`，可被未来任意 4×N 矩阵图复用
+
+**推荐标题**（写进发布建议卡）：
+- 主：4 个独立工具，1 个共同答案——markdown 正在成为 AI 时代的协作契约
+- 强点击备选：装到第 3 个 AI 工具的时候，我才反应过来它们的契约文件长一模一样
+
+**synthesis 状态更新**：publishability 1 → 2，derived_outputs 写入 4 个 draft 路径
+
+## [2026-05-07 16:30] publish | claude-code-12-components 完整发布包落盘
+
+**4 产物**（outputs/drafts/ + raw/attachments/）：
+- `2026-05-07_article_claude-code-12-components_发布版.md`（约 5KB / 4000 字 + 5 段代码引用）
+- `2026-05-07_article_claude-code-12-components_发布建议.md`
+- `2026-05-07_article_claude-code-12-components_认知图.svg`（双层架构图）+ PNG 预览（Chrome headless 0 越界 0 重叠）
+- `2026-05-07_article_claude-code-12-components_社交媒体切图文案.md`（5 条候选金句）
+
+**critique 评分** 18/20，全部 ≥ 4：
+- 信息密度 5 / 独特视角 4 / 可操作性 5 / 阅读节奏 4
+- 硬规则：而是 ×1（边界内）/ 冒号 ×0（首版 41 个全清）/ 协作路标 / 客服 / 戏剧化 / 模板段 / 隐喻词 全 0
+
+**返工记录**：
+- 首版 41 个非引语冒号 → 整篇改写为破折号或拆句，二轮降到 0
+- "尺子"（隐喻义）→ 改"对照"
+- 新建 Satori 模板 `scripts/satori-templates/two-layer-architecture.satori.js`（双层卡片 + 中间磁盘条），可被未来"内核 vs 外围"双层架构图复用
+
+**推荐标题**：
+- 主：Claude Code 内部 12 组件 — 造车人视角
+- 强点击备选：读完 Claude Code 12 章源码，4000 行里 0 个 if-else
+
+**与 markdown-as-spec 那篇的差异化**：本篇有 5 段真实代码（s01 循环 / s02 dispatch / s05 SkillLoader / s11 身份重注入 / s09 drain-on-read），不是纯抽象，是"看着代码下判断"
+
+## [2026-05-07 16:20] publish | Claude Code 内部 12 组件 — 造车人视角（intent-driven 流程首次实战）
+
+**首次跑 intent-driven 发布流程**（自上而下：用户给 intent → 我列选项 → 用户选 → 评估证据 → 爬取补料 → 写作）：
+
+1. **intent**：用户选 C "Claude Code 内部 12 组件 — 造车人视角"
+2. **本地证据评估**：12 组件名称充分，但代码层细节缺
+3. **补料 sub-agent**：clone `shareAI-lab/learn-claude-code` repo，提取 12 章 README + 关键代码 → `raw/sources/documents/2026-05-07_learn-claude-code_12-lessons-extract.md`（26KB，572 行）
+4. **关键发现**（超出 longjing-agent 文章）：
+   - 12 章天然分 2 层（s01-s05 单 agent loop / s06-s12 多 agent 协调）
+   - 真正主线："以磁盘为协调底座"——s06 之后所有机制（transcript / 任务图 / 邮箱 / worktree）走磁盘
+   - 3 个反复出现设计模式：Layer 1/2 注入 / drain-on-read / 状态机+ID
+   - 政治宣言："Agency 来自训练，不是来自编排"——12 章源码 0 处 if-else
+   - 姊妹项目 claw0（心跳+定时任务做常驻 agent）
+5. **wiki 更新**：
+   - 新 source 页 `2026-05-07_document_shareai-lab_learn-claude-code-12-lessons.md`
+   - agent-internals topic 大幅更新（+ 2 层架构 + 3 模式 + 政治宣言 + claw0 段）
+6. **publish sub-agent 跑发布包**（4 产物）：
+   - 正文 `2026-05-07_article_claude-code-12-components_发布版.md`（约 4000 字，5 段真实代码）
+   - 发布建议（主标 + 5 备选 + 4 平台选择建议）
+   - 2 层架构认知图 + 新 Satori 模板 `two-layer-architecture.satori.js`（橙色内层 5 + 黑色磁盘条 + 绿色外层 7）
+   - 社交切图（含 4 条要求金句）
+7. **critique 18/20**（信息密度 5 / 独特视角 4 / 可操作性 5 / 阅读节奏 4），硬规则 0 命中（41 个冒号清零）
+
+**推荐主标题**：Claude Code 内部 12 组件 — 造车人视角
+**强点击备选**：读完 Claude Code 12 章源码，4000 行里 0 个 if-each
+
+**intent-driven 流程跑通**——比上次 markdown-as-spec（synthesis-driven，critique 16/20）评分高 2 分，跟原文连接强、有真实代码、不只是抽象。
+
+**复盘**：这次流程"用户 intent → 评估本地证据 → 补料 → 写"明显优于"自下而上从 source 综合"。建议：
+- 路径 A 候选：把这 6 步固化成 `.agents/skills/write-article/SKILL.md`（用户已表态先用一次再说）
+- 路径 B（已选）：跑通了，下次写作默认走这个流程
+
+## [2026-05-07 21:30] critique-fix | 12-components article + critique skill upgrade
+- 触发：外部读者评分 17/20，命中"极值 6+"和"二人称连续"两条快速自检漏抓
+- article 精修 6 处低风险段落（保留 line 64 唯一极值，删 5 处 + 拆连续二人称 + 删软命中协作路标）：outputs/drafts/2026-05-07_article_claude-code-12-components_发布版.md
+- critique skill 升级：.claude/skills/critique/references/zh-ai-tells.md 快速自检 8 → 10 条，新增"极值 ≤ 1"和"我最大的 X 是"清零，含对仗变体识别
+- 反思：之前自评 18/20 偏宽——零件齐全但 8 条快速自检未覆盖第九节极值判断规则，hard-rule 规则文档与扫描清单脱节
+
+## [2026-05-07 22:00] voice-ref | 数字生命卡兹克写作指纹归纳
+- 抓取 3 篇代表作（行业反思 / 工具教程 / 产品评测）入 raw/sources/Articles/
+- 归纳 A 结构层 6 条 + B 语言层 8 条指纹（段均 24 字、第一人称密度 1/50 字、收尾三段式、"昨天 X"起手等）
+- 沉淀 99_System/voice-references/khazix.md（含跟本仓库 2 稿对照表 + 1 段改写示例 + 按平台选风格判定）
+- 关键发现：我们 vs 卡兹克 = "高质量行业博客" vs "高情绪公众号长文"，两条路线不互斥，按场域选
+
+## [2026-05-07 22:50] voice-ref-batch | 风格库扩展 4 张指纹
+- _self.md（用户本人，9 篇 blog.workmn.com 样本）：工程文档型方法论作者，段均 90-110，强 8 段 SOP 骨架
+- idoubi.md（16 篇本地样本）：诚实账本派 indie，数字精确 + ROI 暴露
+- guizang.md（3 篇 CDP 抓）：设计师 + 开发者结构派
+- xiaohu.md（2 篇 CDP 抓，样本不足已标注）：翻译者 + 实测者派
+- _index.md 总览：5 张指纹一句话定位 + 量化基线对照表 + 按场域决策树
+- ⚠️ 关键冲突：用户本人"而是"句标志特征 vs critique 硬规则"全文≤1"——待裁决 A/B/C
+- 用户备注：「小互」公众号 vs X/Twitter @imxhy 是同一人但两种声音，X 平台短播报需另起指纹

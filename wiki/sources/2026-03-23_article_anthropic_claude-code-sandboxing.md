@@ -3,8 +3,8 @@ type: source
 source_type: article
 status: ingested
 ingested_at: 2026-04-29
-entities: [Claude Code, Anthropic]
-concepts: [autonomy, AI Vibecoding, AI 工作流]
+domains: [domain/ai-coding, domain/ai-agent]
+mentions: [Claude Code, Anthropic, sandboxing, filesystem isolation, network isolation]
 source_title: Making Claude Code more secure and autonomous with sandboxing
 source_url: https://www.anthropic.com/engineering/claude-code-sandboxing
 author: Anthropic

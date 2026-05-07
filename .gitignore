@@ -7,3 +7,5 @@ __pycache__/
 .obsidian/workspace.json
 .obsidian/cache
 .obsidian/workspace-mobile.json
+
+.agents/skills/web-access

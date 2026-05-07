@@ -3,8 +3,8 @@ type: source
 source_type: link
 status: ingested
 ingested_at: 2026-04-29
-entities: [OpenSpec]
-concepts: [AI 工作流, AI Vibecoding]
+domains: [domain/ai-coding]
+mentions: [OpenSpec, ForceInjection, Fission AI]
 source_title: openspec practical guide
 processed_at: 2026-03-23
 source_url: https://github.com/ForceInjection/OpenSpec-practise/blob/main/docs/openspec-practical-guide.md

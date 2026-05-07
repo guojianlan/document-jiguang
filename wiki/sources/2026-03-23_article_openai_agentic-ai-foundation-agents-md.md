@@ -3,8 +3,8 @@ type: source
 source_type: article
 status: ingested
 ingested_at: 2026-04-29
-entities: [OpenAI, Codex, Anthropic]
-concepts: [AI Agent, AI 工作流, 模型能力变化]
+domains: [domain/ai-agent, domain/ai-coding]
+mentions: [AGENTS.md, OpenAI, Codex, Anthropic, Google, Microsoft, AWS, Linux Foundation, Agentic AI Foundation]
 source_title: OpenAI co-founds the Agentic AI Foundation under the Linux Foundation
 source_url: https://openai.com/index/agentic-ai-foundation//
 author: OpenAI

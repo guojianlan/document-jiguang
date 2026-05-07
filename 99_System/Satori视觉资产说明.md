@@ -56,7 +56,7 @@
 
 模板默认放在：
 
-- `04_Templates/Visuals`
+- `scripts/satori-templates/`
 
 模板负责：
 
@@ -72,7 +72,7 @@
 
 ```bash
 node scripts/render_satori_visual.js \
-  04_Templates/Visuals/full-structure-map.satori.js \
+  scripts/satori-templates/full-structure-map.satori.js \
   raw/attachments/xxx.data.json \
   raw/attachments/xxx.svg
 ```
@@ -81,7 +81,7 @@ node scripts/render_satori_visual.js \
 
 ```bash
 npm run render:satori -- \
-  04_Templates/Visuals/full-structure-map.satori.js \
+  scripts/satori-templates/full-structure-map.satori.js \
   raw/attachments/xxx.data.json \
   raw/attachments/xxx.svg
 ```
@@ -117,7 +117,7 @@ bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachme
 全文结构图：
 
 - 数据：[2026-03-23_ai-vibecoding-full-structure-map.data.json](/Users/apple/Desktop/project/document/raw/attachments/2026-03-23_ai-vibecoding-full-structure-map.data.json)
-- 模板：[full-structure-map.satori.js](/Users/apple/Desktop/project/document/04_Templates/Visuals/full-structure-map.satori.js)
+- 模板：[full-structure-map.satori.js](/Users/apple/Desktop/project/document/scripts/satori-templates/full-structure-map.satori.js)
 - 脚本：[render_satori_visual.js](/Users/apple/Desktop/project/document/scripts/render_satori_visual.js)
 
 ## 边界

@@ -42,7 +42,7 @@
 - `04_Templates`：模板
 - `05_Workflows`：工作流
 - `06_Maps`：导航（含 `index.md`）
-- `08_Skills`：skill 候选池与孵化区
+- `99_System/Skill候选池.md`、`99_System/Skill孵化-*.md`：skill 候选池与孵化设计
 - `99_System`：系统约定、命名规则、自动化说明
 - `scripts`：自动化脚本
 - `skills`：仓库内 skill 草稿工作区
@@ -180,7 +180,7 @@ wiki 层三种核心操作：
 2. `README.md`
 3. 对应的 `99_System` 或 `05_Workflows` 说明文档
 4. 如果影响使用方式，补充模板或导航页
-5. 如果与 skill 有关，更新 `08_Skills/Candidates/Skill候选池.md`
+5. 如果与 skill 有关，更新 `99_System/Skill候选池.md`
 
 如果功能只写了代码，没有回写这些说明，视为未完成。
 
@@ -308,7 +308,7 @@ MARKDOWN_PUBLISH_PREVIEW_PORT=4312
 相关说明：
 
 - [Markdown发布预览说明](/Users/apple/Desktop/project/document/99_System/Markdown发布预览说明.md)
-- [markdown-publish-preview](/Users/apple/Desktop/project/document/skills/markdown-publish-preview/SKILL.md)
+- [markdown-publish-preview](/Users/apple/Desktop/project/document/.agents/skills/markdown-publish-preview/SKILL.md)
 
 ### PRD 到测试闭环引擎
 
@@ -375,44 +375,63 @@ npm run loop:panel
 
 skill 候选池与流程入口：
 
-- [Skill候选池.md](/Users/apple/Desktop/project/document/08_Skills/Candidates/Skill候选池.md)
+- [Skill候选池.md](/Users/apple/Desktop/project/document/99_System/Skill候选池.md)
 - [Skill开发流程.md](/Users/apple/Desktop/project/document/05_Workflows/Skill开发流程.md)
 - [Skill集成说明.md](/Users/apple/Desktop/project/document/99_System/Skill集成说明.md)
 
 当前已进入孵化的本地 skill：
 
-- [source-auto-summary](/Users/apple/Desktop/project/document/skills/source-auto-summary/SKILL.md)
+- [source-auto-summary](/Users/apple/Desktop/project/document/.agents/skills/source-auto-summary/SKILL.md)
 
 当前已可复用的本地 skill：
 
-- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
-- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
-- [markdown-publish-preview](/Users/apple/Desktop/project/document/skills/markdown-publish-preview/SKILL.md)
+- [article-publish-kit](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/.agents/skills/render-svg/SKILL.md)
+- [markdown-publish-preview](/Users/apple/Desktop/project/document/.agents/skills/markdown-publish-preview/SKILL.md)
 
-当前已可复用的 Claude Code 入口 skill（位于 `.claude/skills/`）：
+## Skill 跨工具发现机制（2026-05-07 起）
+
+**统一架构**：所有 skill 真身在 `.agents/skills/<name>/`，多工具自动发现：
+
+| 工具 | 发现路径 | 接入方式 |
+|---|---|---|
+| Codex CLI | `.agents/skills/`（项目级，原生）| 直接读，无需配置 |
+| OpenCode | `.agents/skills/` + `.claude/skills/`（都原生支持）| 直接读 |
+| Claude Code | `.claude/skills/`（仅这个）| 通过 symlink → `../../.agents/skills/<name>` 自动接入 |
+| Gemini CLI | 无 skill 目录概念，只读 `GEMINI.md` | 见仓库根 [GEMINI.md](/Users/apple/Desktop/project/document/GEMINI.md) |
+
+> ⚠️ Codex CLI **不**读 `~/.codex/skills/`（这是历史误传）。Codex 真正读的是项目级 `.agents/skills/` + 用户级 `~/.agents/skills/`。
+
+当前 10 个 skill（全部住 `.agents/skills/`）：
 
 wiki 层：
 
-- [ingest](/Users/apple/Desktop/project/document/.claude/skills/ingest/SKILL.md)：处理新来源，fan-out 触达 5-10 wiki 页
-- [query](/Users/apple/Desktop/project/document/.claude/skills/query/SKILL.md)：检索 wiki 回答问题，可归档为 synthesis
-- [lint](/Users/apple/Desktop/project/document/.claude/skills/lint/SKILL.md)：周期性 wiki 健康度检查
+- [ingest](/Users/apple/Desktop/project/document/.agents/skills/ingest/SKILL.md)：处理新来源，fan-out 触达 5-10 wiki 页
+- [query](/Users/apple/Desktop/project/document/.agents/skills/query/SKILL.md)：检索 wiki 回答问题，可归档为 synthesis
+- [lint](/Users/apple/Desktop/project/document/.agents/skills/lint/SKILL.md)：周期性 wiki 健康度检查
 
 publishing 层：
 
-- [critique](/Users/apple/Desktop/project/document/.claude/skills/critique/SKILL.md)：文章产出后按 4 维度评分并强制返工，去 AI 味
-- [publish-article](/Users/apple/Desktop/project/document/.claude/skills/publish-article/SKILL.md)：发布包装入口，指向 `article-publish-kit`
-- [render-svg](/Users/apple/Desktop/project/document/.claude/skills/render-svg/SKILL.md)：视觉资产入口，指向 `article-visual-assets`
+- [critique](/Users/apple/Desktop/project/document/.agents/skills/critique/SKILL.md)：文章产出后按 4 维度评分并强制返工，去 AI 味
+- [publish-article](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)：发布包装完整工作流（含原 article-publish-kit 全部内容）
+- [render-svg](/Users/apple/Desktop/project/document/.agents/skills/render-svg/SKILL.md)：视觉资产生产 + 校验（含原 article-visual-assets 全部内容）
 
 基础层：
 
-- [verify](/Users/apple/Desktop/project/document/.claude/skills/verify/SKILL.md)：跑测试 + SVG 布局校验
+- [verify](/Users/apple/Desktop/project/document/.agents/skills/verify/SKILL.md)：跑测试 + SVG 布局校验
 
-当前已安装并可优先使用的全局外部 skill：
+浏览器 / 联网层：
 
-- `web-access`
-  - 安装位置：`~/.codex/skills/web-access`
-  - 用途：处理联网搜索、页面读取、动态站点访问、登录态页面操作、浏览器 CDP 自动化
-  - 使用原则：当任务涉及外部网页、动态渲染页面、需要登录态、需要像人一样操作浏览器时，优先考虑该 skill
+- [web-access](/Users/apple/Desktop/project/document/.agents/skills/web-access/SKILL.md)：通过 CDP 直连用户日常 Chrome（带登录态），处理反爬站、动态渲染、登录态页面、社交媒体（小红书 / 微信公众号 / 微博等）。前置依赖：Node 22+ 与 Chrome 远程调试授权（`chrome://inspect/#remote-debugging`）。CDP Proxy 端口 `localhost:3456`。
+  - 触发场景：抓取微信公众号 / 小红书 / 知乎等反爬中文站、需要登录态的内部系统、视频帧采样、动态渲染页面
+  - 使用原则：URL 已知且静态可达 → 优先 WebFetch；反爬站、登录态、需要交互 → 直接走 web-access CDP
+
+工具型 skill（独立工具，slash 触发非必需）：
+
+- [markdown-publish-preview](/Users/apple/Desktop/project/document/.agents/skills/markdown-publish-preview/SKILL.md)：本地 Markdown 富文本预览
+- [source-auto-summary](/Users/apple/Desktop/project/document/.agents/skills/source-auto-summary/SKILL.md)：来源自动摘要
+
+> 旧 `~/.codex/skills/web-access` 残留：可保留无影响（Codex 不读它，但也不报错）。新机器请按本节安装方式直接用项目级 `.agents/skills/`。
 
 ## 8. 协作口径
 
@@ -449,8 +468,8 @@ publishing 层：
 
 当内容任务已经进入发布阶段时，优先检查是否适合使用本地 skill：
 
-- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
-- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
+- [article-publish-kit](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/.agents/skills/render-svg/SKILL.md)
 
 当任务涉及封面图、认知图、结构图或 SVG 图卡时，默认执行：
 
@@ -463,8 +482,8 @@ publishing 层：
 
 当任务从来源整理进入主题或发布阶段时，应优先检查：
 
-- [source-auto-summary](/Users/apple/Desktop/project/document/skills/source-auto-summary/SKILL.md)
-- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
+- [source-auto-summary](/Users/apple/Desktop/project/document/.agents/skills/source-auto-summary/SKILL.md)
+- [article-publish-kit](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)
 
 当任务涉及业务闭环设计、流程 agent 化或系统化评估时，应优先复用：
 

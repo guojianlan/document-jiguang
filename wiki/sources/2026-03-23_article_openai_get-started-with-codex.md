@@ -8,8 +8,8 @@ author: OpenAI
 publisher: OpenAI
 processed_at: 2026-03-23
 ingested_at: 2026-04-29
-entities: [Codex, OpenAI]
-concepts: [AI Vibecoding, AI 工作流, AI Agent]
+domains: [domain/ai-coding, domain/ai-agent]
+mentions: [Codex, OpenAI, ChatGPT, Git]
 status: ingested
 tags: [source/article, topic/workflow]
 ---

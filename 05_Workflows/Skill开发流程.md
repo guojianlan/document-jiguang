@@ -25,7 +25,7 @@
 
 ### 1. 记录候选
 
-先在 [Skill候选池.md](/Users/apple/Desktop/project/document/08_Skills/Candidates/Skill候选池.md) 里登记。
+先在 [Skill候选池.md](/Users/apple/Desktop/project/document/99_System/Skill候选池.md) 里登记。
 
 如果需要单独展开，再基于 [T-Skill候选卡.md](/Users/apple/Desktop/project/document/04_Templates/T-Skill候选卡.md) 建详细卡片。
 
@@ -84,7 +84,7 @@
 
 1. [AGENTS.md](/Users/apple/Desktop/project/document/AGENTS.md)
 2. [README.md](/Users/apple/Desktop/project/document/README.md)
-3. [Skill候选池.md](/Users/apple/Desktop/project/document/08_Skills/Candidates/Skill候选池.md)
+3. [Skill候选池.md](/Users/apple/Desktop/project/document/99_System/Skill候选池.md)
 4. 必要时补充 `99_System` 或 `05_Workflows` 说明
 
 ## 状态流转

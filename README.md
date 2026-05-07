@@ -23,7 +23,7 @@
 - `05_Workflows`：固定工作流和 SOP
 - `06_Maps`：总览页和主题导航页
 - `raw/attachments`：图片、截图、导出文件等附件
-- `08_Skills`：skill 候选池和孵化区
+- `99_System/Skill候选池.md`、`99_System/Skill孵化-*.md`：skill 候选池和孵化设计
 - `99_System`：命名规则、标签规则、Obsidian 使用建议
 - `skills`：仓库内 skill 草稿工作区
 
@@ -98,13 +98,13 @@
 
 当前已开始孵化的第一个 skill：
 
-- [source-auto-summary](/Users/apple/Desktop/project/document/skills/source-auto-summary/SKILL.md)
+- [source-auto-summary](/Users/apple/Desktop/project/document/.agents/skills/source-auto-summary/SKILL.md)
 
 当前已可复用的本地 skill：
 
-- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
-- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
-- [markdown-publish-preview](/Users/apple/Desktop/project/document/skills/markdown-publish-preview/SKILL.md)
+- [article-publish-kit](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/.agents/skills/render-svg/SKILL.md)
+- [markdown-publish-preview](/Users/apple/Desktop/project/document/.agents/skills/markdown-publish-preview/SKILL.md)
 
 当前已可配合使用的全局外部 skill：
 
@@ -112,7 +112,7 @@
 
 入口见：
 
-- [Skill候选池.md](/Users/apple/Desktop/project/document/08_Skills/Candidates/Skill候选池.md)
+- [Skill候选池.md](/Users/apple/Desktop/project/document/99_System/Skill候选池.md)
 - [Skill开发流程.md](/Users/apple/Desktop/project/document/05_Workflows/Skill开发流程.md)
 - [Skill集成说明.md](/Users/apple/Desktop/project/document/99_System/Skill集成说明.md)
 
@@ -206,8 +206,8 @@ npm run loop:panel
 - [T-分享文章](/Users/apple/Desktop/project/document/04_Templates/T-分享文章.md)
 - [T-发布建议](/Users/apple/Desktop/project/document/04_Templates/T-发布建议.md)
 - [文章配图与图卡流程](/Users/apple/Desktop/project/document/05_Workflows/文章配图与图卡流程.md)
-- [article-publish-kit](/Users/apple/Desktop/project/document/skills/article-publish-kit/SKILL.md)
-- [article-visual-assets](/Users/apple/Desktop/project/document/skills/article-visual-assets/SKILL.md)
+- [article-publish-kit](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)
+- [article-visual-assets](/Users/apple/Desktop/project/document/.agents/skills/render-svg/SKILL.md)
 - [SVG资产生成与校验说明](/Users/apple/Desktop/project/document/99_System/SVG资产生成与校验说明.md)
 - [Satori视觉资产说明](/Users/apple/Desktop/project/document/99_System/Satori视觉资产说明.md)
 
@@ -238,7 +238,7 @@ bash scripts/validate_svg_asset.sh "raw/attachments/xxx.svg" --png "raw/attachme
 如果要用 `Satori` 模板生成 SVG：
 
 ```bash
-npm run render:satori -- 04_Templates/Visuals/full-structure-map.satori.js raw/attachments/xxx.data.json raw/attachments/xxx.svg
+npm run render:satori -- scripts/satori-templates/full-structure-map.satori.js raw/attachments/xxx.data.json raw/attachments/xxx.svg
 ```
 
 如果要检查文本布局风险：
@@ -317,6 +317,5 @@ npm run preview:md:watch -- "outputs/drafts/xxx.md" --open
 具体约定见：
 
 - [内容处理工作流](/Users/apple/Desktop/project/document/05_Workflows/内容处理工作流.md)
-- [AI 知识库总览](/Users/apple/Desktop/project/document/06_Maps/AI知识库总览.md)
 - [命名与标签约定](/Users/apple/Desktop/project/document/99_System/命名与标签约定.md)
 - [Obsidian 使用建议](/Users/apple/Desktop/project/document/99_System/Obsidian使用建议.md)

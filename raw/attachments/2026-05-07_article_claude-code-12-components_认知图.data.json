@@ -1,0 +1,34 @@
+{
+  "eyebrow": "CLAUDE CODE INTERNAL · 12 LESSONS",
+  "title": "Claude Code 不是 12 个并列组件，是 2 层架构",
+  "subtitle": "内层 5 章是单 agent loop 内核，外层 7 章是以磁盘为底座的多 agent 协调系统。来源：shareAI-lab/learn-claude-code 12 节课参考实现。",
+  "innerLayer": {
+    "title": "内层 5 组件 · 一个 agent 的全部内核",
+    "subtitle": "循环 30 行不动，机制围绕循环叠加。bash 一个工具就能干活。",
+    "judgement": "循环属于 agent，机制属于 harness",
+    "components": [
+      { "id": "s01", "title": "Agent Loop", "note": "while + bash，stop_reason 决定退出" },
+      { "id": "s02", "title": "Tool Use", "note": "dispatch map，循环不变只加 handler" },
+      { "id": "s03", "title": "TodoWrite", "note": "3 轮没碰 todo 就 nag 提醒" },
+      { "id": "s04", "title": "Subagent", "note": "fresh messages，只回最后一句" },
+      { "id": "s05", "title": "Skills", "note": "Layer1 描述常驻，Layer2 按需注入" }
+    ]
+  },
+  "diskLabel": "—— 磁盘 ——",
+  "diskNote": "会话上下文短命，磁盘比对话长命；s06 之后所有机制都依赖磁盘做协调骨架",
+  "outerLayer": {
+    "title": "外层 7 组件 · 以磁盘为底座的多 agent 系统",
+    "subtitle": "transcript / task / mailbox / worktree 都是磁盘文件，agent 之间靠文件系统通信。",
+    "judgement": "Agency 来自训练，不是来自编排",
+    "components": [
+      { "id": "s06", "title": "Context Compact", "note": "三层压缩，read_file 不压" },
+      { "id": "s07", "title": "Task System", "note": "JSON 任务图，blockedBy 边" },
+      { "id": "s08", "title": "Background Tasks", "note": "drain-on-read 通知队列" },
+      { "id": "s09", "title": "Agent Teams", "note": "JSONL 邮箱 + 守护线程" },
+      { "id": "s10", "title": "Team Protocols", "note": "request_id + FSM 握手" },
+      { "id": "s11", "title": "Autonomous Agents", "note": "IDLE 轮询 + 身份重注入" },
+      { "id": "s12", "title": "Worktree Isolation", "note": "control / execution 平面分离" }
+    ]
+  },
+  "footer": "12 章源码 0 处 if-else——理解这个比理解 12 个组件更值钱"
+}

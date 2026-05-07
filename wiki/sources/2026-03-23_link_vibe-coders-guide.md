@@ -3,8 +3,8 @@ type: source
 source_type: link
 status: ingested
 ingested_at: 2026-04-29
-entities: []
-concepts: [AI Vibecoding, AI Agent, AI 工作流]
+domains: [domain/ai-coding, domain/ai-agent]
+mentions: [Vibe Coders Guide, Markdown Specs, User Stories]
 source_title: Vibe Coder's Guide
 source_url: https://vibecoders.guide/
 platform: website

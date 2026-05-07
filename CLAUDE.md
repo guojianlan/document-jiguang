@@ -25,13 +25,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Skill 位置
 
-- `skills/`：仓库长期沉淀的 skill（`article-publish-kit`、`article-visual-assets`、`markdown-publish-preview`、`source-auto-summary`），按 `AGENTS.md` 优先复用
-- `.claude/skills/`：Claude Code 入口 skill，分三层：
-  - **wiki 层**：`/ingest`、`/query`、`/lint`（详见 [llm-wiki约定](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md)）
-  - **publishing 层**：`/publish-article`、`/critique`、`/render-svg`
-  - **基础层**：`/verify`
+所有 skill 真身在 `.agents/skills/<name>/`（跨工具兼容：Codex / OpenCode 原生发现）。`.claude/skills/<name>` 是 symlink 指向 `.agents/skills/<name>`，让 Claude Code 自动发现。
 
-两套并存，不要把 `skills/` 视为冗余删除。
+- 编辑 skill 时改 `.agents/skills/`，**不要**改 `.claude/skills/`（symlink 本身不是文件）
+- 新建 skill 时只在 `.agents/skills/` 下建目录，然后 `ln -s ../../.agents/skills/<name> .claude/skills/<name>` 链入
+
+10 个 skill 分四层：
+
+- **wiki 层**：`/ingest`、`/query`、`/lint`
+- **publishing 层**：`/publish-article`、`/critique`、`/render-svg`
+- **基础层**：`/verify`
+- **联网层**：`/web-access`
+- **工具层**（不需 slash）：`markdown-publish-preview`、`source-auto-summary`
 
 ### Wiki 模式（重要）
 
@@ -48,4 +53,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### 必读规则（来自 AGENTS.md）
 
-新增功能后，必须按 `AGENTS.md` 第 4 节的规则 A/B/C 同步回写 `AGENTS.md`、`README.md`、对应 `99_System` 或 `05_Workflows` 文档、必要时更新 `08_Skills/Candidates/Skill候选池.md`。只写代码不回写说明，视为未完成。
+新增功能后，必须按 `AGENTS.md` 第 4 节的规则 A/B/C 同步回写 `AGENTS.md`、`README.md`、对应 `99_System` 或 `05_Workflows` 文档、必要时更新 `99_System/Skill候选池.md`。只写代码不回写说明，视为未完成。

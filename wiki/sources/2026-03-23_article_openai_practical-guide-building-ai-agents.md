@@ -3,8 +3,8 @@ type: source
 source_type: article
 status: ingested
 ingested_at: 2026-04-29
-entities: [OpenAI]
-concepts: [AI Agent, AI 工作流]
+domains: [domain/ai-agent]
+mentions: [OpenAI, Agents SDK, GPT-4]
 source_title: A practical guide to building agents
 source_url: https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/
 author: OpenAI

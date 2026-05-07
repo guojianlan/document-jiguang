@@ -1,5 +1,17 @@
 # LLM Wiki 约定
 
+> **⚠️ 重要更新（2026-05-06 起）：**
+>
+> 本仓库 wiki 切换到**用户拥有 taxonomy 的 3 层模型**——5 个固定 domain 货架 + 按需生长 topic 页 + 自由 mentions。**LLM 不再自动建 entity / concept**，新分类节点必须经用户批准。
+>
+> **新规则唯一权威**：[`06_Maps/taxonomy.md`](/Users/apple/Desktop/project/document/06_Maps/taxonomy.md)
+>
+> 决策记录与再评估钩子：[`memory/project_wiki_taxonomy_model.md`](file:///Users/apple/.claude/projects/-Users-apple-Desktop-project-document/memory/project_wiki_taxonomy_model.md)
+>
+> **本文件下方原 entities/concepts 章节是过渡状态**——迁移到 `wiki/topics/` 目录尚未完成，新 ingest 走新模型，存量 wiki/entities/ + wiki/concepts/ 暂时并存。
+
+---
+
 本文件把 [Karpathy 的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 翻译成本仓库的术语和操作。
 
 > The wiki is a persistent, compounding artifact. The cross-references are already there. The contradictions have already been flagged. The synthesis already reflects everything you've read.
@@ -22,10 +34,10 @@
 | Karpathy 层 | 本仓库目录 | 谁拥有 |
 |---|---|---|
 | **Raw sources** | `raw/inbox/`、`raw/sources/`、`raw/attachments/` | 用户（不可被 LLM 修改）|
-| **The wiki** | `wiki/sources/`、`wiki/entities/`、`wiki/concepts/`、`wiki/syntheses/` | LLM（用户只读浏览）|
-| **The schema** | `AGENTS.md` + `CLAUDE.md` + `99_System/` | 共同维护 |
+| **The wiki** | `wiki/sources/`、`wiki/topics/`（新）、`wiki/syntheses/`；`wiki/entities/` + `wiki/concepts/`（迁移中）| LLM 写作 + **用户拥有 taxonomy** |
+| **The schema** | `AGENTS.md` + `CLAUDE.md` + `99_System/` + `06_Maps/taxonomy.md`（v2 唯一分类权威）| 用户拥有 |
 
-不属于 Karpathy 三层但保留在仓库内的 meta 目录：`04_Templates/`、`05_Workflows/`、`06_Maps/`、`08_Skills/`、`scripts/`、`skills/`、`.claude/skills/`、`business_loop/`、`tests/`。
+不属于 Karpathy 三层但保留在仓库内的 meta 目录：`04_Templates/`、`05_Workflows/`、`06_Maps/`、`scripts/`、`.agents/skills/`（10 个 skill 真身）、`.claude/skills/`（symlink → .agents/skills/）、`business_loop/`、`tests/`。
 
 ---
 
@@ -134,9 +146,9 @@ derived_outputs: [outputs/drafts/<file>.md]
 
 详见各自 skill：
 
-- `/ingest` ([SKILL.md](/Users/apple/Desktop/project/document/.claude/skills/ingest/SKILL.md))：处理新来源，fan-out 更新 wiki
-- `/query` ([SKILL.md](/Users/apple/Desktop/project/document/.claude/skills/query/SKILL.md))：检索 wiki 回答问题，可归档为 synthesis
-- `/lint` ([SKILL.md](/Users/apple/Desktop/project/document/.claude/skills/lint/SKILL.md))：扫矛盾、过时、孤儿、缺交叉引用
+- `/ingest` ([SKILL.md](/Users/apple/Desktop/project/document/.agents/skills/ingest/SKILL.md))：处理新来源，fan-out 更新 wiki
+- `/query` ([SKILL.md](/Users/apple/Desktop/project/document/.agents/skills/query/SKILL.md))：检索 wiki 回答问题，可归档为 synthesis
+- `/lint` ([SKILL.md](/Users/apple/Desktop/project/document/.agents/skills/lint/SKILL.md))：扫矛盾、过时、孤儿、缺交叉引用
 
 ### Ingest 的 fan-out 含义
 

@@ -9,8 +9,8 @@ publisher: Anthropic
 published_at: 2025-09-29
 processed_at: 2026-03-23
 ingested_at: 2026-04-28
-entities: [Claude Code, Anthropic]
-concepts: [AI Agent, autonomy, AI 工作流, AI Vibecoding, 模型能力变化]
+domains: [domain/ai-coding, domain/ai-agent]
+mentions: [Claude Code, Anthropic, Checkpoints, Subagents, Hooks, Background tasks, Sonnet 4.5]
 status: ingested
 tags: [source/article, topic/workflow]
 ---

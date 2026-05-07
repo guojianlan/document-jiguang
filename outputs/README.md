@@ -16,4 +16,4 @@
 3. 跑 `/critique` 4 维度评分；任一维度 ≤ 2 强制返工
 4. 发布后在 synthesis 的 frontmatter 标 `publishability: 2` + 写 `derived_outputs` 路径
 
-详见 [99_System/llm-wiki约定.md](../99_System/llm-wiki约定.md) 与 [skills/article-publish-kit/SKILL.md](../skills/article-publish-kit/SKILL.md)。
+详见 [99_System/llm-wiki约定.md](../99_System/llm-wiki约定.md) 与 [.agents/skills/publish-article/SKILL.md](../.agents/skills/publish-article/SKILL.md)。

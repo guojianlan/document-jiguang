@@ -3,8 +3,8 @@ type: source
 source_type: article
 status: ingested
 ingested_at: 2026-04-29
-entities: [GitHub Copilot]
-concepts: [AI Agent, AI Vibecoding, AI 工作流]
+domains: [domain/ai-coding, domain/ai-agent]
+mentions: [GitHub Copilot, custom agents, agent profile, GitHub.com, Copilot CLI]
 source_title: About custom agents
 source_url: https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-custom-agents
 author: GitHub Docs

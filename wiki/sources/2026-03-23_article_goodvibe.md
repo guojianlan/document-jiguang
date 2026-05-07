@@ -3,8 +3,8 @@ type: source
 source_type: article
 status: ingested
 ingested_at: 2026-04-29
-entities: []
-concepts: [AI Vibecoding]
+domains: [domain/ai-coding]
+mentions: [arXiv, GoodVibe, security]
 source_title: GoodVibe: Security-by-Vibe for LLM-Based Code Generation
 source_url: https://arxiv.org/abs/2602.10778
 author: arXiv

@@ -1,51 +1,52 @@
 # Wiki Index
 
-按 [LLM Wiki 约定](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md) 维护。
+按 [LLM Wiki 约定](/Users/apple/Desktop/project/document/99_System/llm-wiki约定.md) 维护。每次 `/ingest` 必更。
 
-每个 wiki 页都应在这里有一条记录。每次 `/ingest` 必更，`/lint` 周期校对。
+> **2026-05-06 起切到 v2 模型**：用户拥有 taxonomy（5 domain + 按需 topic + 自由 mentions）。详见 [`taxonomy.md`](taxonomy.md) 和 [`mentions.md`](mentions.md)。
+>
+> **2026-05-06 重构完成**：source frontmatter 已迁（38 个用 v2 domain+mentions），entity/concept 共 16 页已分流——9 页晋升 `wiki/topics/`，7 页降级 `wiki/_drafts/` 等候。
 
 ## 类别速览
 
-| 类别 | 数量 | 路径 |
-|---|---|---|
-| sources | 13 | `wiki/sources/` |
-| entities | 6 | `wiki/entities/` |
-| concepts | 8 | `wiki/concepts/` |
-| syntheses | 3 | `wiki/syntheses/` |
+| 类别 | 数量 | 路径 | 状态 |
+|---|---|---|---|
+| sources | 50 | `wiki/sources/` | v2 ✅ |
+| topics | 15 | `wiki/topics/` | v2 ✅ |
+| syntheses | 7 | `wiki/syntheses/` | +1 markdown-as-spec_digest |
+| _drafts（草稿池）| 6 | `wiki/_drafts/` | Superpowers 已晋升离开 |
 
-> Phase 2 已完成：物理目录按 type 分隔（entities / concepts / sources / syntheses）。schema 层 `04_Templates`、`05_Workflows`、`99_System`、`08_Skills` 留在原位。
+## 分类工具
 
----
-
-## Entities（具体物 / 工具 / 产品）
-
-| 名称 | 类型 | 一句话 | 关键来源 | 状态 |
-|---|---|---|---|---|
-| [[OpenSpec]] | 工具/方法 | 把 AI 编程从依赖聊天历史升级为基于规格工件的可审查协作流程 | link_openspec-practical-guide、link_openspec-ai-workflow-analysis | active |
-| [[Claude Code]] | 工具/产品 | Anthropic 的 coding agent，路线 = 可回退的自主 + 沙箱边界 | claude-code-autonomy、claude-code-sandboxing | active |
-| [[Anthropic]] | 公司/出品方 | Claude / Claude Code 出品方，autonomy + safety 绑成一件事 | claude-code-autonomy、claude-code-sandboxing | active |
-| [[Codex]] | 工具/产品 | OpenAI 的 coding agent，路线 = AGENTS.md + cloud sandbox | get-started-with-codex、how-openai-uses-codex、agentic-ai-foundation | active |
-| [[OpenAI]] | 公司/出品方 | Codex 出品方 + AGENTS.md 标准发起方，主导 Linux Foundation 旗下 AAIF | get-started-with-codex、agentic-ai-foundation、how-openai-uses-codex | active |
-| [[GitHub Copilot]] | 工具/产品 | GitHub/Microsoft 的 coding agent，路线 = custom agents profile + 跨表面复用 | github_about-custom-agents | active |
-
-> 待补 entities：Cursor、Satori、Obsidian。这些已在 sources 里反复出现但还没建独立页。
+- [`taxonomy.md`](taxonomy.md) — 5 个固定 domain + 当前 topic 候选清单（用户管理）
+- [`mentions.md`](mentions.md) — 自动生成的 mention 索引（每次 ingest 后重新扫）
 
 ---
 
-## Concepts（抽象概念 / 模式 / 方法）
+## Topics（v2 主层）
 
-| 名称 | 一句话 | 状态 |
-|---|---|---|
-| [[AI Agent]] | Agent 的角色分工、任务拆解、工具调用、协作机制与落地边界 | active |
-| [[AI Vibecoding]] | 用户从 AI 辅助编码初级阶段进入工具使用、工作流、agent 协作、质量控制的成长路径 | active |
-| [[AI 产品观察]] | AI 产品的定位、能力边界、交互设计、用户价值与商业方向 | active |
-| [[AI 内容生产]] | 用 AI 完成内容收集、拆解、重组、成稿、分发，而非简单改写 | active |
-| [[AI 工作流]] | AI 从单点助手到可复用、可审查、可沉淀的工作流系统 | active |
-| [[模型能力变化]] | 主流模型在推理、工具调用、多模态、上下文长度、价格上的变化 | active |
-| [[组织如何使用 AI]] | 团队、部门、公司如何把 AI 纳入日常流程而非停留在个人试用 | active |
-| [[autonomy]] | agent 自主完成多步任务的能力——程度变量，不是有无 | active |
+按 source 数 + 沉淀密度排序。每页结构：是什么 / 当前结论 / 待证伪 / 与其他对照 / 相关 source。
 
-> 待补 concepts：spec-driven 开发、prompt caching、context engineering、change management、sandboxing（暂归在 [[Claude Code]] 与 [[autonomy]] 内）。这些在 sources 里出现但还没独立页。
+| topic | source 数 | domain | 一句话 |
+|---|---|---|---|
+| [[mcp\|MCP]] | 9 | ai-agent / infra | Anthropic 2024-11 发布的 LLM 工具调用协议，AI 时代的 LSP |
+| [[vibe-coding-path\|AI Vibecoding]] | 14 | ai-coding / indie-dev | 从 AI 辅助编码初阶到全自动 6 阶段成长路径 |
+| [[ai-agent\|AI Agent]] | 10 | ai-agent / ai-coding | agent 路线对照 + multi-agent 三范式 + 厂商路线观察 |
+| [[ai-workflow\|AI 工作流]] | 8 | ai-coding / ai-agent | hooks / spec-driven / profile / AGENTS.md 四路线对照 |
+| [[claude-code\|Claude Code]] | 7 | ai-coding / ai-agent | Anthropic 的 coding agent，路线 = 可回退自主 + 沙箱边界 |
+| [[openspec\|OpenSpec]] | 5 | ai-coding | 把 AI 编程升级为基于规格工件的可审查协作流程 |
+| [[autonomy]] | 4 | ai-agent / ai-coding | agent 自主完成多步任务的能力——程度变量，不是有无 |
+| [[codex\|Codex]] | 4 | ai-coding / ai-agent | OpenAI 的 coding agent，路线 = AGENTS.md + cloud sandbox |
+| [[model-capability-shift\|模型能力变化]] | 3 | ai-coding / ai-agent | 区分模型升级 vs 产品壳升级，避免被 release notes 带节奏 |
+| [[design-md-pattern\|DESIGN.md Pattern]] | 4 | ai-coding / indie-dev | 视觉规范打包成 markdown 喂 AI；含 Figma MCP 互补路线对照 |
+| [[agent-internals\|Agent Internals]] | 4 | ai-agent / ai-coding | Agent 内部 12 组件（循环 / 工具箱 / Todo / Subagent / Skill / Hook）—— inside-out 视角 |
+| [[claude-skill-ecosystem\|Claude Skill Ecosystem]] | 6 | ai-coding / indie-dev | Q1 2026 skill 生态，公开 100+；动作 + 标准二维矩阵 |
+| [[superpowers\|Superpowers]] | 2 | ai-coding | 14 项 skill 工程纪律框架，跨 6 工具支持，文件系统 handshake |
+| [[indie-dev-sop\|独立开发 SOP]] | 16 | indie-dev / ai-coding | idoubi 3 年 9 产品方法论合集——5 步 SOP + 6 感悟 + 反神话集 |
+| [[agents-md\|AGENTS.md]] | 4 | ai-agent / ai-coding / wiki-meta | Linux Foundation AAIF 跨厂商 agent 项目约定标准；本仓库自身实例
+
+> **晋升候选（≥3 source 但未建页）**：见 [`taxonomy.md`](taxonomy.md) 候选列表（spec-driven / multi-agent-orchestration / indie-dev-sop / agents-md / role-shift-to-architect / ai-app-monetization-myth / gpts）。
+>
+> **草稿池（_drafts/）**：Anthropic、OpenAI、GitHub Copilot、AI 产品观察、AI 内容生产、组织如何使用 AI——按 v2 规则下线，等阈值或合并。Superpowers 已晋升 → topic（2026-05-07）。详见 [`wiki/_drafts/README.md`](/Users/apple/Desktop/project/document/wiki/_drafts/README.md)。
 
 ---
 
@@ -53,7 +54,79 @@
 
 按摘录日期倒序。每条对应 `wiki/sources/` 下一份摘要。
 
+### 2026-05
+
+| 文件 | 类型 | 作者/出处 | 主题 |
+|---|---|---|---|
+| `2026-05-03_article_huishe-ji_global-2000-design-md.md` | article | 萤柳（会设计）| refero.design 2000+ DESIGN.md（thin）|
+| `2026-05-02_article_shangyanai_gpt-image-2-ui-seo-agent.md` | article | 熵衍 AI | GPT Image 2 整站 UI + 自主 SEO Agent 框架 |
+
+### 2026-04
+
+| 文件 | 类型 | 作者/出处 | 主题 |
+|---|---|---|---|
+| `2026-04-30_article_huishe-ji_claude-design-alternative-30-skills.md` | article | 萤柳（会设计）| Open Design：Claude Design 平替，19 skill + 71 设计系统 |
+| `2026-04-30_article_ai-zhudaimatang_gpt-image-2-codex-taste-skill.md` | article | AI煮代码汤 | Taste-Skill：GPT Image 2 + Codex 一键建站（thin）|
+| `2026-04-30_article_bazijichanpinhua_codex-fighter-game.md` | article | 八字鸡产品话 | Codex 一句 prompt 生成横版格斗游戏（thin）|
+| `2026-04-29_article_huishe-ji_27-global-ai-uiux-tools-q1-2026.md` | article | 萤柳（会设计）| Q1 2026 全球 27 款 AI UI/UX 工具盘点（thin）|
+| `2026-04-19_article_shugex_openspec-superpowers-from-zero-to-one.md` | article | 术哥无界 | OpenSpec × Superpowers 协作实战 |
+| `2026-04-18_article_zhihuiwenshu_superpowers-claude-code-engineering.md` | article | 智慧问数 | Superpowers 14 项 skill 全解 + ECC 框架对比 |
+| `2026-04-08_article_ai-chongdianguan_awesome-design-md-58-ui-systems.md` | article | AI充电官 | awesome-design-md：DESIGN.md 协作契约命名 |
+| `2026-04-05_article_idoubi_my-vibe-coding-projects.md` | article | 艾逗笔 | 全自动 vibe coding，9 产品矩阵 |
+| `2026-04-01_article_longjing-agent_harness-engineering-claude-code-agent.md` | article | 龙井Agent | Harness 工程：Coding Agent 内部 12 组件拆解 |
+
 ### 2026-03
+
+| 文件 | 类型 | 作者/出处 | 主题 |
+|---|---|---|---|
+| `2026-03-25_article_huishe-ji_figma-official-mcp.md` | article | 萤柳（会设计）| Figma 官方 MCP 接入 Cursor / Codex |
+| `2026-03-17_article_huishe-ji_one-skill-remove-ai-flavor-6-design-skills.md` | article | 萤柳（会设计）| Impeccable + 6 设计 skill 横向 snapshot |
+| `2026-03-13_article_huishe-ji_vibe-coding-claude-code-yolo-auto-test.md` | article | 萤柳（会设计）| 设计师视角 Vibe Coding：Claude Code YOLO + Playwright |
+
+### 2026-01 ~ 02
+
+| 文件 | 类型 | 作者/出处 | 主题 |
+|---|---|---|---|
+| `2026-01-24_article_idoubi_vibe-coding-workany.md` | article | 艾逗笔 | WorkAny 桌面 Agent，全自动 vibe coding |
+| `2026-01-03_article_idoubi_my-ai-2025.md` | article | 艾逗笔 | MCP、Agent 三大件、年终复盘 |
+
+### 2025（idoubi 全年）
+
+| 文件 | 类型 | 作者/出处 | 涉及 entity / concept |
+|---|---|---|---|
+| `2025-12-31_article_idoubi_ai-agents-cowork.md` | article | 艾逗笔 | Claude Code、Codex、MCP、multi-agent 横评 |
+| `2025-12-29_article_idoubi_ai-agents-work-together.md` | article | 艾逗笔 | Claude Code、Codex、tmux multi-agent |
+| `2025-07-17_article_idoubi_my-mcp-book.md` | article | 艾逗笔 | MCP、《这就是 MCP》出版 |
+| `2025-07-03_article_idoubi_ai-solo-dev.md` | article | 艾逗笔 | 独立开发方法论、6 感悟 + 5 步 SOP |
+| `2025-06-16_article_idoubi_mcp-is-all-you-need.md` | article | 艾逗笔 | MCP 本质论、双边网络效应 |
+| `2025-04-13_article_idoubi_mcp-architecture.md` | article | 艾逗笔 | MCP 架构（三件套之三）|
+| `2025-04-12_article_idoubi_mcp-lifecycle.md` | article | 艾逗笔 | MCP 生命周期（三件套之二）|
+| `2025-04-11_article_idoubi_mcp-transport.md` | article | 艾逗笔 | MCP 传输（三件套之一）|
+| `2025-01-01_article_idoubi_my-ai-2024.md` | article | 艾逗笔 | 2024 年终、ShipAny、MCP.so 起点 |
+
+### 2024（idoubi 全年）
+
+| 文件 | 类型 | 作者/出处 | 涉及 entity / concept |
+|---|---|---|---|
+| `2024-12-16_article_idoubi_use-ai-coding-copilot.md` | article | 艾逗笔 | Claude、Cursor、AI Vibecoding 辅助阶段 |
+| `2024-11-09_article_idoubi_get-paied-all-over-the-world.md` | article | 艾逗笔 | 出海收付款、Stripe、Wise |
+| `2024-08-12_article_idoubi_migrate-to-cloudflare.md` | article | 艾逗笔 | Cloudflare、独立开发基础设施 |
+| `2024-05-22_article_idoubi_ai-search-engine.md` | article | 艾逗笔 | ThinkAny、AI 搜索、支付率 0.03% |
+| `2024-02-23_article_idoubi_sora-ai-video-generator.md` | article | 艾逗笔 | sora.fm、套壳、诚信底线 |
+| `2024-01-30_article_idoubi_ai-cover-generator.md` | article | 艾逗笔 | 红包封面、模板复用 |
+| `2024-01-09_article_idoubi_my-ai-course-in-2024.md` | article | 艾逗笔 | 知识付费、陪伴型课程 |
+| `2024-01-04_article_idoubi_my-ai-projects-in-2023.md` | article | 艾逗笔 | 2023 年终、模型能力跃迁论 |
+
+### 2023（idoubi 起点）
+
+| 文件 | 类型 | 作者/出处 | 涉及 entity / concept |
+|---|---|---|---|
+| `2023-12-20_article_idoubi_an-ai-native-product.md` | article | 艾逗笔 | 知了 zKnown、AI-Native 概念 |
+| `2023-11-24_article_idoubi_I-quit-from-tencent.md` | article | 艾逗笔 | 腾讯裸辞、独立开发起点 |
+| `2023-11-19_article_idoubi_my-gpts-works-project.md` | article | 艾逗笔 | GPTs Works、出海冷启动 |
+| `2023-11-10_article_idoubi_how-to-create-gpts.md` | article | 艾逗笔 | GPTs 教程、Actions API |
+
+### 2026-03（Anthropic / OpenAI / GitHub / arXiv 一手来源）
 
 | 文件 | 类型 | 作者/出处 | 涉及 entity / concept |
 |---|---|---|---|
@@ -80,6 +153,10 @@
 | [[claude-code-vs-codex_comparison]] | comparison | Claude Code 与 Codex 两条 autonomy 路线对照、生态策略差异、组合使用建议 | 1 | active |
 | [[openspec-vibecoding_digest]] | digest | OpenSpec 在 Vibecoding 5 阶段成长路径里的咬合点 + 学术背书 | 1 | active |
 | [[agent-learning-path_digest]] | digest | 如何了解 agents、如何做 agents——四件事理解 + 5 阶段实践路径 | 1 | active |
+| [[openspec-superpowers_workflow_digest]] | digest | OpenSpec × Superpowers 文件系统 handshake + 两层 spec 区分 + 三级审查 pattern | 1 | active |
+| [[idoubi-vibecoding-journey_timeline]] | timeline | 艾逗笔 3 年 24 篇看 4 次范式跃迁（GPTs → 套壳 → MCP → Vibe Coding）+ 反神话数字集 | 1 | active |
+| [[mcp-foundations_digest]] | digest | MCP 三件套技术骨架 + 四件套关系矩阵（OpenSpec / Superpowers / Skills / MCP） | 1 | active |
+| [[markdown-as-spec_digest]] | digest | 4 个独立工具走到同一答案——OpenSpec / DESIGN.md / AGENTS.md / SKILL.md 都把人类规则写成 markdown 喂 AI | 1 | active |
 
 待落地的 syntheses 候选：
 
@@ -109,8 +186,8 @@ grep -c "^|" 06_Maps/index.md
 # 找某个 entity 在 sources 里出现多少次
 grep -ic "openspec" wiki/sources/*.md
 
-# 找未在 index 的 wiki 页（孤儿）— 同时扫 entities 与 concepts
-{ ls wiki/entities; ls wiki/concepts; } | sed 's/.md$//' | sort -u > /tmp/wiki-pages.txt
-grep -oE '\[\[[^]]+\]\]' 06_Maps/index.md | tr -d '[]' | sort -u > /tmp/index-refs.txt
+# 找未在 index 的 wiki 页（孤儿）— v2 扫 topics
+ls wiki/topics | sed 's/.md$//' | sort -u > /tmp/wiki-pages.txt
+grep -oE '\[\[[^]]+\]\]' 06_Maps/index.md | tr -d '[]' | sed 's/|.*//' | sort -u > /tmp/index-refs.txt
 comm -23 /tmp/wiki-pages.txt /tmp/index-refs.txt
 ```

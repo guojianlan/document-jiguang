@@ -1,0 +1,64 @@
+{
+  "eyebrow": "MARKDOWN AS SPEC · 2026",
+  "title": "4 个独立工具，1 个共同答案",
+  "subtitle": "OpenSpec / DESIGN.md / AGENTS.md / SKILL.md 走到同一格式：把人类规则用 markdown 写下来，喂给 AI。",
+  "columns": [
+    { "label": "OpenSpec", "sublabel": "业务规约 → coding agent" },
+    { "label": "DESIGN.md", "sublabel": "视觉规范 → UI 生成 AI" },
+    { "label": "AGENTS.md", "sublabel": "协作约定 → 多 agent" },
+    { "label": "SKILL.md", "sublabel": "工作流 → Claude / Codex" }
+  ],
+  "rows": [
+    {
+      "title": "都用 markdown",
+      "subtitle": "不是 JSON / DSL",
+      "cells": [
+        "proposal / spec / tasks 全 .md",
+        "颜色 / 字体 / 反模式列表 .md",
+        "项目根 AGENTS.md，纯文本",
+        "YAML frontmatter + 正文 .md"
+      ]
+    },
+    {
+      "title": "都靠文件系统交付",
+      "subtitle": "不靠 API",
+      "cells": [
+        "openspec/specs/ 目录",
+        "项目根 DESIGN.md",
+        "仓库根 AGENTS.md",
+        ".agents/skills/<name>/SKILL.md"
+      ]
+    },
+    {
+      "title": "AI 启动前注入",
+      "subtitle": "不是事后 review",
+      "cells": [
+        "执行任务前先读 spec",
+        "生成组件前先读规范",
+        "agent 进项目第一件事读它",
+        "调用 skill 前加载 SKILL.md"
+      ]
+    },
+    {
+      "title": "跨厂商收敛",
+      "subtitle": "无人协调",
+      "cells": [
+        "Claude / Codex / Cursor 都支持",
+        "awesome-design-md / refero / Open Design",
+        "AAIF 标准（OpenAI / 谷歌 / AWS）",
+        "Codex 原生 + Claude 通过 symlink"
+      ]
+    },
+    {
+      "title": "动作 + 标准 二维结构",
+      "subtitle": "缺一个就跑不动",
+      "cells": [
+        "tasks.md（动作）+ spec（标准）",
+        "skill（动作）+ DESIGN.md（标准）",
+        "工具调用（动作）+ AGENTS 约定（标准）",
+        "脚本（动作）+ SKILL.md（标准）"
+      ]
+    }
+  ],
+  "footer": "5 条共性都对上：这不是巧合，是 AI 协作时代的契约格式被独立选中"
+}
