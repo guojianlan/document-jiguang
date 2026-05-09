@@ -10,8 +10,8 @@
 
 | 类别 | 数量 | 路径 | 状态 |
 |---|---|---|---|
-| sources | 50 | `wiki/sources/` | v2 ✅ |
-| topics | 15 | `wiki/topics/` | v2 ✅ |
+| sources | 51 | `wiki/sources/` | v2 ✅ |
+| topics | 16 | `wiki/topics/` | v2 ✅ |
 | syntheses | 7 | `wiki/syntheses/` | +1 markdown-as-spec_digest |
 | _drafts（草稿池）| 6 | `wiki/_drafts/` | Superpowers 已晋升离开 |
 
@@ -43,6 +43,7 @@
 | [[superpowers\|Superpowers]] | 2 | ai-coding | 14 项 skill 工程纪律框架，跨 6 工具支持，文件系统 handshake |
 | [[indie-dev-sop\|独立开发 SOP]] | 16 | indie-dev / ai-coding | idoubi 3 年 9 产品方法论合集——5 步 SOP + 6 感悟 + 反神话集 |
 | [[agents-md\|AGENTS.md]] | 4 | ai-agent / ai-coding / wiki-meta | Linux Foundation AAIF 跨厂商 agent 项目约定标准；本仓库自身实例
+| [[html-as-canvas\|HTML as Canvas]] | 1 | ai-coding / ai-agent | agent 时代的"宽画布"output 格式；与 markdown-as-spec 镜像（input vs output）|
 
 > **晋升候选（≥3 source 但未建页）**：见 [`taxonomy.md`](taxonomy.md) 候选列表（spec-driven / multi-agent-orchestration / indie-dev-sop / agents-md / role-shift-to-architect / ai-app-monetization-myth / gpts）。
 >
@@ -58,6 +59,7 @@
 
 | 文件 | 类型 | 作者/出处 | 主题 |
 |---|---|---|---|
+| `2026-05-09_article_baoyuai_claude-code-html-unreasonable-effectiveness.md` | article | 宝玉AI（译）/ Thariq（原作）| Claude Code 团队成员主张 HTML 替代 Markdown 作为 agent 输出格式 |
 | `2026-05-03_article_huishe-ji_global-2000-design-md.md` | article | 萤柳（会设计）| refero.design 2000+ DESIGN.md（thin）|
 | `2026-05-02_article_shangyanai_gpt-image-2-ui-seo-agent.md` | article | 熵衍 AI | GPT Image 2 整站 UI + 自主 SEO Agent 框架 |
 

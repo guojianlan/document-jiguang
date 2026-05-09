@@ -78,6 +78,8 @@ updated_at: 2026-05-07
 - **质量参差**：100+ skill 不等于 100+ 高质量 skill。idoubi 在 [[2026-01-03_article_idoubi_my-ai-2025]] 评价 90% MCP 是噱头，skill 生态可能也有同样的"长尾噪音 + 头部精品"分布
 - **跨工具兼容性陷阱**：Claude / Codex / OpenCode 都说支持 skill，但 SKILL.md 的细节字段（如 frontmatter）是否完全一致尚无系统对比
 - **skill 与 plugin / extension 的边界**：未来 skill 会不会被某种"更结构化的 extension 协议"替代？
+- **作者主动反对 skill 化某些场景**：Thariq（Claude Code 团队成员）2026-05 在 [[2026-05-09_article_baoyuai_claude-code-html-unreasonable-effectiveness]] 文中明确说："你根本不需要做任何繁琐的设置，就能让 Claude 为你生成 HTML。你只需要像平时聊天一样，直接告诉它：'给我做一个 HTML 文件'或者'生成一个 HTML 制品'就行了。"
+  - 这是反向证据，原因暂不解读。后续如有更多此类一手陈述，再考虑是否需要新增"什么不该做成 skill"段。
 
 ## 当前可输出方向
 

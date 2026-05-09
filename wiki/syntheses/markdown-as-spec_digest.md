@@ -118,6 +118,8 @@ OpenSpec 把 spec 落 `openspec/specs/`，DESIGN.md 落项目根目录，AGENTS.
 - **markdown 不能表达所有规则**：复杂状态机、严格 schema、跨语言一致性等场景，markdown 表达力不足。会不会出现"markdown 契约 + JSON schema 校验层"的组合？
 - **markdown 易发散**：4 个工具都是 markdown 但格式不统一（OpenSpec 走 proposal/design/spec/tasks，DESIGN.md 走颜色/字体/间距/组件，SKILL.md 走 YAML frontmatter + body），会不会出现"meta-spec spec"来统一格式？
 - **AI 真的"理解"这些 markdown 吗**？还是只是凑巧有效。当 LLM 升级 / 退化时，markdown 契约的稳定性是否被影响？
+- **HTML 反向命题**：Thariq（Claude Code 团队成员）2026-05 主张 markdown 作为 **AI 输出格式**已失效，HTML 在信息密度 / 视觉清晰 / 易分享 / 双向交互 / 数据摄取 5 维全面胜出。详见 [[html-as-canvas]] / [[2026-05-09_article_baoyuai_claude-code-html-unreasonable-effectiveness]]。
+  - **跟本 synthesis 的关系**：markdown-as-spec 讲的是 input 契约（人写给 agent 看），HTML 反命题讲的是 output 呈现（agent 写给人看）——不冲突，但说明"markdown 全栈契约"的判断需要收缩到 input 端，不再涵盖 output。
 
 ## 跟现有 wiki 的连接
 

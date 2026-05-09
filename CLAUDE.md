@@ -30,10 +30,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 编辑 skill 时改 `.agents/skills/`，**不要**改 `.claude/skills/`（symlink 本身不是文件）
 - 新建 skill 时只在 `.agents/skills/` 下建目录，然后 `ln -s ../../.agents/skills/<name> .claude/skills/<name>` 链入
 
-10 个 skill 分四层：
+11 个 skill 分四层：
 
 - **wiki 层**：`/ingest`、`/query`、`/lint`
-- **publishing 层**：`/publish-article`、`/critique`、`/render-svg`
+- **publishing 层**：`/publish-article`、`/critique`、`/voice-match`、`/render-svg`
 - **基础层**：`/verify`
 - **联网层**：`/web-access`
 - **工具层**（不需 slash）：`markdown-publish-preview`、`source-auto-summary`

@@ -36,6 +36,14 @@ description: Turn a topic note or draft into a publish-ready content package (cl
 
 ## 工作流
 
+### 0. 写作前轻量加载 voice 基线（2026-05-09 起）
+
+无论本次发布走哪一步，启动时**必须先读** `99_System/voice-references/_index.md`（约 5KB），按目标平台决定本次写作的 voice 基线，把基线说明（"段均 X 字 / 第一人称密度 / 章节结构偏好 / 收尾配方"）注入写作 sub-agent 的 prompt。
+
+默认走 `_self.md`（用户自己的方法论作者风格）。如果发布平台显式是公众号 / 小红书 / 朋友圈，按 `_index.md` 的"按场域决策树"切到对应外部参考（如 khazix）。
+
+这一步是**轻量调用**，不跑完整 voice-match 流程。完整评分留到草稿落盘后用户主动调 `/voice-match`。详见 [.agents/skills/voice-match/SKILL.md](/Users/apple/Desktop/project/document/.agents/skills/voice-match/SKILL.md)。
+
 ### 1. 判断当前阶段
 
 先判断用户现在手上的内容处于哪一层：
@@ -121,7 +129,15 @@ description: Turn a topic note or draft into a publish-ready content package (cl
 
 ### 6. 发布前必跑 critique
 
-**发布版正文落盘前必须跑一次 [critique](/Users/apple/Desktop/project/document/.agents/skills/critique/SKILL.md)**：按 4 维度（信息密度 / 独特视角 / 可操作性 / 阅读节奏）评分，任一维度 ≤ 2 必须返工，命中硬规则（"而是"句、协作路标词、模板段、客服口吻、戏剧化揭露）也必须改完再发。
+**发布版正文落盘前必须跑一次 [critique](/Users/apple/Desktop/project/document/.agents/skills/critique/SKILL.md)**：按 4 维度（信息密度 / 独特视角 / 可操作性 / 阅读节奏）评分，任一维度 ≤ 2 必须返工，命中硬规则也必须改完再发。
+
+注意 critique 自 2026-05-09 起按场域分层（strict / blog / reference），博客 / wiki 场域不会再误扣"而是"句等用户标志特征——详见 critique SKILL.md §1.5。
+
+### 6.5 critique 通过后建议跑 voice-match
+
+critique 通过后，如对"是否像作者本人写的"仍有疑虑，跑 [voice-match](/Users/apple/Desktop/project/document/.agents/skills/voice-match/SKILL.md)：5 维量化对照 voice-references 基线，找出最偏离的段落 + 改写建议。
+
+不强制——critique 已通过的稿子可直接发，但用户曾指出"不像我写的"的稿子必须跑 voice-match 闸门。
 
 ### 7. 回写规则
 

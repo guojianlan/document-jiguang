@@ -402,7 +402,7 @@ skill 候选池与流程入口：
 
 > ⚠️ Codex CLI **不**读 `~/.codex/skills/`（这是历史误传）。Codex 真正读的是项目级 `.agents/skills/` + 用户级 `~/.agents/skills/`。
 
-当前 10 个 skill（全部住 `.agents/skills/`）：
+当前 11 个 skill（全部住 `.agents/skills/`）：
 
 wiki 层：
 
@@ -412,8 +412,9 @@ wiki 层：
 
 publishing 层：
 
-- [critique](/Users/apple/Desktop/project/document/.agents/skills/critique/SKILL.md)：文章产出后按 4 维度评分并强制返工，去 AI 味
-- [publish-article](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)：发布包装完整工作流（含原 article-publish-kit 全部内容）
+- [critique](/Users/apple/Desktop/project/document/.agents/skills/critique/SKILL.md)：文章产出后按 4 维度评分并强制返工，去 AI 味（2026-05-09 起按场域分层 strict/blog/reference）
+- [voice-match](/Users/apple/Desktop/project/document/.agents/skills/voice-match/SKILL.md)：5 维量化对照 voice-references 基线，评估"是否像作者本人写的"，给改写建议（不直接改文件）。**2026-05-07 起 _self 拆双 mode**：方法论 mode（_self.md）/ 随笔 mode（_self-essay.md），voice-match §1.2 按章节标题 + 关键词自动选 mode
+- [publish-article](/Users/apple/Desktop/project/document/.agents/skills/publish-article/SKILL.md)：发布包装完整工作流（含原 article-publish-kit 全部内容；启动时轻量加载 voice 基线）
 - [render-svg](/Users/apple/Desktop/project/document/.agents/skills/render-svg/SKILL.md)：视觉资产生产 + 校验（含原 article-visual-assets 全部内容）
 
 基础层：
@@ -457,6 +458,7 @@ publishing 层：
 - 对可重复使用的方法和流程，优先沉淀为“参考文档 + 模板”的组合，方便他人按自己的业务重新定制
 - 发布前默认跑一次 `/critique` 去 AI 味校验，命中硬规则（"而是"句、协作路标词、戏剧化揭露、模板段、客服口吻）必须返工
 - 反 AI 味规则沉淀在 [.claude/skills/critique/references/zh-ai-tells.md](/Users/apple/Desktop/project/document/.claude/skills/critique/references/zh-ai-tells.md) 与 [rule-taxonomy.md](/Users/apple/Desktop/project/document/.claude/skills/critique/references/rule-taxonomy.md)，发现新模式按规则 A 回写
+- **用户写作有双 mode**（2026-05-07 沉淀）：方法论 mode（[_self.md](/Users/apple/Desktop/project/document/99_System/voice-references/_self.md)，blog 主流，TL;DR + FAQ + 通过标准三件套）和随笔 mode（[_self-essay.md](/Users/apple/Desktop/project/document/99_System/voice-references/_self-essay.md)，技术随笔 / 评测 / 复盘，砍掉 SOP 骨架 + 章节标题改观点句 + "——"破折号打节奏 + "我读完"动词链做证据）。voice-match 必须先按 [_index.md](/Users/apple/Desktop/project/document/99_System/voice-references/_index.md) "用户双 mode 自动判定"段选 mode 再评分
 
 输出原则：
 
